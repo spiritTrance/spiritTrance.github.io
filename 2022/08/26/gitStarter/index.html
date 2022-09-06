@@ -275,7 +275,7 @@ mjx-container[display="true"] + br {
             
             <span class="tag">
                 
-                <a href="/tags/git/" style="color: #00bcd4">
+                <a href="/tags/git/" style="color: #ffa2c4">
                     git
                 </a>
             </span>
@@ -285,61 +285,69 @@ mjx-container[display="true"] + br {
     </div>
     <div class="content" v-pre>
         <p>本文不准备介绍原理（但可能会附上链接），仅介绍使用方法和常见的坑（作者遇到的），以便于快速上手</p>
-<h1 id="Git初步"><a href="#Git初步" class="headerlink" title="Git初步"></a>Git初步</h1><p>本节介绍<strong>单人</strong>从git开始到拥有一个完整的仓库，并如何将本地数据同步上去。</p>
+<h1 id="git初步">Git初步</h1>
+<p>本节介绍<strong>单人</strong>从git开始到拥有一个完整的仓库，并如何将本地数据同步上去。</p>
 <blockquote>
 <p>Git：版本控制工具；GitHub/Gitee：社交代码托管平台</p>
 <p>因此将代码托管到github和gitee的步骤大同小异。github因为连接不稳定（有时登不上），gitee成为了替代品；但gitee出现了奇怪的限制（比如<code>document.s**e()</code>），所以本文以github为例，介绍如何使用Git及托管平台。</p>
 </blockquote>
-<h2 id="准备步骤"><a href="#准备步骤" class="headerlink" title="准备步骤"></a>准备步骤</h2><ul>
-<li>开始之前，您需要：<blockquote>
-<p>1.注册<a target="_blank" rel="noopener" href="https://github.com/">github</a>/<a target="_blank" rel="noopener" href="https://gitee.com/">gitee</a>账号，并牢记昵称和邮箱，并<strong>不要轻易更改昵称和密码</strong>（修改后会有坑）</p>
-<p>2.下载<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>工具，作者用的是2.37.3版本，安装过程中的一大堆勾选项可以一通忽略掉，无脑next即可。</p>
-<p>3.可以选择下载TortoiseGit，这是Git的图形化操作工具，此为备选项。</p>
-</blockquote>
-</li>
+<h2 id="准备步骤">准备步骤</h2>
+<ul>
+<li>开始之前，您需要：<br>
+&gt;1.注册<a target="_blank" rel="noopener" href="https://github.com/">github</a>/<a target="_blank" rel="noopener" href="https://gitee.com/">gitee</a>账号，并牢记昵称和邮箱，并<strong>不要轻易更改昵称和密码</strong>（修改后会有坑）<br>
+&gt;<br>
+&gt;2.下载<a target="_blank" rel="noopener" href="https://git-scm.com/">git</a>工具，作者用的是2.37.3版本，安装过程中的一大堆勾选项可以一通忽略掉，无脑next即可。<br>
+&gt;<br>
+&gt;3.可以选择下载TortoiseGit，这是Git的图形化操作工具，此为备选项。</li>
 </ul>
-<p>准备好后，您可以无脑复制代码框的内容。首先右键，点击Git Bash Here，打开终端，输入以下内容（引号内内容替换为<strong>注册账号时所用信息</strong>即可，分别为<strong>昵称和邮箱</strong>）：</p>
-<pre><code class="bash">git config --global user.name "yourName"
-git config --global user.email "yourEmail@email.com" 
-</code></pre>
+<p>准备好后，您可以无脑复制代码框的内容。首先右键，点击Git Bash
+Here，打开终端，输入以下内容（引号内内容替换为<strong>注册账号时所用信息</strong>即可，分别为<strong>昵称和邮箱</strong>）：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"yourName"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"yourEmail@email.com"</span> </span></code></pre></div>
 <p>之后在本地创建ssh key：</p>
-<pre><code class="bash">ssh-keygen -t rsa -C "yourEmail@email.com"
-</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh-keygen</span> <span class="at">-t</span> rsa <span class="at">-C</span> <span class="st">"yourEmail@email.com"</span></span></code></pre></div>
 <p>之后<strong>连续敲击三次回车键</strong>，生成两个<strong>隐藏文件</strong>，windows11放置在该路径（或者留意提示框）：<code>C:\Users\UserName\.ssh</code>，找到<code>id_rsa.pub</code>文件，复制里面的内容。</p>
-<p>然后登录托管平台，进入<a target="_blank" rel="noopener" href="https://github.com/settings/profile">设置</a>项目，在<strong>侧边栏</strong>找到<strong>SSH and GPG keys</strong>，添加SSH key（点击New SSH key），在Key里面粘贴<code>id_rsa.pub</code>文件里的内容，Title随意取，添加即可。<br><img src="/2022/08/26/gitStarter/1.png"></p>
+<p>然后登录托管平台，进入<a target="_blank" rel="noopener" href="https://github.com/settings/profile">设置</a>项目，在<strong>侧边栏</strong>找到<strong>SSH
+and GPG keys</strong>，添加SSH key（点击New SSH
+key），在Key里面粘贴<code>id_rsa.pub</code>文件里的内容，Title随意取，添加即可。<br>
+<img src="1.png"></p>
 <p>自此，一切准备步骤完成。</p>
-<h2 id="仓库创建及同步"><a href="#仓库创建及同步" class="headerlink" title="仓库创建及同步"></a>仓库创建及同步</h2><p>开始之前，先<strong>强调一个原则</strong>：先拉后推，尤其是<strong>多人协作</strong>的时候。</p>
+<h2 id="仓库创建及同步">仓库创建及同步</h2>
+<p>开始之前，先<strong>强调一个原则</strong>：先拉后推，尤其是<strong>多人协作</strong>的时候。</p>
 <p>好了，下面介绍如何创建仓库：</p>
-<p><strong>远程仓库创建</strong>：</p>
+<p><strong>远程仓库创建</strong>：<br>
+- 登录github，点击个人头像，在下拉菜单里找到<strong>Your
+repositories</strong>，这里就是你的远程仓库了。<br>
+- 然后找到New，开始<a target="_blank" rel="noopener" href="https://github.com/new">创建你的仓库</a>，按照其要求填写即可。（<strong>注意</strong>：如果勾选需要README.md，则分支名为main，否则为master）<br>
+- 关于license，请看这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/51331026">License许可证怎么选择？</a>，一般来说初学者选择MIT协议，可以规避很多问题。</p>
+<p><strong>本地仓库初次创建与连接</strong>：在本地新建目录，在目录下面打开Git
+bash，进行以下输入：</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>remoteRepositoryPath<span class="op">&gt;</span> <span class="op">&lt;</span>localRepositoryPath<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">touch</span> HelloGitHub.txt</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"First upd"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>remoteRepositoryBranch<span class="op">&gt;</span></span></code></pre></div>
 <ul>
-<li>登录github，点击个人头像，在下拉菜单里找到<strong>Your repositories</strong>，这里就是你的远程仓库了。</li>
-<li>然后找到New，开始<a target="_blank" rel="noopener" href="https://github.com/new">创建你的仓库</a>，按照其要求填写即可。（<strong>注意</strong>：如果勾选需要README.md，则分支名为main，否则为master）</li>
-<li>关于license，请看这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/51331026">License许可证怎么选择？</a>，一般来说初学者选择MIT协议，可以规避很多问题。</li>
+<li><code>git clone</code>：第一个参数remoteRepositoryPath一般为git@github.com:&lt;昵称&gt;/&lt;仓库名&gt;.git，或者直接在下图红色圈处复制即可；第二个参数是本地仓库的路径（找一个目录即可），例：<code>git clone git@github.com:spiritTrance/tutorialRepo.git C:/Users/15781/Desktop/testRepo</code></li>
 </ul>
-<p><strong>本地仓库初次创建与连接</strong>：在本地新建目录，在目录下面打开Git bash，进行以下输入：</p>
-<pre><code class="bash">git clone &lt;remoteRepositoryPath&gt; &lt;localRepositoryPath&gt;
-touch HelloGitHub.txt
-git add .
-git commit -m "First upd"
-git push origin &lt;remoteRepositoryBranch&gt;
-</code></pre>
-<ul>
-<li><code>git clone</code>：第一个参数remoteRepositoryPath一般为<a href="mailto:&#x67;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#117;&#x62;&#x2e;&#99;&#111;&#109;">git@github.com</a>:&lt;昵称&gt;/&lt;仓库名&gt;.git，或者直接在下图红色圈处复制即可；第二个参数是本地仓库的路径（找一个目录即可），例：<code>git clone git@github.com:spiritTrance/tutorialRepo.git C:/Users/15781/Desktop/testRepo </code></li>
-<li><code>touch</code>: linux新建文件的指令，为了演示效果加的，可忽略。</li>
-<li><code>git add</code>：将指定文件加入本地仓库，后面接一个点表示将本目录下的所有文件加入本地仓库</li>
-<li><code>git commit -m</code>：编写提交备注信息</li>
-<li><code>git push</code>：第二个参数是远程仓库的分支名，具体在上图绿色圈处查看。<strong>注意</strong>：分支名一般是main或者master，以绿圈为准。前面提过原因。这也是为什么选择<a target="_blank" rel="noopener" href="https://blog.csdn.net/gongdamrgao/article/details/115032436">git clone</a>而不是优先在本地初始化仓库<code>git init</code>的原因）</li>
-</ul>
+<p><img src="2.png"><br>
+- <code>touch</code>:
+linux新建文件的指令，为了演示效果加的，可忽略。<br>
+-
+<code>git add</code>：将指定文件加入本地仓库，后面接一个点表示将本目录下的所有文件加入本地仓库<br>
+- <code>git commit -m</code>：编写提交备注信息<br>
+-
+<code>git push</code>：第二个参数是远程仓库的分支名，具体在上图绿色圈处查看。<strong>注意</strong>：分支名一般是main或者master，以绿圈为准。前面提过原因。这也是为什么选择<a target="_blank" rel="noopener" href="https://blog.csdn.net/gongdamrgao/article/details/115032436">git
+clone</a>而不是优先在本地初始化仓库<code>git init</code>的原因）</p>
 <p><strong>仓库更新</strong>：</p>
 <p>再次强调，<strong>先拉后推</strong>！</p>
 <p>执行以下命令：</p>
-<pre><code class="bash">git fetch
-//执行修改
-git add .
-git commit -m "update Message"
-git merge
-git push origin &lt;远程仓库分支名&gt;
-</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> fetch</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">//执行修改</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"update Message"</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push origin <span class="op">&lt;</span>远程仓库分支名<span class="op">&gt;</span></span></code></pre></div>
 <ul>
 <li><code>git fetch</code>：首先不推荐直接用git pull的方式，原因<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/123370920">见此</a>。两个步骤下来，<strong>可能提示有冲突，但先不管</strong>。</li>
 <li><code>git add</code>：将修改过的文件再加一次。</li>
@@ -348,14 +356,24 @@ git push origin &lt;远程仓库分支名&gt;
 </ul>
 <p><strong>冲突解决</strong>：</p>
 <p>有时候会很不幸，因为各种原因，在上面最后一条执行完后会出现冲突问题，如下图所示：</p>
-<p><img src="/2022/08/26/gitStarter/5.png"><br>此时你需要打开冲突的文件（本地文件图标右下角为黄色感叹号的文件）：</p>
-<p><img src="/2022/08/26/gitStarter/4.png"><br>可以看到图中有两个来源的信息，需要将<strong>带有&lt;&lt;&lt;和&gt;&gt;&gt;的一行和===的一行删除</strong>，可以选择两个来源都保留，或者只保留一方，或者都删掉，均可。之后重新走一遍add,commit,merge,push的流程即可（注意<strong>按顺序</strong>）</p>
+<p><img src="5.png"><br>
+此时你需要打开冲突的文件（本地文件图标右下角为黄色感叹号的文件）：</p>
+<p><img src="4.png"><br>
+可以看到图中有两个来源的信息，需要将<strong>带有&lt;&lt;&lt;和&gt;&gt;&gt;的一行和===的一行删除</strong>，可以选择两个来源都保留，或者只保留一方，或者都删掉，均可。之后重新走一遍add,commit,merge,push的流程即可（注意<strong>按顺序</strong>）</p>
 <p>至此，你应该学会了最基本的操作。</p>
-<h1 id="多人协作"><a href="#多人协作" class="headerlink" title="多人协作"></a>多人协作</h1><h2 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h2><h2 id="冲突解决"><a href="#冲突解决" class="headerlink" title="冲突解决"></a>冲突解决</h2><p>见Git初步-仓库创建及同步</p>
-<h1 id="版本管理"><a href="#版本管理" class="headerlink" title="版本管理"></a>版本管理</h1><p>作为版本管理工具，最重要的功能肯定是版本管理啦。</p>
-<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><h2 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h2><p>（强行合并分支，待补）<code>:q!</code></p>
-<h1 id="疑难杂症"><a href="#疑难杂症" class="headerlink" title="疑难杂症"></a>疑难杂症</h1><p>作者碰到的一系列问题记录，待补</p>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/git-guide.html">github简明资料</a></p>
+<h1 id="多人协作">多人协作</h1>
+<h2 id="基本步骤">基本步骤</h2>
+<h2 id="冲突解决">冲突解决</h2>
+<p>见Git初步-仓库创建及同步</p>
+<h1 id="版本管理">版本管理</h1>
+<p>作为版本管理工具，最重要的功能肯定是版本管理啦。</p>
+<h1 id="分支管理">分支管理</h1>
+<h2 id="合并分支">合并分支</h2>
+<p>（强行合并分支，待补）<code>:q!</code></p>
+<h1 id="疑难杂症">疑难杂症</h1>
+<p>作者碰到的一系列问题记录，待补<br>
+# 参考资料<br>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/git-guide.html">github简明资料</a></p>
 <p><a target="_blank" rel="noopener" href="https://backlog.com/git-tutorial/cn/intro/intro1_1.html">猴子都能懂的git入门</a>（这个貌似在打backlog的广告，注意分辨）</p>
 
     </div>
