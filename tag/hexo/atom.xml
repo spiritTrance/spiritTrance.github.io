@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>spiritTranceの小窝 • Posts by &#34;hexo&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2022-08-26T02:22:26.000Z</updated>
+    <category term="cpp" />
+    <category term="Makefile" />
+    <category term="链接" />
+    <category term="Docker" />
+    <category term="CMake" />
+    <category term="Hexo" />
+    <category term="正则表达式" />
+    <category term="Misc" />
+    <category term="量化研究方法" />
+    <category term="读书笔记" />
+    <category term="gdb" />
+    <category term="git" />
+    <category term="linux基本操作" />
+    <entry>
+        <id>http://example.com/2022/08/26/hexo_HexoStarter/</id>
+        <title>Hexo快速入门</title>
+        <link rel="alternate" href="http://example.com/2022/08/26/hexo_HexoStarter/"/>
+        <content type="html">&lt;p&gt;参考资料：①&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/60578464&#34;&gt;hexo框架使用入门 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;②&lt;a class=&#34;link&#34; href=&#34;https://github.com/argvchs/hexo-theme-particlex&#34;&gt;主题particleX的配置和使用 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;③&lt;a class=&#34;link&#34; href=&#34;https://redefine-docs.ohevan.com/article_customize/excerpt&#34;&gt;redefine主题文档 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;常用指令：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo g  //生成页面&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo d  //部署&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo s  //本地预览&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo g -d  //生成并部署&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;Q： particleX主题的代码块有行号，怎么办？&lt;br&gt;
+A： 看particleX theme的介绍，关闭highlight即可&lt;/p&gt;
+&lt;p&gt;Q： 头像和背景的URL？&lt;br&gt;
+A： 需要图床。作者使用的是铁锈图床（能用就行）（不知道放进file里面上传url可不可以，file见后面）&lt;/p&gt;
+&lt;p&gt;Q：Hexo放置Pdf？&lt;br&gt;
+A：参考：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_43827595/article/details/104574959&#34;&gt;【如何在网页中实现pdf在线预览】10分钟学会如何利用Hexo博客上传本地pdf文件并在线预览pdf_白马金羁侠少年的博客-CSDN博客 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意：对于particleX，由于生成的文件编排方式不同，文件路径应该为：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;../../../../file/{pdfName}.pdf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意file放置在写博客的source文件夹下，与_posts同级&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;每个markdown应该带的信息头：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Text&#34;&gt;&lt;figure class=&#34;iseeu highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;author:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;- SpiritTrance&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;date: 2022-08-26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;title: 计算机网络学习笔记&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;description:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;- 计算机网络学习笔记&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;tags:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;- 计算机网络&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;categories:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;- 学校课程&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;Q：对于Tags页面，Categories页面没有内容？&lt;br&gt;
+A：第一步：在根目录打开Git Bash，输入以下内容：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo new page &lt;span class=&#34;string&#34;&gt;&#34;tags&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;第二步：在source里面发现tags目录，进入，打开index.md，文件头输入以下信息即可：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Text&#34;&gt;&lt;figure class=&#34;iseeu highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;title: &#34;tags&#34;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;type: &#34;tags&#34;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;layout: &#34;tags&#34;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;categories同理，about可以自己编写内容进行自我介绍。&lt;/p&gt;
+&lt;p&gt;Q：gitalk搭建？&lt;br&gt;
+A：参考以下网址：&lt;br&gt;
+https://zhuanlan.zhihu.com/p/141078552&lt;br&gt;
+https://blog.csdn.net/m0_46916422/article/details/124065600&lt;br&gt;
+最后参考particleX作者的blog，在_config.yml里面配置好即可。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;踩坑1：未找到相关issue，联系@xxx&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;首先确保OAuth application的homepage URL是存放评论的仓库的URL，callback URL是blog网址的URL。&lt;/li&gt;
+&lt;li&gt;然后注意调用Gitalk的方法中，repo是仓库名而不是URL。&lt;/li&gt;
+&lt;li&gt;这些确保正确后，点击登录（本地localhost貌似不行，要部署上去），按照提示授权即可。&lt;/li&gt;
+&lt;li&gt;如果主题用的是&lt;em&gt;particleX&lt;/em&gt;的话，注意_config.yml的repo是存放评论的&lt;strong&gt;仓库名&lt;/strong&gt;（而非URL），生成Gitalk评论区的代码在source目录的script.ejs中，可以查看原始调用方式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;踩坑2：Error: Vaildation Failed.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;部分&lt;/strong&gt;文章评论区出现这种报错。一般情况是Gitalk的id长度超过50，所以避免id长度超过50即可。&lt;/li&gt;
+&lt;li&gt;一般id用的是pathname，所以保证pathname不要过长，别用中文，只含数字字母下划线即可，&lt;strong&gt;没有必要使用md5压缩长度（网上搜到解决办法大多是MD5压缩长度）&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;particleX使用的id也是pathname，即文件名，即_posts下的文件名称&lt;strong&gt;而非文件中的title文章名称&lt;/strong&gt;，注意particleX的路径还会添加日期，所以文件长度不能超过39（前面多了2022/08/26，url里面能看到）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Q：latex公式渲染？&lt;/p&gt;
+&lt;p&gt;A：首先下载pandoc，然后再做相应配置（参考particleX作者的博客，略，后面再改）&lt;/p&gt;
+&lt;p&gt;Q：电脑不同，迁移博客？&lt;/p&gt;
+&lt;p&gt;A：作者是直接粗暴地把文件夹复制到新电脑，然后按照创建博客的步骤搭一遍，然后source（博客）直接复制过来覆盖，根目录的config.yml复制过来覆盖，以及theme（因为自己改过）进行覆盖。&lt;/p&gt;
+&lt;div class=&#34;note-large notel-blue&#34;&gt;&lt;div class=&#34;notel-title&#34;&gt;&lt;p&gt;提示&lt;/p&gt;
+&lt;/div&gt;&lt;div class=&#34;notel-content&#34;&gt;&lt;p&gt;后面更新博客的时候稍微清楚了一点，你完全可以在根目录下创建git仓库，然后利用.gitignore过滤掉其他文件，只留source文件夹，存档即可。实际上：&lt;br&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Cmd&#34;&gt;&lt;figure class=&#34;iseeu highlight cmd&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;hexo g      # 根据theme的定制生成public文件夹&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hexo clean  # 删除public文件夹&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;br&gt;
+图片的寻址也是在public文件夹下面进行的。&lt;/p&gt;
+ &lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Q：如何插入图片？&lt;br&gt;
+A：参考这篇&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/265077468&#34;&gt;博客 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img lazyload src=&#34;/images/loading.svg&#34; data-src=&#34;testPic.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Q：如何插入pdf文档？&lt;br&gt;
+A：首先需要安装插件，然后在source文件夹下创建文件夹file，然后在正文输入：&lt;br&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Text&#34;&gt;&lt;figure class=&#34;iseeu highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;{% pdf ../../../../file/fileName.pdf %}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[笔记地址](../../../../file/fileName.pdf)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;Q：hexo cheatsheet(一键安装)&lt;br&gt;
+A：&lt;br&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo apt-get install npm -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo apt-get install nodejs -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install -g hexo-cli -y       &lt;span class=&#34;comment&#34;&gt;# hexo框架&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo apt install pandoc -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm uninstall hexo-renderer-markded --save -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install hexo-asset-image --save -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install hexo-deployer-git --save -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install hexo-pdf -S -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install hexo-renderer-pandoc -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install --save hexo-deployer-git -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install --save hexo-asset-image -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install --save hexo-math -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm uninstall --save hexo-renderer-marked -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install --save hexo-renderer-pandoc -y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo npm install --save hexo-filter-flowchart -y&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/p&gt;
+</content>
+        <category term="Hexo" />
+        <updated>2022-08-26T02:22:26.000Z</updated>
+    </entry>
+</feed>

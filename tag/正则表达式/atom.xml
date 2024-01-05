@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>spiritTranceの小窝 • Posts by &#34;正则表达式&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-08-17T04:47:19.000Z</updated>
+    <category term="cpp" />
+    <category term="Makefile" />
+    <category term="链接" />
+    <category term="Docker" />
+    <category term="CMake" />
+    <category term="Hexo" />
+    <category term="正则表达式" />
+    <category term="Misc" />
+    <category term="量化研究方法" />
+    <category term="读书笔记" />
+    <category term="gdb" />
+    <category term="git" />
+    <category term="linux基本操作" />
+    <entry>
+        <id>http://example.com/2023/08/17/linux_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/</id>
+        <title>正则表达式学习</title>
+        <link rel="alternate" href="http://example.com/2023/08/17/linux_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/"/>
+        <content type="html">&lt;h1 id=&#34;参考教程&#34;&gt;参考教程&lt;/h1&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/regexp/regexp-syntax.html&#34;&gt;正则表达式 - 语法 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+说明：速查速记，学习参考网址已足够。可以配合&lt;a class=&#34;link&#34; href=&#34;https://c.runoob.com/front-end/854/&#34;&gt;练习网址 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;食用。&lt;/p&gt;
+&lt;h1 id=&#34;正则表达式格式&#34;&gt;正则表达式格式&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;/pattern/flag&lt;/code&gt;，其中pattern为模式串，flag为修饰符&lt;/p&gt;
+&lt;h1 id=&#34;普通字符&#34;&gt;普通字符&lt;/h1&gt;
+&lt;p&gt;不赘述。&lt;code&gt;a-zA-Z0-9_&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\s&lt;/code&gt; 匹配空白符（包括换行），&lt;code&gt;\S&lt;/code&gt; 匹配非空白符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\w&lt;/code&gt; 匹配字母数字下划线（等价于匹配程序的identifier）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\d&lt;/code&gt; 匹配所有数字字符&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.&lt;/code&gt; 代表任意字符（不包括换行符，除非修饰符为&lt;code&gt;s&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;非打印字符&#34;&gt;非打印字符&lt;/h1&gt;
+&lt;p&gt;重要的就&lt;code&gt;\n\r&lt;/code&gt;这两个换行符及制表符&lt;code&gt;\t&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;限定符&#34;&gt;限定符&lt;/h1&gt;
+&lt;p&gt;作用是指定前面的字表达式出现几次：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;?&lt;/code&gt;：匹配0-1次，等价于&lt;code&gt;{0,1}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt;：匹配0到无数次，等价于&lt;code&gt;{0,}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt;：匹配1到无数次，等价于&lt;code&gt;{1,}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{m,n}&lt;/code&gt;：匹配m到n次，m和n可以没有，逗号表范围&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{m}&lt;/code&gt;：匹配m次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;贪婪与非贪婪匹配&#34;&gt;贪婪与非贪婪匹配&lt;/h1&gt;
+&lt;p&gt;由&lt;code&gt;?&lt;/code&gt;控制，例：对于待匹配串&lt;code&gt;&amp;lt;h1&amp;gt;str&amp;lt;h1&amp;gt;&lt;/code&gt;，模式串&lt;code&gt;&amp;lt;.*?&amp;gt;&lt;/code&gt;为非贪婪模式，仅匹配&lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt;，如果为&lt;code&gt;&amp;lt;.*&amp;gt;&lt;/code&gt;，默认为贪婪模式，匹配&lt;code&gt;&amp;lt;h1&amp;gt;str&amp;lt;h1&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;定位符&#34;&gt;定位符&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;^&lt;/code&gt;：匹配字符串开始位置，注意修饰符如果是&lt;code&gt;m&lt;/code&gt;，则还会匹配换行符&lt;code&gt;\n\r&lt;/code&gt;后的位置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;/code&gt;：匹配字符串结束位置，特性同&lt;code&gt;^&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\b&lt;/code&gt;：匹配单词边界（空格）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\B&lt;/code&gt;：匹配非边界&lt;br&gt;
+例：&lt;code&gt;\Bcha&lt;/code&gt; 可以匹配到&lt;code&gt;achaa&lt;/code&gt;，但&lt;code&gt;chapter&lt;/code&gt;不行，但&lt;code&gt;\bcha&lt;/code&gt;反之。&lt;code&gt;^cha&lt;/code&gt;可以匹配&lt;code&gt;chapter&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;选择&#34;&gt;选择&lt;/h1&gt;
+&lt;p&gt;使用&lt;code&gt;|&lt;/code&gt;即可。&lt;br&gt;
+例：&lt;code&gt;a(a|b)a&lt;/code&gt;可以匹配&lt;code&gt;aba&lt;/code&gt;和&lt;code&gt;aaa&lt;/code&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;正向预查和负向预查&#34;&gt;正向预查和负向预查&lt;/h1&gt;
+&lt;p&gt;记忆：带&lt;code&gt;&amp;lt;&lt;/code&gt;为负向预查，否则为正向。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;exp1(?=exp2)&lt;/code&gt;：查找 &lt;code&gt;exp2&lt;/code&gt; 前面的 &lt;code&gt;exp1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(?&amp;lt;=exp2)exp1&lt;/code&gt;：查找 &lt;code&gt;exp2&lt;/code&gt; 后面的 &lt;code&gt;exp1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exp1(?!exp2)&lt;/code&gt;：查找后面不是 &lt;code&gt;exp2&lt;/code&gt; 的 &lt;code&gt;exp1&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;(?&amp;lt;!exp2)exp1&lt;/code&gt;：查找前面不是 &lt;code&gt;exp2&lt;/code&gt; 的 &lt;code&gt;exp1&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;反向引用&#34;&gt;反向引用&lt;/h1&gt;
+&lt;p&gt;不是很了解，暂略&lt;/p&gt;
+&lt;h1 id=&#34;修饰符&#34;&gt;修饰符&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;：不区分大小写&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;g&lt;/code&gt;：全局匹配&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;m&lt;/code&gt;：多行匹配，对&lt;code&gt;^&lt;/code&gt;和&lt;code&gt;$&lt;/code&gt;有影响&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;s&lt;/code&gt;：特殊字符圆点&lt;code&gt;.&lt;/code&gt;包含换行符&lt;code&gt;\n&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="正则表达式" />
+        <updated>2023-08-17T04:47:19.000Z</updated>
+    </entry>
+</feed>

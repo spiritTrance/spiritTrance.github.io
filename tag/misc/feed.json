@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "spiritTranceの小窝 • All posts by \"misc\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2022/09/12/misc/",
+            "url": "http://example.com/2022/09/12/misc/",
+            "title": "杂项",
+            "date_published": "2022-09-12T10:31:26.000Z",
+            "content_html": "<h1 id=\"深度学习\">深度学习</h1>\n<ul>\n<li><p><a class=\"link\" href=\"https://blog.csdn.net/holly_Z_P_F/article/details/120222856\">pytorch: CUDA和cuDNN安装 <i class=\"fa-regular fa-arrow-up-right-from-square fa-sm\"></i></a></p></li>\n<li><p><a class=\"link\" href=\"https://zhuanlan.zhihu.com/p/358641541\">anaconda环境变量配置 <i class=\"fa-regular fa-arrow-up-right-from-square fa-sm\"></i></a></p></li>\n<li><p><a class=\"link\" href=\"https://blog.csdn.net/lucboll/article/details/106755074#:~:text=%E4%BD%BF%E7%94%A8anaconda%E9%85%8D%E7%BD%AEpytorch%E3%80%82%20%E5%9C%A8%E6%96%87%E4%BB%B6--%E9%A6%96%E9%80%89%E9%A1%B9--%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%90%9C%E7%B4%A2python.linting.pylintPath%EF%BC%8C%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E6%90%9C%E7%B4%A2%E6%A1%86%EF%BC%8C%E5%8E%9F%E4%BD%8D%E7%BD%AE%E4%B8%BApylint%EF%BC%8C%E6%9B%B4%E6%94%B9%E4%B8%BA,%7Banacond%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE%7Dpkgspylint-2.2.2-py36_0Scripts%EF%BC%88%E5%9C%A8anaconda%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E5%AF%BB%E6%89%BEpylint%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE%EF%BC%89%202.%E5%9C%A8Linux%EF%BC%88Centos7%EF%BC%89%E4%B8%AD\">vscode+anaconda+pylint找不到库 <i class=\"fa-regular fa-arrow-up-right-from-square fa-sm\"></i></a><br>\nPython › Analysis: Extra Paths:加上anaconda3-&gt;Libs-&gt;site-packages，以及envs-&gt;Libs-.site-packages的内容</p></li>\n</ul>\n",
+            "tags": [
+                "Misc"
+            ]
+        }
+    ]
+}

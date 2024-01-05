@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>spiritTranceの小窝 • Posts by &#34;misc&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2022-09-12T10:31:26.000Z</updated>
+    <category term="cpp" />
+    <category term="Makefile" />
+    <category term="链接" />
+    <category term="Docker" />
+    <category term="CMake" />
+    <category term="Hexo" />
+    <category term="正则表达式" />
+    <category term="Misc" />
+    <category term="量化研究方法" />
+    <category term="读书笔记" />
+    <category term="gdb" />
+    <category term="git" />
+    <category term="linux基本操作" />
+    <entry>
+        <id>http://example.com/2022/09/12/misc/</id>
+        <title>杂项</title>
+        <link rel="alternate" href="http://example.com/2022/09/12/misc/"/>
+        <content type="html">&lt;h1 id=&#34;深度学习&#34;&gt;深度学习&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/holly_Z_P_F/article/details/120222856&#34;&gt;pytorch: CUDA和cuDNN安装 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/358641541&#34;&gt;anaconda环境变量配置 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/lucboll/article/details/106755074#:~:text=%E4%BD%BF%E7%94%A8anaconda%E9%85%8D%E7%BD%AEpytorch%E3%80%82%20%E5%9C%A8%E6%96%87%E4%BB%B6--%E9%A6%96%E9%80%89%E9%A1%B9--%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%90%9C%E7%B4%A2python.linting.pylintPath%EF%BC%8C%E5%87%BA%E7%8E%B0%E5%A6%82%E4%B8%8B%E6%90%9C%E7%B4%A2%E6%A1%86%EF%BC%8C%E5%8E%9F%E4%BD%8D%E7%BD%AE%E4%B8%BApylint%EF%BC%8C%E6%9B%B4%E6%94%B9%E4%B8%BA,%7Banacond%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE%7Dpkgspylint-2.2.2-py36_0Scripts%EF%BC%88%E5%9C%A8anaconda%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E5%AF%BB%E6%89%BEpylint%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE%EF%BC%89%202.%E5%9C%A8Linux%EF%BC%88Centos7%EF%BC%89%E4%B8%AD&#34;&gt;vscode+anaconda+pylint找不到库 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+Python › Analysis: Extra Paths:加上anaconda3-&amp;gt;Libs-&amp;gt;site-packages，以及envs-&amp;gt;Libs-.site-packages的内容&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="Misc" />
+        <updated>2022-09-12T10:31:26.000Z</updated>
+    </entry>
+</feed>

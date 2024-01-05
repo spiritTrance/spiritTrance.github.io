@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>spiritTranceの小窝 • Posts by &#34;编程语言&#34; category</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Sun, 01 Oct 2023 12:33:07 +0800</pubDate>
+        <lastBuildDate>Sun, 01 Oct 2023 12:33:07 +0800</lastBuildDate>
+        <category>cpp</category>
+        <category>Makefile</category>
+        <category>链接</category>
+        <category>Docker</category>
+        <category>CMake</category>
+        <category>Hexo</category>
+        <category>正则表达式</category>
+        <category>Misc</category>
+        <category>量化研究方法</category>
+        <category>读书笔记</category>
+        <category>gdb</category>
+        <category>git</category>
+        <category>linux基本操作</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/</guid>
+            <title>【cpp查漏补缺】1-cpp是如何跑起来的？</title>
+            <link>http://example.com/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/</link>
+            <category>cpp</category>
+            <category>链接</category>
+            <pubDate>Sun, 01 Oct 2023 12:33:07 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;总概&#34;&gt;总概&lt;/h1&gt;
+&lt;p&gt;本文将介绍cpp从源代码到可执行文件的构建流程。&lt;/p&gt;
+&lt;h1 id=&#34;预处理&#34;&gt;预处理&lt;/h1&gt;
+&lt;p&gt;预处理一步仅仅是简单的文本替换，如包含文件&lt;code&gt;#include&lt;/code&gt;，宏展开&lt;code&gt;#define&lt;/code&gt;等。预处理的结果是一个经过修改的源代码，通常以.i文件的扩展名保存。你可以尝试下列指令来生成预处理后的文件：&lt;br&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;gcc -E my_program.cpp -o my_program.i&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;h1 id=&#34;编译&#34;&gt;编译&lt;/h1&gt;
+&lt;p&gt;编译这一步则是将预处理后的源文件转换成汇编语言，常见的指令集，如x86。&lt;/p&gt;
+&lt;h2 id=&#34;cpp主流编译器介绍&#34;&gt;cpp主流编译器介绍&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GCC（GNU Compiler Collection）:准确来说，GCC是由GNU项目开发的编译器&lt;strong&gt;套件&lt;/strong&gt;，包括C，C++，Fortran等。而g++是C++的编译器，gcc是C的编译器（也可以编译C++，但一般用g++代替）&lt;/li&gt;
+&lt;li&gt;MinGW（Minimalist GNU for Windows）是一套用于Windows操作系统的开发&lt;strong&gt;工具集&lt;/strong&gt;，它允许开发人员使用GNU工具链在Windows上开发应用程序，包括编译和构建C、C++等编程语言的应用程序。&lt;/li&gt;
+&lt;li&gt;MSVC（MicroSoft Visual C++）：是指 Microsoft Visual C++，是 Microsoft 的 C++ 编译器和开发&lt;strong&gt;工具集&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;Clang：是LLVM（Low-Level Virtual Machine）项目的一部分。Clang 可以在多种操作系统上运行，包括各种Unix-like系统（如Linux和macOS）以及Windows。&lt;/li&gt;
+&lt;li&gt;LLVM：是一个开源的编译器基础设施项目，它包括一组模块化的编译器技术和工具，用于开发和优化程序的编译和执行。Clang为LLVM的前端。除此之外，还包括一种虚拟指令集和优化器，&lt;strong&gt;允许开发者构建自定义编程语言&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;简单总结，主流的编译器为gcc（g++），msvc（中的c++编译器）和clang三种。而LLVM是一个基础框架，可以帮助开发编译器。&lt;/p&gt;
+&lt;h2 id=&#34;生成汇编代码&#34;&gt;生成汇编代码&lt;/h2&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;gcc -S -march=x86-64 my_program.cpp -o my_program.S&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;注意&lt;code&gt;-march&lt;/code&gt;选项用于指定指令集，这里指定的是x86-64。可以选择将x86-64替换成其他选项，如果不存在，gcc会提示非法，并展示所有合法选项。&lt;/p&gt;
+&lt;h1 id=&#34;汇编&#34;&gt;汇编&lt;/h1&gt;
+&lt;p&gt;这一步的任务由汇编器完成：将汇编语言转换成机器代码。除此之外，汇编语言还承担着翻译伪指令的任务。&lt;br&gt;
+&amp;gt; 伪指令：相关指令集并未提供的指令，伪指令的出现原因是为了编译器开发者的方便而发明出来的。最后需要由汇编器完成伪指令翻译的任务。&lt;/p&gt;
+&lt;h1 id=&#34;链接&#34;&gt;链接&lt;/h1&gt;
+&lt;p&gt;链接是将多个目标文件和库文件&lt;strong&gt;组合成一个可执行文件&lt;/strong&gt;的过程。&lt;/p&gt;
+&lt;h2 id=&#34;链接器的任务&#34;&gt;链接器的任务&lt;/h2&gt;
+&lt;p&gt;链接器的任务主要有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;符号解析：解析各个目标文件中的符号引用，以确定它们对应的符号定义，并建立符号表。这里解释一下符号：符号包括变量名，函数名，类名等。C中有一个关键字&lt;code&gt;extern&lt;/code&gt;，即提醒该符号需要在外部文件中查找。另外，如果一个cpp源文件没有包含函数声明而调用了某一函数，那么这一文件是无法通过编译这一步的。如果修过《编译原理》相关课程，这一原因不难想到：无法确定参数列表和返回值，也就无法生成正确的ABI调用。&lt;/li&gt;
+&lt;li&gt;地址解析：计算各个符号在可执行文件中的地址。每一个目标文件都是假设从虚拟地址空间的0x00000000开始，多个目标文件组合成一个文件，自然要重新计算地址，也就是下面的重定位步骤。&lt;/li&gt;
+&lt;li&gt;重定位：调整目标文件中的代码和数据，使其正确地引用其他目标文件中的符号。&lt;/li&gt;
+&lt;li&gt;合并：将所有目标文件合并成为可执行文件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;考虑到本文的出发点，本文主体主要介绍库文件如何创建和链接。本文仅简单介绍了链接的具体步骤。如果对链接的具体细节感兴趣，请参考《深入理解计算机系统》相关章节。&lt;/p&gt;
+&lt;h2 id=&#34;库文件&#34;&gt;库文件&lt;/h2&gt;
+&lt;p&gt;库文件（Library Files）是一种包含已编译二进制代码的文件，它们包含了可重用的程序模块或函数。一般来说，库文件分为静态库和动态库。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;静态库
+&lt;ul&gt;
+&lt;li&gt;扩展名：&lt;code&gt;.a&lt;/code&gt;(Linux)或&lt;code&gt;.lib&lt;/code&gt;(Windows)&lt;/li&gt;
+&lt;li&gt;在编译时加入可执行文件中&lt;/li&gt;
+&lt;li&gt;优点：在于程序执行速度快&lt;/li&gt;
+&lt;li&gt;缺点：是增大了可执行文件大小，库文件的更新会引起可执行文件的重新编译&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;动态库
+&lt;ul&gt;
+&lt;li&gt;扩展名：&lt;code&gt;.so&lt;/code&gt;(Linux)或&lt;code&gt;.dll&lt;/code&gt;(Windows)或&lt;code&gt;.dylib&lt;/code&gt;(macOS)&lt;/li&gt;
+&lt;li&gt;不会在编译期加入可执行文件，而是在程序运行时加载到内存中&lt;/li&gt;
+&lt;li&gt;优点：是多个程序可以共享动态库，有助于节省内存。库文件的更新，不需要重新编译可执行文件，只需替换库文件即可&lt;/li&gt;
+&lt;li&gt;缺点：是由于在运行时要加载库文件，程序启动速度较慢。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下面介绍静态库和动态库的创建和链接，这里先给出目录：&lt;br&gt;
+这里先给出目录：&lt;br&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Text&#34;&gt;&lt;figure class=&#34;iseeu highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;├── add.cpp&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;├── main.cpp&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;├── mul.cpp&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;├── add.o&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;├── mul.o&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;├── lib&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;│   ├── libcalc.a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;│   ├── libcalc.so&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;│   ├── libadd.a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;│   ├── libadd.so&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;│   ├── libmul.a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;│   └── libmul.so&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;└── main&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 生成目标文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -o add.o -c add.cpp&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 静态库&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ar -rcs lib/libcalc.a add.o mul.o  &lt;span class=&#34;comment&#34;&gt;# 使用ar(archive)工具创建，其中mylib.a是静态库名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -o main main.cpp -L ./lib -lcalc &lt;span class=&#34;comment&#34;&gt;# -L(Library)代表静态库路径，-l(link)是要链接的静态库&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 动态库&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -shared -o libcalc.so add.o mul.o &lt;span class=&#34;comment&#34;&gt;# -shared 表示创建动态库，mylib.so是动态库名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -o main main.cpp -L ./lib -lcalc &lt;span class=&#34;comment&#34;&gt;# 与静态库一样&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ldd main  &lt;span class=&#34;comment&#34;&gt;# 查看依赖关系，通常会发现新加的动态库找不到依赖&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;LD_LIBRARY_PATH=&lt;span class=&#34;variable&#34;&gt;$LD_LIBRARY_PATH&lt;/span&gt;:`&lt;span class=&#34;built_in&#34;&gt;pwd&lt;/span&gt;`/lib&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;export&lt;/span&gt; LD_LIBRARY_PATH  &lt;span class=&#34;comment&#34;&gt;# 修改LD_LIBRARY_PATH变量使得能够查找到依赖，注意该方法只对当前终端有效，如果希望能够永久生效，需要修改环境变量&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;ldd main  &lt;span class=&#34;comment&#34;&gt;# 再次查看&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;./main    &lt;span class=&#34;comment&#34;&gt;# 执行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;这里需要强调的是，库名需要用&lt;code&gt;mylib&lt;/code&gt;，对应的文件名是&lt;code&gt;libmylib.a&lt;/code&gt;或&lt;code&gt;libmylib.so&lt;/code&gt;，也就是说，搜索库的时候会在前面加上&lt;code&gt;lib&lt;/code&gt;，后面加上&lt;code&gt;.a&lt;/code&gt;或&lt;code&gt;.so&lt;/code&gt;后缀。然后会优先搜索动态库，其次搜索静态库。&lt;/p&gt;
+&lt;p&gt;下面介绍一下多个库链接以及动态库和静态库混合链接的情况。&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 多个静态库链接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -static -o main main.cpp -L ./lib -ladd -lmul&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -static -o main main.cpp ./lib/libadd.a ./lib/libmul.a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 多个动态库链接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc -Bdynamic -o main main.cpp -L ./lib -ladd -lmul&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 动态库和静态库混合链接&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc main.cpp -L ./lib -Wl,-Bstatic -ladd -Wl,-Bdynamic -lmul  &lt;span class=&#34;comment&#34;&gt;# 第一种方式，先链接静态库，后链接动态库&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;gcc main.cpp -L ./lib -Wl,-Bdynamic -lmul -Wl,-Bstatic -ladd -Wl,-Bdynamic  &lt;span class=&#34;comment&#34;&gt;#第二种方式，先链接动态库，后链接静态库，然后在最后加上`-Wl,-Bdynamic`使用动态连接的命令&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h1 id=&#34;装载&#34;&gt;装载&lt;/h1&gt;
+&lt;p&gt;最后，程序如果需要执行，需要装载器将可执行文件载入内存中，进行执行。其中仍然有一些细节，但不在本章讨论之类。如果希望了解更多的细节，请参考《深入理解计算机系统》。&lt;/p&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;在本文最后，我们再次总结一下gcc常用的选项：&lt;br&gt;
+- &lt;code&gt;-o&lt;/code&gt;：指定输出文件&lt;br&gt;
+- &lt;code&gt;-E&lt;/code&gt;：对代码仅进行预处理，生成&lt;code&gt;*.i&lt;/code&gt;文件&lt;br&gt;
+- &lt;code&gt;-S&lt;/code&gt;：生成汇编代码，生成&lt;code&gt;*.S&lt;/code&gt;文件&lt;br&gt;
+- &lt;code&gt;-march&lt;/code&gt;：指定指令集&lt;br&gt;
+- &lt;code&gt;-c&lt;/code&gt;：对源代码进行预处理，编译和汇编，但不链接。（即目标代码&lt;code&gt;.o&lt;/code&gt;）&lt;br&gt;
+- &lt;code&gt;-L&lt;/code&gt;：指定库所在的目录&lt;br&gt;
+- &lt;code&gt;-I&lt;/code&gt;：指定头文件所在目录&lt;br&gt;
+- &lt;code&gt;-l&lt;/code&gt;：指定库名，注意对于lib*.so或lib*.a类似的库，有两种写法：&lt;code&gt;-l:lib*.a&lt;/code&gt;或&lt;code&gt;-l*&lt;/code&gt;&lt;br&gt;
+- &lt;code&gt;-static&lt;/code&gt;或&lt;code&gt;-Bstatic&lt;/code&gt;：指定静态库链接&lt;br&gt;
+- &lt;code&gt;-Bdynamic&lt;/code&gt;：指定动态库链接&lt;br&gt;
+- &lt;code&gt;-Wl,&lt;/code&gt;：表示将额外的参数传递给链接器，如&lt;code&gt;-Wl,-Bstatic&lt;/code&gt;表明需要接下来链接静态库&lt;/p&gt;
+&lt;h1 id=&#34;参考资料&#34;&gt;参考资料&lt;/h1&gt;
+&lt;p&gt;《深入理解计算机系统》&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

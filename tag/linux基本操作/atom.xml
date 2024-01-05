@@ -1,0 +1,297 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>spiritTranceの小窝 • Posts by &#34;linux基本操作&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2023-08-21T07:33:07.000Z</updated>
+    <category term="cpp" />
+    <category term="Makefile" />
+    <category term="链接" />
+    <category term="Docker" />
+    <category term="CMake" />
+    <category term="Hexo" />
+    <category term="正则表达式" />
+    <category term="Misc" />
+    <category term="量化研究方法" />
+    <category term="读书笔记" />
+    <category term="gdb" />
+    <category term="git" />
+    <category term="linux基本操作" />
+    <entry>
+        <id>http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</id>
+        <title>linux基本操作学习</title>
+        <link rel="alternate" href="http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/"/>
+        <content type="html">&lt;h1 id=&#34;目录&#34;&gt;目录&lt;/h1&gt;
+&lt;p&gt;[toc]&lt;/p&gt;
+&lt;h1 id=&#34;前言及参考资料&#34;&gt;前言及参考资料&lt;/h1&gt;
+&lt;p&gt;这篇文章主要给出各个指令的作用，详细用法请查阅相关资料，灵活使用man指令和--help选项。仅当我认为重要的时候，会给出详细用法和示例。&lt;/p&gt;
+&lt;p&gt;这篇文档会跟随着作者对linux的使用而持续更新。主要是记录一些注意的地方。&lt;/p&gt;
+&lt;p&gt;参考资料：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux命令行与shell脚本编程大全&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-command-manual.html&#34;&gt;菜鸟教程-Linux指令大全 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nju-projectn.github.io/ics-pa-gitbook/ics2022/linux.html&#34;&gt;linux的使用 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://nju-projectn.github.io/ics-pa-gitbook/ics2022/man.html&#34;&gt;man的使用 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;man的使用&#34;&gt;man的使用&lt;/h1&gt;
+&lt;p&gt;注意&lt;code&gt;man&lt;/code&gt;可能会提供9个章节，每个章节有相应内容，请输入&lt;code&gt;man man&lt;/code&gt;进行了解，如&lt;br&gt;
+- &lt;code&gt;man 1 man&lt;/code&gt;&lt;br&gt;
+- &lt;code&gt;man -f ls&lt;/code&gt;：可以查看&lt;code&gt;ls&lt;/code&gt;指令有什么页面。&lt;br&gt;
+- 章节有：&lt;br&gt;
+- 1 可执行程序或 shell 命令，用法查这个&lt;br&gt;
+- 2 系统调用(内核提供的函数)&lt;br&gt;
+- 3 库调用(程序库中的函数)&lt;br&gt;
+- 4 特殊文件(通常位于 /dev)&lt;br&gt;
+- 5 文件格式和规范，如 /etc/passwd，编写程序看2-5&lt;br&gt;
+- 6 游戏&lt;br&gt;
+- 7 杂项（包括宏包和规范）， 如 man(7)，groff(7), man-pages(7)&lt;br&gt;
+- 8 系统管理命令(通常只针对 root 用户)&lt;br&gt;
+- 9 内核例程 非标准&lt;/p&gt;
+&lt;h1 id=&#34;基本指令&#34;&gt;基本指令&lt;/h1&gt;
+&lt;h2 id=&#34;echo&#34;&gt;echo&lt;/h2&gt;
+&lt;h1 id=&#34;文件系统&#34;&gt;文件系统&lt;/h1&gt;
+&lt;h2 id=&#34;文件管理&#34;&gt;文件管理&lt;/h2&gt;
+&lt;h3 id=&#34;文件权限管理&#34;&gt;文件权限管理&lt;/h3&gt;
+&lt;h3 id=&#34;文件修改&#34;&gt;文件修改&lt;/h3&gt;
+&lt;h4 id=&#34;ln&#34;&gt;ln&lt;/h4&gt;
+&lt;p&gt;用于创建软硬链接。不加参数是硬链接，加上&lt;code&gt;-s&lt;/code&gt;参数则是软链接。&lt;/p&gt;
+&lt;h3 id=&#34;文件压缩与解压缩&#34;&gt;文件压缩与解压缩&lt;/h3&gt;
+&lt;h4 id=&#34;压缩文件指令&#34;&gt;压缩文件指令&lt;/h4&gt;
+&lt;h5 id=&#34;gzip&#34;&gt;gzip&lt;/h5&gt;
+&lt;p&gt;可以解决后缀为Z,zip,gz等后缀的压缩文件。比较重要的参数：c（压缩数据输出到屏幕），d（解压缩），t（检查错误），v（显示具体信息），-number（压缩等级，number为1最快，压缩比最差，9反之，默认是6）。&lt;br&gt;
+注意其可以被windows下的winRAR和7zip等软件处理。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;坑点：注意压缩后会删除原来的文件！所以最好使用&lt;code&gt;gzip -c file &amp;gt; file.gz&lt;/code&gt;进行操作&lt;br&gt;
+另外,&lt;code&gt;zcat,zmore,zless&lt;/code&gt;可以用来读取&lt;strong&gt;被压缩&lt;/strong&gt;后的&lt;strong&gt;纯文本文件&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;bzip2&#34;&gt;bzip2&lt;/h5&gt;
+&lt;p&gt;压缩效果比gzip更好，后缀名是bz2，用法与gzip2差不多&lt;br&gt;
+相应的，有&lt;code&gt;bzcat,bzmore和bzless&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;xz&#34;&gt;xz&lt;/h5&gt;
+&lt;p&gt;压缩效果比bzip2更好，后缀名是x2，用法与gzip2差不多&lt;br&gt;
+相应的，有&lt;code&gt;xzcat,xzmore和xzless&lt;/code&gt;&lt;/p&gt;
+&lt;h5 id=&#34;zip与unzip&#34;&gt;zip与unzip&lt;/h5&gt;
+&lt;h4 id=&#34;tar文件打包&#34;&gt;tar：文件打包&lt;/h4&gt;
+&lt;p&gt;注意gzip等压缩对目录压缩的方式是对里面的文件分别进行压缩，导致压缩效果较差，而tar可以进行打包。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-zjJ&lt;/code&gt;：三种不同压缩方式，依次为gzip，bzip2，xz.&lt;br&gt;
+&lt;code&gt;-c&lt;/code&gt;:进行压缩&lt;br&gt;
+&lt;code&gt;-x&lt;/code&gt;:进行解压缩&lt;br&gt;
+&lt;code&gt;-t&lt;/code&gt;:查询一个压缩包有哪些文件&lt;br&gt;
+&lt;code&gt;-C &amp;lt;dir&amp;gt;&lt;/code&gt; ：解压在dir目录中&lt;br&gt;
+&lt;code&gt;-f &amp;lt;file&amp;gt;&lt;/code&gt;：需要处理的压缩文件名file&lt;br&gt;
+&lt;code&gt;-v&lt;/code&gt;:展示被处理的文件名&lt;br&gt;
+&lt;code&gt;-p&lt;/code&gt;:保留文件原有权限（重要）&lt;br&gt;
+&lt;code&gt;--exclude=&amp;lt;file&amp;gt;&lt;/code&gt;：不打包file文件，注意/etc*表示不打包/etc开头的文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;压缩： &lt;code&gt;tar -jcv -f file.tar.bz2 &amp;lt;要被压缩的一系列文件和目录&amp;gt;&lt;/code&gt;&lt;br&gt;
+查询： &lt;code&gt;tar -jtv -f file.tar.bz2&lt;/code&gt;&lt;br&gt;
+解压缩：&lt;code&gt;tar -jxv -f file.tar.bz2 -C &amp;lt;解压到的目录&amp;gt;&lt;/code&gt;&lt;br&gt;
+解压指定文件：&lt;code&gt;tar -jxv -f file.tar.bz2 &amp;lt;解压的文件(需要先查询压缩包内的文件)&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;dpkg文件解压缩&#34;&gt;dpkg：文件解压缩&lt;/h4&gt;
+&lt;h4 id=&#34;光盘文件制作及刻录&#34;&gt;光盘文件制作及刻录&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;mkisofs&lt;/code&gt;,&lt;code&gt;cdrecord&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;其他&#34;&gt;其他&lt;/h4&gt;
+&lt;p&gt;关于备份工具，光盘写入工具和dd等指令，详见鸟哥的Linux厨房一书。&lt;/p&gt;
+&lt;h2 id=&#34;文档编辑&#34;&gt;文档编辑&lt;/h2&gt;
+&lt;h3 id=&#34;参考文档&#34;&gt;参考文档&lt;/h3&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/139482499&#34;&gt;linux三剑客 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;find&#34;&gt;find&lt;/h3&gt;
+&lt;p&gt;作用：&lt;strong&gt;递归&lt;/strong&gt;列出目录下的所有文件。常配合grep使用。详细用法见&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-comm-find.html&#34;&gt;此 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;，支持按照文件特征如创建时间，修改时间，创建用户，用户组等查找。&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;find /opt/module/datax/job/export -type f -prune -exec sed -i &#39;s/hadoop151:3306/hadoop101:3306/g&#39; {} +&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h3 id=&#34;sed&#34;&gt;sed&lt;/h3&gt;
+&lt;p&gt;主要用于编辑相应文件。一行一行处理。支持新增，取代，打印，删除，插入等功能。详细用法见&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-comm-sed.html&#34;&gt;此 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sed &lt;span class=&#34;string&#34;&gt;&#39;3d&#39;&lt;/span&gt; xxx.txt 		&lt;span class=&#34;comment&#34;&gt;# 删除文件第3行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sed &lt;span class=&#34;string&#34;&gt;&#34;&lt;span class=&#34;variable&#34;&gt;$d&lt;/span&gt;&#34;&lt;/span&gt; xxx.txt 		&lt;span class=&#34;comment&#34;&gt;# 删除文件最后一行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sed ’s/^[ ]*//g’ xxx.txt 	&lt;span class=&#34;comment&#34;&gt;# 删除空格&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sed &lt;span class=&#34;string&#34;&gt;&#39;s/test/mytest/g&#39;&lt;/span&gt; xxx.txt 	&lt;span class=&#34;comment&#34;&gt;# 替换：把test替换为mytest。如果没有g标记，则只有每行第一个匹配的test被替换成mytest。&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sed ‘s/pattern/&amp;amp;\n/g’ filename 	&lt;span class=&#34;comment&#34;&gt;# 添加新行（向前）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sed -i ‘$ a\插入字符串’ filename 	&lt;span class=&#34;comment&#34;&gt;# 在最后一行插入字符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;选项说明：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-i&lt;/code&gt;，&lt;code&gt;-i.bak&lt;/code&gt;:直接在源文件上修改，如果有.bak，则源文件备份到后缀名为.bak的文件里面&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&#39;s/pattern/result/g&#39;&lt;/code&gt;：将符合正则表达式的 &lt;code&gt;pattern&lt;/code&gt;替换成 &lt;code&gt;result&lt;/code&gt;，注意s前加n,m表示只修改n到m行的内容。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-n&lt;/code&gt;:只打印修改的内容&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;3p&lt;/code&gt;:打印第三行的内容，配合-n使用更好，&lt;code&gt;2,9p&lt;/code&gt;表示打印2到9行的内容。&lt;code&gt;/pattern/p&lt;/code&gt;则是表示显示符合条件pattern的行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;2d&lt;/code&gt;:删除第二行的内容，&lt;code&gt;$d&lt;/code&gt;则是删除最后一行的内容，&lt;code&gt;/pattern/d&lt;/code&gt;则是表示删除符合条件pattern的行&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-e&lt;/code&gt;选项表示将结果输出到stdout，不修改源文件&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;5a # comment&lt;/code&gt;表示在第五行后增添 &lt;code&gt;# comment&lt;/code&gt;字符串一行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;awk&#34;&gt;awk&lt;/h3&gt;
+&lt;p&gt;非常强大而又复杂的文本处理工具，支持打印相应位置文本，按照指令分隔符分割，过滤文本内容输出等作用。下面是一些简单的介绍，更多具体用法见&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-comm-awk.html&#34;&gt;此 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意，awk是行处理工具，一行一行处理的。&lt;br&gt;
+格式：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;awk &lt;span class=&#34;string&#34;&gt;&#39;PATTERN{ACTIONS} filename&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk -F&lt;span class=&#34;string&#34;&gt;&#39;:&#39;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#39;{print $1,$2}&#39;&lt;/span&gt; file                      &lt;span class=&#34;comment&#34;&gt;# 指定冒号为分隔符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk -v&lt;span class=&#34;string&#34;&gt;&#39;FS=:&#39;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#39;{print $1,$2}&#39;&lt;/span&gt; file                   &lt;span class=&#34;comment&#34;&gt;# 指定冒号为分隔符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk &lt;span class=&#34;string&#34;&gt;&#39;BEGIN{OFS=FS=&#34;\t&#34;}{print $0, $1;}&#39;&lt;/span&gt; filename    &lt;span class=&#34;comment&#34;&gt;# 指定分隔符为制表符&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk &lt;span class=&#34;string&#34;&gt;&#39;{if(NR&amp;gt;=20 &amp;amp;&amp;amp; NR&amp;lt;=30) print $1}&#39;&lt;/span&gt; test.txt      &lt;span class=&#34;comment&#34;&gt;# 输出20行到30行的内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk &lt;span class=&#34;string&#34;&gt;&#39;NR&amp;gt;=20 &amp;amp;&amp;amp; NR&amp;lt;=30{print $1}&#39;&lt;/span&gt; test.txt           &lt;span class=&#34;comment&#34;&gt;# 输出20行到30行的内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk &lt;span class=&#34;string&#34;&gt;&#39;/re/ &#39;&lt;/span&gt; log.txt                                 &lt;span class=&#34;comment&#34;&gt;# 输出包含re的行&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;awk &lt;span class=&#34;string&#34;&gt;&#39;$2 ~ /th/ {print $2,$4}&#39;&lt;/span&gt; log.txt               &lt;span class=&#34;comment&#34;&gt;# 输出第二列包含 &#34;th&#34;，并打印第二列与第四列，～表示模式开始，!~表示模式取反（排除在外）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;注意有以下变量：&lt;br&gt;
+&lt;code&gt;FS&lt;/code&gt;输入间隔副，&lt;code&gt;OFS&lt;/code&gt;输出间隔符，&lt;code&gt;NR&lt;/code&gt;行号，从1开始，&lt;code&gt;NF&lt;/code&gt;分隔后的字段数量。&lt;br&gt;
+&lt;mjx-container class=&#34;MathJax&#34; jax=&#34;SVG&#34;&gt;&lt;svg style=&#34;vertical-align: -0.452ex;&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; width=&#34;27.475ex&#34; height=&#34;2.149ex&#34; role=&#34;img&#34; focusable=&#34;false&#34; viewbox=&#34;0 -750 12144 950&#34;&gt;&lt;g stroke=&#34;currentColor&#34; fill=&#34;currentColor&#34; stroke-width=&#34;0&#34; transform=&#34;scale(1,-1)&#34;&gt;&lt;g data-mml-node=&#34;math&#34;&gt;&lt;g data-mml-node=&#34;mi&#34;&gt;&lt;path data-c=&#34;1D465&#34; d=&#34;M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z&#34;/&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(572,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;表&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(1572,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;示&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(2572,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;第&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(3572,0)&#34;&gt;&lt;path data-c=&#34;1D465&#34; d=&#34;M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z&#34;/&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(4144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;个&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(5144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;分&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(6144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;隔&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(7144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;后&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(8144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;的&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(9144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;结&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(10144,0)&#34;&gt;&lt;text data-variant=&#34;normal&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34;&gt;果&lt;/text&gt;&lt;/g&gt;&lt;g data-mml-node=&#34;mi&#34; transform=&#34;translate(11144,0)&#34;&gt;&lt;text data-variant=&#34;italic&#34; transform=&#34;scale(1,-1)&#34; font-size=&#34;884px&#34; font-family=&#34;serif&#34; font-style=&#34;italic&#34;&gt;，&lt;/text&gt;&lt;/g&gt;&lt;/g&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/mjx-container&gt;0则是整行&lt;/p&gt;
+&lt;p&gt;这里再提供一个使用脚本的示例，注意脚本文件格式为awk，第一行需要指定 &lt;code&gt;/bin/awk&lt;/code&gt;：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#!/bin/awk -f&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# here is cal.awk&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#运行前&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;BEGIN {&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    math = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    english = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    computer = 0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;NAME    NO.   MATH  ENGLISH  COMPUTER   TOTAL\n&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;---------------------------------------------\n&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#运行中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    math+=&lt;span class=&#34;variable&#34;&gt;$3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    english+=&lt;span class=&#34;variable&#34;&gt;$4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    computer+=&lt;span class=&#34;variable&#34;&gt;$5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;%-6s %-6s %4d %8d %8d %8d\n&#34;&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$1&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$2&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$3&lt;/span&gt;,&lt;span class=&#34;variable&#34;&gt;$4&lt;/span&gt;,&lt;span class=&#34;variable&#34;&gt;$5&lt;/span&gt;, &lt;span class=&#34;variable&#34;&gt;$3&lt;/span&gt;+&lt;span class=&#34;variable&#34;&gt;$4&lt;/span&gt;+&lt;span class=&#34;variable&#34;&gt;$5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#运行后&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;END {&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;---------------------------------------------\n&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;  TOTAL:%10d %8d %8d \n&#34;&lt;/span&gt;, math, english, computer&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;AVERAGE:%10.2f %8.2f %8.2f\n&#34;&lt;/span&gt;, math/NR, english/NR, computer/NR&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;awk -f cal.awk score.txt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;打印乘法表的有趣示例：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;seq&lt;/span&gt; 9 | sed &lt;span class=&#34;string&#34;&gt;&#39;H;g&#39;&lt;/span&gt; | awk -v RS=&lt;span class=&#34;string&#34;&gt;&#39;&#39;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#39;{for(i=1;i&amp;lt;=NF;i++)printf(&#34;%dx%d=%d%s&#34;, i, NR, i*NR, i==NR?&#34;\n&#34;:&#34;\t&#34;)}&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;计算文件大小的有趣示例：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;ls&lt;/span&gt; -l *.txt | awk &lt;span class=&#34;string&#34;&gt;&#39;{sum+=$5} END {print sum}&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h3 id=&#34;find-1&#34;&gt;find&lt;/h3&gt;
+&lt;h3 id=&#34;grep&#34;&gt;grep&lt;/h3&gt;
+&lt;p&gt;作用是将输出在&lt;strong&gt;命令行&lt;/strong&gt;上的内容进行匹配筛选处理。&lt;/p&gt;
+&lt;p&gt;注意 &lt;code&gt;grep&lt;/code&gt;使用正则表达式有点坑。要么开 &lt;code&gt;-e&lt;/code&gt;选项，要么用 &lt;code&gt;egrep&lt;/code&gt;，要么注意 &lt;code&gt;|&lt;/code&gt;要转义才能发挥正则匹配的作用，但 &lt;code&gt;^&lt;/code&gt;和 &lt;code&gt;$&lt;/code&gt;作为锚点不需要转义。&lt;/p&gt;
+&lt;p&gt;-v反向匹配，匹配到的不输出&lt;/p&gt;
+&lt;h1 id=&#34;进程管理&#34;&gt;进程管理&lt;/h1&gt;
+&lt;h3 id=&#34;kill&#34;&gt;kill&lt;/h3&gt;
+&lt;p&gt;准确地来说，kill是向相应进程发送中断信号。&lt;code&gt;-9&lt;/code&gt;是强制停止。相应信号见&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-comm-kill.html&#34;&gt;此 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;top&#34;&gt;top&lt;/h3&gt;
+&lt;h3 id=&#34;ps&#34;&gt;ps&lt;/h3&gt;
+&lt;h1 id=&#34;用户管理&#34;&gt;用户管理&lt;/h1&gt;
+&lt;p&gt;useradd, groupadd&lt;/p&gt;
+&lt;h1 id=&#34;网络相关操作&#34;&gt;网络相关操作&lt;/h1&gt;
+&lt;h2 id=&#34;ssh&#34;&gt;ssh&lt;/h2&gt;
+&lt;h1 id=&#34;存储管理&#34;&gt;存储管理&lt;/h1&gt;
+&lt;h2 id=&#34;基础知识&#34;&gt;基础知识&lt;/h2&gt;
+&lt;h3 id=&#34;块设备文件&#34;&gt;块设备文件&lt;/h3&gt;
+&lt;h3 id=&#34;文件系统介绍&#34;&gt;文件系统介绍&lt;/h3&gt;
+&lt;p&gt;文件系统驱动都在&lt;code&gt;/lib/modules/$(uname -r) /kernal/fs&lt;/code&gt;目录下面&lt;/p&gt;
+&lt;h4 id=&#34;ext4&#34;&gt;ext4&lt;/h4&gt;
+&lt;h2 id=&#34;常用指令&#34;&gt;常用指令&lt;/h2&gt;
+&lt;h3 id=&#34;块设备信息查看&#34;&gt;块设备信息查看&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;dumpe2fs&lt;/code&gt;:查看ext*文件系统的信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;blkid&lt;/code&gt;:列出所有block的id&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lsblk&lt;/code&gt;:列出所有block的层级关系&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;df&lt;/code&gt;:查看某文件所使用的文件系统&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;du&lt;/code&gt;:查看某文件所用量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;分区管理与格式化&#34;&gt;分区管理与格式化&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;parted &amp;lt;blk_dev&amp;gt; print&lt;/code&gt;:列出某个block的基本信息，注意这个工具还可以进行分区操作。man一下。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gdisk,fdisk&lt;/code&gt;:分区工具，前者是GPT格式，后者是MBR格式，使用前使用parted指令进行查询&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;partprobe -s&lt;/code&gt;:刷新分区表，使得分区更新立即生效&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;mkfs.*&lt;/code&gt;:文件系统make工具，给新分区格式化使用
+&lt;ul&gt;
+&lt;li&gt;agcount是存储群组数量，一般设置为cpu数量&lt;/li&gt;
+&lt;li&gt;务必注意所称的“大小”的单位，在有必要的时候请使用&lt;code&gt;man&lt;/code&gt;进行查看。&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fsck.*&lt;/code&gt;:对文件系统进行检查，&lt;strong&gt;注意只有有问题的时候才能使用，否则会造成危害&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;挂载与卸载&#34;&gt;挂载与卸载&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mount -t &amp;lt;fs&amp;gt; UUID=&#34;&#34; &amp;lt;dir&amp;gt;&lt;/code&gt;:将设备UUID为&#34;&#34;的设备挂载到dir下面，使用fs文件系统&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;有iocharset选项，可以用utf8&lt;/li&gt;
+&lt;li&gt;注意-o有很多额外选项，请使用man查看&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mount -n -o remount,rw /&lt;/code&gt;根目录重新挂载，如果陷入只读模式下可以考虑使用。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;dd if=&#34;/dev/zero&#34; of=&#34;/dev/loop0&#34; bs=1M count=512&lt;/code&gt; 创建一个文件为/dev/loop0（注意这可能是个设备），往里面写0进去，一个block1M，一共512个Block&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果需要使用一个大文件进行挂载操作（而不是目录），可以利用dd进行初始化，然后利用mkfs对大文件进行文件系统的制作，然后用blkid来查询id，然后利用mount的&lt;code&gt;-o loop&lt;/code&gt;选项进行挂载。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如果需要设置启动挂载，注意开机自动挂载的文件配置在&lt;code&gt;/etc/fstab&lt;/code&gt;中。如果用的是大文件而不是物理区块，请使用文件路径名标记。编辑后，请务必使用&lt;code&gt;mount -a&lt;/code&gt;检查是否有语法错误。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;mkswap&lt;/code&gt;和&lt;code&gt;swapon&lt;/code&gt;可以用来制作交换分区。注意也可以使用文件来制作。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;管道与重定向&#34;&gt;管道与重定向&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;&amp;gt;&lt;/code&gt;覆盖，&lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt;重定向，&lt;code&gt;2&amp;gt;&lt;/code&gt;表示stderr的数据重定向。&lt;code&gt;&amp;lt;&lt;/code&gt;重定向输入，&lt;code&gt;&amp;lt;&amp;lt;&lt;/code&gt;约定EOF标志，如&lt;code&gt;&amp;lt;&amp;lt; &#34;end&#34;&lt;/code&gt;约定end为EOF标志。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;/dev/null&lt;/code&gt;：把数据输入到这里面相当于丢掉所有输出数据&lt;/p&gt;
+&lt;p&gt;写入同一文件的语法：&lt;code&gt;echo hello &amp;gt; test 2&amp;gt;&amp;amp;1&lt;/code&gt;或&lt;code&gt;echo hello &amp;amp;&amp;gt; test&lt;/code&gt;：stdout和stderr的数据全部输入到test中&lt;/p&gt;
+&lt;p&gt;管道&lt;code&gt;|&lt;/code&gt;：会将上一条指令的stdout作为下一条指令的stdin，如果希望stderr能够被下一条指令处理，需要&lt;code&gt;2&amp;gt;&amp;amp;1&lt;/code&gt;进行重定向&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tee&lt;/code&gt;：将数据同时输出到stdout和某个文件，双向重定向&lt;/p&gt;
+&lt;h2 id=&#34;xargs&#34;&gt;xargs&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;xargs -0pne [command]&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;-0&lt;/code&gt;：碰到特殊符号时候转换成一般字符&lt;br&gt;
+&lt;code&gt;-p&lt;/code&gt;：执行每个指令时进行询问&lt;br&gt;
+&lt;code&gt;-n&lt;/code&gt;：取多少个参数执行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;环境变量详解&#34;&gt;环境变量详解&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;直接修改 &lt;code&gt;$PATH&lt;/code&gt;：&lt;code&gt;export PATH=$PATH:/home/uusama/mysql/bin&lt;/code&gt;，注意仅在当前bash有效&lt;/li&gt;
+&lt;li&gt;修改 &lt;code&gt;~/.bashrc&lt;/code&gt;或 &lt;code&gt;~/.bash_profile&lt;/code&gt;：永久对&lt;strong&gt;当前用户&lt;/strong&gt;生效，即使打开新的bash&lt;/li&gt;
+&lt;li&gt;修改 &lt;code&gt;/etc/bashrc&lt;/code&gt;或 &lt;code&gt;/etc/profile&lt;/code&gt;或 &lt;code&gt;/etc/environment&lt;/code&gt;：永久对&lt;strong&gt;所有用户&lt;/strong&gt;生效，即使打开新的bash&lt;br&gt;
+注意需要 &lt;code&gt;source&lt;/code&gt;命令或重启使改变生效。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;疑问：&lt;code&gt;.bashrc&lt;/code&gt;和 &lt;code&gt;.bash_profile&lt;/code&gt;的区别？加载顺序会有不同，详见&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/317282094&#34;&gt;此处 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;脚本编写&#34;&gt;脚本编写&lt;/h1&gt;
+&lt;h2 id=&#34;基本语法&#34;&gt;基本语法&lt;/h2&gt;
+&lt;h2 id=&#34;变量&#34;&gt;变量&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;set&lt;/code&gt;&amp;amp;&lt;code&gt;unset&lt;/code&gt;：设置变量和删除变量&lt;br&gt;
+&lt;code&gt;readonly&lt;/code&gt;：限定只读&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;基本运算&#34;&gt;基本运算&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;test&lt;/code&gt;：用于输出一个表达式的结果&lt;br&gt;
+&lt;code&gt;expr 2 + 2&lt;/code&gt;：注意表达式之间要有空格&lt;br&gt;
+&lt;code&gt;[ $a == $b ]&lt;/code&gt;：注意条件表达式放方括号，并且有很多空格&lt;br&gt;
+&lt;code&gt;-le&lt;/code&gt;：使用这些命令来比较大小，因为&amp;lt;&amp;gt;被用于重定向了&lt;br&gt;
+&lt;code&gt;!&lt;/code&gt;&amp;amp;&lt;code&gt;-a&lt;/code&gt;&amp;amp;&lt;code&gt;-o&lt;/code&gt;&amp;amp;&lt;code&gt;&amp;amp;&amp;amp;&lt;/code&gt;&amp;amp;&lt;code&gt;||&lt;/code&gt;：布尔运算&lt;br&gt;
+&lt;code&gt;-z&lt;/code&gt;&amp;amp;&lt;code&gt;-n&lt;/code&gt;：字符串运算符，后面跟字符串，检查长度是否为0&lt;br&gt;
+&lt;code&gt;$a&lt;/code&gt;：检查字符串a是否为空，不为空则为true&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/linux/linux-shell-basic-operators.html&#34;&gt;还有文件测试运算符 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;变量测试与赋值&#34;&gt;变量测试与赋值&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;v=${var-expr}&lt;/code&gt;:var未设置则将v赋值为expr，否则为var&lt;br&gt;
+&lt;code&gt;v=${var+expr}&lt;/code&gt;:var设置则将v赋值为expr，否则为空串&lt;br&gt;
+&lt;code&gt;v=${var=expr}&lt;/code&gt;:var未设置则将var和v同时赋值为expr，否则v赋值为var&lt;br&gt;
+&lt;code&gt;v=${var?expr}&lt;/code&gt;:var未设置则expr输出到stderr，否则v赋值为var&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意这些符号之前可以加冒号，此时var为空字符串也会视为没有设置相应的var变量。&lt;/p&gt;
+&lt;h3 id=&#34;字符串&#34;&gt;字符串&lt;/h3&gt;
+&lt;h4 id=&#34;字符串种类&#34;&gt;字符串种类&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;单引号字符串：原样输出，但注意awk的 &lt;code&gt;&#39;{print $1}&#39;&lt;/code&gt;&lt;br&gt;
+双引号字符串：支持变量和转义符&lt;br&gt;
+反引号：先执行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;字符串变量&#34;&gt;字符串变量&lt;/h4&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;s=&lt;span class=&#34;string&#34;&gt;&#34;str&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${#s}&lt;/span&gt;	&lt;span class=&#34;comment&#34;&gt;# 输出s的长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${s:1:2}&lt;/span&gt;	&lt;span class=&#34;comment&#34;&gt;# 输出tr&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; `&lt;span class=&#34;built_in&#34;&gt;expr&lt;/span&gt; index &lt;span class=&#34;string&#34;&gt;&#34;&lt;span class=&#34;variable&#34;&gt;$string&lt;/span&gt;&#34;&lt;/span&gt; io`	&lt;span class=&#34;comment&#34;&gt;# 输出字符rt的下标，这里是1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h4 id=&#34;字符串匹配&#34;&gt;字符串匹配&lt;/h4&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Plaintext&#34;&gt;&lt;figure class=&#34;iseeu highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;${var#key}:从前往后，var中匹配上key的最短部分，去除&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;${var##key}：从前往后，var中匹配上key的最长部分，去除&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;${var%key}：从后往前，var中匹配上key的最短部分，去除&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;${var%%key}：从后往前，var中匹配上key的最长部分，去除&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;${var/old_str/new_str}：第一个匹配上old_str的部分用new_str替换&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;${var//old_str/new_str}：所有匹配上old_str的用new_str替换&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;p&gt;例：&lt;code&gt;echo ${PATH##/*:}&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;数组&#34;&gt;数组&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;注意数组分隔估计和环境变量 &lt;code&gt;IFS&lt;/code&gt;有关，&lt;code&gt;IFS&lt;/code&gt;是分隔符，默认是 &lt;code&gt;\r\n&lt;/code&gt;三个&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;array=(1 2 3)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;array=(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;array[0]=9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;array[n]=2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${array[@]}&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${array[*]}&lt;/span&gt;	&lt;span class=&#34;comment&#34;&gt;# 两个都是打印整个数组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${#array[@]}&lt;/span&gt;	&lt;span class=&#34;comment&#34;&gt;# 打印数组长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 关联数组（实际就是个map)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;declare&lt;/span&gt; -A site&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;site[&lt;span class=&#34;string&#34;&gt;&#34;google&#34;&lt;/span&gt;]=&lt;span class=&#34;string&#34;&gt;&#34;www.google.com&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;site[&lt;span class=&#34;string&#34;&gt;&#34;runoob&#34;&lt;/span&gt;]=&lt;span class=&#34;string&#34;&gt;&#34;www.runoob.com&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;site[&lt;span class=&#34;string&#34;&gt;&#34;taobao&#34;&lt;/span&gt;]=&lt;span class=&#34;string&#34;&gt;&#34;www.taobao.com&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${site[*]}&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${site[@]}&lt;/span&gt; 	&lt;span class=&#34;comment&#34;&gt;# 获取所有值&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${!site[*]}&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;${!site[@]}&lt;/span&gt;	&lt;span class=&#34;comment&#34;&gt;# 获取所有键&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;控制结构&#34;&gt;控制结构&lt;/h2&gt;
+&lt;h3 id=&#34;条件表达&#34;&gt;条件表达&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;(( $a &amp;gt; $b ))&lt;/code&gt;：注意两个圆括号可以用大于符号&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;((i=1;i&amp;lt;9;i++))&lt;/code&gt;：for循环可以用&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[ cond ]:&lt;/code&gt;注意要有括空格，注意用变量的时候要用双引号括起来才行，但test可以直接用，大于号和小于号会当成重定向，要加转移符&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;[[ cond ]]&lt;/code&gt;:bash自己实现的，迁移性较差&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;test cond&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;for v in $@&lt;/code&gt;：注意用循环结构的时候，要区分 &lt;code&gt;&#34;$@&#34; &#34;$*&#34; $@ $*&lt;/code&gt;的区别&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;控制结构模板&#34;&gt;控制结构模板&lt;/h3&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# if&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; [[ cond ]]; &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	expr1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;elif&lt;/span&gt; [[ cond ]]; &lt;span class=&#34;keyword&#34;&gt;then&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	expr2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;fi&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# for&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;((i=1;i&amp;lt;=9;i++)); &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;built_in&#34;&gt;expr&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;done&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; var &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; a b c; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;built_in&#34;&gt;expr&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;done&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; var &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$@&lt;/span&gt;; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	&lt;span class=&#34;built_in&#34;&gt;expr&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;done&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# case&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$var&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;1)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	expr1;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2|3|4)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	expr2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;*)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;	defaultexpr&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;esac&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# while&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h2 id=&#34;其他-1&#34;&gt;其他&lt;/h2&gt;
+&lt;h3 id=&#34;特殊变量&#34;&gt;特殊变量&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;${p}&lt;/code&gt;：第 &lt;code&gt;p&lt;/code&gt;个参数，&lt;code&gt;echo $0&lt;/code&gt;的结果是 &lt;code&gt;echo&lt;/code&gt;，当 &lt;code&gt;p&lt;/code&gt;小于10时可以不带花括号，否则必须带&lt;br&gt;
+&lt;code&gt;$#&lt;/code&gt;：参数个数&lt;br&gt;
+&lt;code&gt;$*&lt;/code&gt;和 &lt;code&gt;$@&lt;/code&gt;：获取参数，其中前者以&lt;strong&gt;字符串&lt;/strong&gt;的形式获取，后者是加引号，然后在引号中返回每个参数。假设在脚本运行时写了三个参数 1、2、3，则 &#34; * &#34; 等价于 &#34;1 2 3&#34;（传递了一个参数），而 &#34;@&#34; 等价于 &#34;1&#34; &#34;2&#34; &#34;3&#34;（传递了三个参数）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$?&lt;/code&gt;：上一个shell命令的返回状态码&lt;br&gt;
+&lt;code&gt;$$&lt;/code&gt;：当前shell环境的进程ID号&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;-- \$* 演示 ---&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;$*&#34;&lt;/span&gt;; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;done&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;-- \$@ 演示 ---&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&#34;&lt;span class=&#34;variable&#34;&gt;$@&lt;/span&gt;&#34;&lt;/span&gt;; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;variable&#34;&gt;$i&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;done&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# $ chmod +x test.sh &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# $ ./test.sh 1 2 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# -- $* 演示 ---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 1 2 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# -- $@ 演示 ---&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 3&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;h3 id=&#34;间隔符&#34;&gt;间隔符&lt;/h3&gt;
+&lt;h3 id=&#34;基本符号的用法&#34;&gt;基本符号的用法&lt;/h3&gt;
+&lt;h4 id=&#34;引号&#34;&gt;引号&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;单引号&lt;/strong&gt;：将其中的内容全部作为字符串，忽略所有的命令和特殊字符&lt;br&gt;
+&lt;strong&gt;双引号&lt;/strong&gt;：解析特殊字符，包括 &lt;code&gt;&#39;, &#34;, $, \&lt;/code&gt;，如果需要输出这些字符，需要转义符&lt;br&gt;
+&lt;strong&gt;反引号&lt;/strong&gt;：包含一个命令字符串的，其中的&lt;strong&gt;命令会先执行&lt;/strong&gt;，如`ls`等效于 &lt;code&gt;$(ls)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;括号&#34;&gt;括号&lt;/h4&gt;
+&lt;p&gt;参考资料&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/m0_52425873/article/details/113052611&#34;&gt;见此 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;大括号&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中括号&lt;/strong&gt;：&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;小括号&lt;/strong&gt;：注意小括号实际上开了一个子shell！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;小练习&#34;&gt;小练习&lt;/h1&gt;
+&lt;p&gt;练习1：请将git status中，将所有模式处于xxx的文件，全部更改为yyy？&lt;br&gt;
+练习2：将所有文件名后缀为xxx中的文件里，前缀有yyy的单词，统一替换为zzz&lt;br&gt;
+练习3：找出大小超过500MB的所有文件，并将其在git记录中进行--uncached处理（作者遇到的问题，暂时不知道怎么处理？）&lt;/p&gt;
+</content>
+        <category term="linux基本操作" />
+        <updated>2023-08-21T07:33:07.000Z</updated>
+    </entry>
+</feed>
