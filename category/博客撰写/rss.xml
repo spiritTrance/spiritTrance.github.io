@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <rss version="2.0">
     <channel>
-        <title>spiritTranceの小窝 • Posts by &#34;博客搭建&#34; category</title>
+        <title>spiritTranceの小窝 • Posts by &#34;博客撰写&#34; category</title>
         <link>http://example.com</link>
         <description></description>
         <language>en</language>
@@ -9,18 +9,18 @@
         <lastBuildDate>Fri, 26 Aug 2022 10:22:26 +0800</lastBuildDate>
         <category>cpp</category>
         <category>Makefile</category>
-        <category>CMake</category>
         <category>链接</category>
-        <category>Docker</category>
+        <category>docker</category>
+        <category>CMake</category>
         <category>Hexo</category>
-        <category>正则表达式</category>
         <category>Misc</category>
         <category>计算机系统结构</category>
         <category>读书笔记</category>
+        <category>正则表达式</category>
         <category>课程复习</category>
+        <category>基本操作</category>
         <category>gdb</category>
         <category>git</category>
-        <category>linux基本操作</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/08/26/hexo_HexoStarter/</guid>
             <title>Hexo快速入门</title>

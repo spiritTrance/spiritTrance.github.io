@@ -6,18 +6,18 @@
     <updated>2023-08-21T07:33:07.000Z</updated>
     <category term="cpp" />
     <category term="Makefile" />
-    <category term="CMake" />
     <category term="链接" />
-    <category term="Docker" />
+    <category term="docker" />
+    <category term="CMake" />
     <category term="Hexo" />
-    <category term="正则表达式" />
     <category term="Misc" />
     <category term="计算机系统结构" />
     <category term="读书笔记" />
+    <category term="正则表达式" />
     <category term="课程复习" />
+    <category term="基本操作" />
     <category term="gdb" />
     <category term="git" />
-    <category term="linux基本操作" />
     <entry>
         <id>http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</id>
         <title>linux基本操作学习</title>
@@ -292,7 +292,7 @@
 练习2：将所有文件名后缀为xxx中的文件里，前缀有yyy的单词，统一替换为zzz&lt;br&gt;
 练习3：找出大小超过500MB的所有文件，并将其在git记录中进行--uncached处理（作者遇到的问题，暂时不知道怎么处理？）&lt;/p&gt;
 </content>
-        <category term="linux基本操作" />
+        <category term="基本操作" />
         <updated>2023-08-21T07:33:07.000Z</updated>
     </entry>
     <entry>

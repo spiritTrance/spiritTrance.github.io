@@ -6,18 +6,18 @@
     <updated>2022-09-12T10:31:26.000Z</updated>
     <category term="cpp" />
     <category term="Makefile" />
-    <category term="CMake" />
     <category term="链接" />
-    <category term="Docker" />
+    <category term="docker" />
+    <category term="CMake" />
     <category term="Hexo" />
-    <category term="正则表达式" />
     <category term="Misc" />
     <category term="计算机系统结构" />
     <category term="读书笔记" />
+    <category term="正则表达式" />
     <category term="课程复习" />
+    <category term="基本操作" />
     <category term="gdb" />
     <category term="git" />
-    <category term="linux基本操作" />
     <entry>
         <id>http://example.com/2022/09/12/misc/</id>
         <title>杂项</title>

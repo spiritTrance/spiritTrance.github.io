@@ -1,28 +1,33 @@
 <?xml version="1.0"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
-    <title>spiritTranceの小窝 • Posts by &#34;linux基本操作&#34; tag</title>
-    <link href="http://example.com" />
-    <updated>2023-08-21T07:33:07.000Z</updated>
-    <category term="cpp" />
-    <category term="Makefile" />
-    <category term="CMake" />
-    <category term="链接" />
-    <category term="Docker" />
-    <category term="Hexo" />
-    <category term="正则表达式" />
-    <category term="Misc" />
-    <category term="计算机系统结构" />
-    <category term="读书笔记" />
-    <category term="课程复习" />
-    <category term="gdb" />
-    <category term="git" />
-    <category term="linux基本操作" />
-    <entry>
-        <id>http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</id>
-        <title>linux基本操作学习</title>
-        <link rel="alternate" href="http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/"/>
-        <content type="html">&lt;h1 id=&#34;目录&#34;&gt;目录&lt;/h1&gt;
+<rss version="2.0">
+    <channel>
+        <title>spiritTranceの小窝 • Posts by &#34;基本操作&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Mon, 21 Aug 2023 15:33:07 +0800</pubDate>
+        <lastBuildDate>Mon, 21 Aug 2023 15:33:07 +0800</lastBuildDate>
+        <category>cpp</category>
+        <category>Makefile</category>
+        <category>链接</category>
+        <category>docker</category>
+        <category>CMake</category>
+        <category>Hexo</category>
+        <category>Misc</category>
+        <category>计算机系统结构</category>
+        <category>读书笔记</category>
+        <category>正则表达式</category>
+        <category>课程复习</category>
+        <category>基本操作</category>
+        <category>gdb</category>
+        <category>git</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</guid>
+            <title>linux基本操作学习</title>
+            <link>http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</link>
+            <category>基本操作</category>
+            <pubDate>Mon, 21 Aug 2023 15:33:07 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;目录&#34;&gt;目录&lt;/h1&gt;
 &lt;p&gt;[toc]&lt;/p&gt;
 &lt;h1 id=&#34;前言及参考资料&#34;&gt;前言及参考资料&lt;/h1&gt;
 &lt;p&gt;这篇文章主要给出各个指令的作用，详细用法请查阅相关资料，灵活使用man指令和--help选项。仅当我认为重要的时候，会给出详细用法和示例。&lt;/p&gt;
@@ -291,8 +296,7 @@
 &lt;p&gt;练习1：请将git status中，将所有模式处于xxx的文件，全部更改为yyy？&lt;br&gt;
 练习2：将所有文件名后缀为xxx中的文件里，前缀有yyy的单词，统一替换为zzz&lt;br&gt;
 练习3：找出大小超过500MB的所有文件，并将其在git记录中进行--uncached处理（作者遇到的问题，暂时不知道怎么处理？）&lt;/p&gt;
-</content>
-        <category term="linux基本操作" />
-        <updated>2023-08-21T07:33:07.000Z</updated>
-    </entry>
-</feed>
+ ]]></description>
+        </item>
+    </channel>
+</rss>
