@@ -26,10 +26,11 @@
 <meta property="og:image" content="http://example.com/img/gitStarter/1.png">
 <meta property="og:image" content="http://example.com/img/gitStarter/5.png">
 <meta property="og:image" content="http://example.com/img/gitStarter/4.png">
+<meta property="og:image" content="http://example.com/img/gitStarter/area.jpg">
 <meta property="og:image" content="http://example.com/img/gitSt_GitGraph.png">
 <meta property="og:image" content="http://example.com/img/gitSt_2_1_2_1.png">
 <meta property="article:published_time" content="2022-07-17T16:05:11.000Z">
-<meta property="article:modified_time" content="2024-01-06T01:59:50.628Z">
+<meta property="article:modified_time" content="2024-01-06T03:16:23.263Z">
 <meta property="article:author" content="spiritTrance">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -483,8 +484,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-01-06 09:59:50</span>
-            <span class="mobile">2024-01-06 09:59</span>
+            <span class="desktop">2024-01-06 11:16:23</span>
+            <span class="mobile">2024-01-06 11:16</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -517,12 +518,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.4k Words</span>
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>16 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>19 Mins</span>
         </span>
     
     
@@ -574,7 +575,7 @@ mjx-container[display="true"] + br {
 <h3 id="本地仓库创建与远程仓库推送">本地仓库创建与远程仓库推送</h3>
 <p>当github/gitee上的远程仓库创建好后，如果里面没有任何文件，那么github/gitee会出现以下提示帮助你快速上手。所以你可以在你的工作目录下面打开命令行，输入以下内容，对应含义请见注释.</p>
 <p>在命令行创建新的仓库的步骤：<br>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"# blogPostArchive"</span> &gt;&gt; README.md   <span class="comment"># 添加README.md文件，里面一般用于介绍你的仓库</span></span><br><span class="line">git init            <span class="comment"># 初始化本地仓库</span></span><br><span class="line">git add README.md   <span class="comment"># 将README.md文件加入本地仓库的暂存区，可以加`.`符号表示加入当前工作目录下的所有文件（但.gitignore文件中设置的文件除外）</span></span><br><span class="line">git commit -m <span class="string">"first commit"</span>  <span class="comment"># 将暂存区里面的内容提交，并加上"first commit"的注释</span></span><br><span class="line">git branch -M main <span class="comment"># 创建新分支</span></span><br><span class="line">git remote add origin git@github.com:[你的用户名]/[你的远程仓库名].git <span class="comment"># 操作远程仓库，后续推送需要 例：git remote add origin git@github.com:spiritTrance/gitlearning.git</span></span><br><span class="line">git push -u origin main <span class="comment"># -u 设置推送流，origin是远程仓库别名，main是本地仓库分支名（特别注意本地分支名是main还是master）</span></span><br></pre></td></tr></table></figure></div></p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"# blogPostArchive"</span> &gt;&gt; README.md   <span class="comment"># 添加README.md文件，里面一般用于介绍你的仓库</span></span><br><span class="line">git init            <span class="comment"># 初始化本地仓库</span></span><br><span class="line">git add README.md   <span class="comment"># 将README.md文件加入本地仓库的暂存区，可以加`.`符号表示加入当前工作目录下的所有文件（但.gitignore文件中设置的文件除外）</span></span><br><span class="line">git commit -m <span class="string">"first commit"</span>  <span class="comment"># 将暂存区里面的内容提交，并加上"first commit"的注释</span></span><br><span class="line">git branch -M main <span class="comment"># 命名分支名为main（默认为master）</span></span><br><span class="line">git remote add origin git@github.com:[你的用户名]/[你的远程仓库名].git <span class="comment"># 操作远程仓库，后续推送需要 例：git remote add origin git@github.com:spiritTrance/gitlearning.git</span></span><br><span class="line">git push -u origin main <span class="comment"># -u 设置推送流，origin是远程仓库别名，main是本地仓库分支名（特别注意本地分支名是main还是master）</span></span><br></pre></td></tr></table></figure></div></p>
 <p>在命令行推送本地已有的仓库的步骤：<br>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:spiritTrance/gitlearning.git</span><br><span class="line">git branch -M main</span><br><span class="line">git push -u origin main</span><br></pre></td></tr></table></figure></div></p>
 <p>值得一提的是，一个仓库一般都会有README.md文件和.gitignore文件<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>:<br>
@@ -613,17 +614,15 @@ mjx-container[display="true"] + br {
 </ul>
 </blockquote>
 <h1 id="git基础概念介绍">git基础概念介绍</h1>
-<p>上面一章是救急用的。如果希望能搞懂git的各种诡异情况和神奇操作，请务必先了解如下概念。</p>
-<p>待更：工作区，缓存区，分支，远程分支，常见指令的流程。</p>
-<h1 id="分支及版本管理">分支及版本管理</h1>
-<p>考虑到项目开发可能存在多个版本，因此git有分支模型，最常见的是maim分支和dev分支，前者是发行版本，后者是开发版本。当然，在多人协作中也更为常见。下面介绍一下git的基本原理，以及与分支管理相关的操作。</p>
-<h2 id="git的基本原理">Git的基本原理</h2>
-<p>Git的基本原理请具体<a class="link" target="_blank" rel="noopener" href="https://www.runoob.com/git/git-workspace-index-repo.html">参考此处 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。<br>
-简单来说，Git管理有两个区域：工作区（你能看到的目录）以及版本库（.git），而版本库里维护了很多信息，主要包括：暂存区，目录树和对象库。其中：</p>
+<h2 id="本地的git">本地的git</h2>
+<p>因为git还涉及其他奇奇怪怪的操作，可能会涉及各种各样的问题，因此这里先介绍一些有关git设计的基础概念。</p>
+<p>这里借用<a class="link" target="_blank" rel="noopener" href="https://www.runoob.com/git/git-workspace-index-repo.html">菜鸟教程的一张图 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，画的很好：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/img/gitStarter/area.jpg"></p>
+<p>简单来说，Git管理有两个区域：工作区（就是你能看到的目录）以及版本库（.git下面的记录），而版本库里维护了很多信息，主要包括：暂存区，目录树和对象库。其中：</p>
 <blockquote>
 <ul>
 <li>暂存区：暂时存放更新内容。使用<code>add</code>指令，会将<strong>工作区</strong>内的内容加入暂存区，更新内容会加入对象库中。而<code>rm --cached</code>则是<code>add</code>的逆过程，会将<strong>未提交的内容</strong>从暂存区移除（<strong>但工作区不受影响</strong>）</li>
-<li>版本库：<code>commit</code>指令会将本次更新内容从暂存区加入版本库。而<code>checkout</code>指令会将某个版本的内容恢复到<strong>工作区</strong>中（注意：此时会清除工作区中<strong>未加入到暂存区</strong>的内容）。</li>
+<li>版本库：<code>commit</code>指令会将本次更新内容从暂存区加入版本库。而<code>checkout</code>指令会将某个版本的内容恢复到<strong>工作区</strong>中（注意：此时会清除工作区中<strong>未加入到暂存区</strong>的内容）。同时<code>commit</code>后，HEAD指针产生变化，移动到当前<code>commit</code>的内容。</li>
 <li>对象库：维护更新内容。</li>
 </ul>
 </blockquote>
@@ -638,6 +637,22 @@ mjx-container[display="true"] + br {
 <li><code>log</code>：查看历史提交记录。</li>
 </ul>
 </blockquote>
+<h2 id="考虑上代码托管平台">考虑上代码托管平台</h2>
+<p>那么现在考虑托管平台，又该如何做呢？<br>
+是的，与托管平台之间的交互很多，主要有<code>git pull</code>，<code>git push</code>等，这是最常见的交互方式。但如果需要<code>push</code>。想必之前你已经弄好了一个仓库，那么，我们试一下如下指令？</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git remote -v </span><br><span class="line"><span class="comment"># origin  git@github.com:spiritTrance/blogPostArchive.git (fetch)</span></span><br><span class="line"><span class="comment"># origin  git@github.com:spiritTrance/blogPostArchive.git (push)</span></span><br><span class="line">git branch</span><br><span class="line"><span class="comment"># * master</span></span><br><span class="line">git branch -a</span><br><span class="line"><span class="comment"># * master</span></span><br><span class="line"><span class="comment">#   remotes/origin/master</span></span><br><span class="line">git branch -avv  </span><br><span class="line"><span class="comment"># * master 9af8fd2 [origin/master] 博客文章存档</span></span><br><span class="line"><span class="comment"># remotes/origin/master 9af8fd2 博客文章存档</span></span><br></pre></td></tr></table></figure></div>
+<p>那么这几条语句可以帮助你看到，远程仓库是<code>git@github.com:spiritTrance/blogPostArchive.git</code>，其别名是<code>origin</code>。而<code>git branch</code>加入<code>-a</code>选项后，可以同时看到本地和远程仓库的分支。对的，本地有一堆分支，远程仓库同样可以有一堆分支。使用<code>-vv/-avv</code>选项，可以看到分支的最后一条提交记录。值得注意的是，<code>master</code>一行后面的方括号，标注了对应的远程分支。因此，不难猜出，本地的一个分支和远程的一个分支其实是有对应关系的。那么我们应当如何设置这个对应关系呢？回到之前的教程，我们可以发现如下语句：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git branch -M main </span><br><span class="line">git remote add origin git@github.com:[你的用户名]/[你的远程仓库名].git </span><br><span class="line">git push -u origin main </span><br></pre></td></tr></table></figure></div>
+<p>其中<br>
+- 第一条语句的作用是将当前分支的名称改成main<br>
+- 第二条语句的仓库是加入远程仓库<code>git@github.com:[你的用户名]/[你的远程仓库名].git</code>，别名为<code>origin</code><br>
+- 第三条语句是关键：<code>-u</code>全名为<code>--set-upstream</code>，这个指令用来设置推送流，将本地的main分支和远程的main分支（没有则自动创建）关联起来（当然，你可以按照<code>&lt;localbranch&gt;:&lt;remotebranch&gt;</code>的格式指定远程分支）。之后使用<code>git push</code>，会默认按照这个上游分支推送。</p>
+<p>你可以修改推送流，推送到不同的远程分支，甚至将本地仓库与多个远程仓库进行关联。<br>
+你可以将本次推送推送到不同分支：<code>git push origin &lt;localBranch&gt;:&lt;remoteBranch&gt;</code>，如果远程分支不存在，甚至会创建，因此又引出了另外一个议题——分支保护。这在多人协作中防铸币队友特别好用。另外，你也可以直接删除远程仓库的分支：<code>git push &lt;remote&gt; --delete &lt;branchname&gt;</code>.</p>
+<p>总结一下，本小节你应该知道如下内容：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote add &lt;remoteAlias&gt; git@github.com:[你的用户名]/[你的远程仓库名].git <span class="comment"># 使用本指令添加远程仓库，别名为remoteAlias（一般是origin）</span></span><br><span class="line">git push --set-upstream &lt;remoteAlias&gt; &lt;localBranch&gt;:&lt;remoteBranch&gt; <span class="comment"># 使用本指令设置上游分支并推送到指定仓库的指定分支</span></span><br><span class="line">git push &lt;remoteAlias&gt; --delete &lt;remoteBranch&gt; <span class="comment"># 删除远程指定分支</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<h1 id="分支及版本管理">分支及版本管理</h1>
+<p>考虑到项目开发可能存在多个版本，因此git有分支模型，最常见的是maim分支和dev分支，前者是发行版本，后者是开发版本。当然，在多人协作中也更为常见。下面介绍一下git的基本原理，以及与分支管理相关的操作。</p>
 <h2 id="vscode扩展---git-graph">VsCode扩展 - Git Graph</h2>
 <p>Git Graph扩展可以清晰地展示git仓库的分支的历史提交信息和合并情况，因此强烈建议安装使用。<br>
 <img lazyload src="/images/loading.svg" data-src="/img/gitSt_GitGraph.png"></p>
@@ -675,6 +690,7 @@ mjx-container[display="true"] + br {
 <p>使用场景：到达一个重要阶段使用。<a class="link" target="_blank" rel="noopener" href="https://www.runoob.com/git/git-tag.html">使用参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h2 id="stash指令">stash指令</h2>
 <p>使用场景：你正在dev分支工作，然后突然告知release分支出现问题需要马上修复，然而你dev上已经做了修改但还不能commit，此时你希望能先暂存你的进度，那么可以考虑<code>stash</code>指令。<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/117553180">使用参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="分支保护">分支保护</h2>
 <h1 id="多人协作以github为例">多人协作——以GitHub为例</h1>
 <h2 id="远程仓库与本地仓库管理区别在哪">远程仓库与本地仓库管理区别在哪？</h2>
 <p><a class="link" target="_blank" rel="noopener" href="https://www.runoob.com/git/git-basic-operations.html">图片参考 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>
@@ -744,7 +760,7 @@ do so (now or later) by using -c with the switch command. Example:</p>
         <li><strong>Created at:</strong> 2022-07-18 00:05:11</li>
         
             <li>
-                <strong>Updated at:</strong> 2024-01-06 09:59:50
+                <strong>Updated at:</strong> 2024-01-06 11:16:23
             </li>
         
         <li>
@@ -773,15 +789,15 @@ do so (now or later) by using -c with the switch command. Example:</p>
   <div class="recommended-article-header">
     <i aria-hidden="true"></i><span>推荐阅读</span>
   </div>
-  <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/08/21/linux_linux基本操作学习/" title="linux基本操作学习" rel="bookmark">
-  <img src="img/cover/linux_tools.png" alt="linux基本操作学习">
-  <span class="title">linux基本操作学习</span>
-</a><a class="recommended-article-item" href="/2022/08/26/hexo_HexoStarter/" title="Hexo快速入门" rel="bookmark">
+  <div class="recommended-article-group"><a class="recommended-article-item" href="/2022/08/26/hexo_HexoStarter/" title="Hexo快速入门" rel="bookmark">
   <img src="/img/cover/starter.png" alt="Hexo快速入门">
   <span class="title">Hexo快速入门</span>
-</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
-  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用">
-  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
+</a><a class="recommended-article-item" href="/2023/08/21/linux_linux基本操作学习/" title="linux基本操作学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="linux基本操作学习">
+  <span class="title">linux基本操作学习</span>
+</a><a class="recommended-article-item" href="/2023/07/29/课程复习_计算机系统结构复习/" title="【课程复习】计算机系统结构复习" rel="bookmark">
+  <img src="/img/cover/coursereview.png" alt="【课程复习】计算机系统结构复习">
+  <span class="title">【课程复习】计算机系统结构复习</span>
 </a></div>
 </div>
 
@@ -874,7 +890,7 @@ do so (now or later) by using -c with the switch command. Example:</p>
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">git快速入门</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%8F%8A%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">Git及代码托管平台初步使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.1.</span> <span class="nav-text">准备步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA%E5%8F%8A%E5%90%8C%E6%AD%A5"><span class="nav-number">2.2.</span> <span class="nav-text">仓库创建及同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%9A%84%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA"><span class="nav-number">2.2.1.</span> <span class="nav-text">托管平台上的仓库创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8E%A8%E9%80%81"><span class="nav-number">2.2.2.</span> <span class="nav-text">本地仓库创建与远程仓库推送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%8F%8A%E8%BF%9C%E5%A4%84%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0"><span class="nav-number">2.2.3.</span> <span class="nav-text">本地仓库及远处仓库更新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.</span> <span class="nav-text">git基础概念介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%8F%8A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">分支及版本管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-number">4.1.</span> <span class="nav-text">Git的基本原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E6%89%A9%E5%B1%95---git-graph"><span class="nav-number">4.2.</span> <span class="nav-text">VsCode扩展 - Git Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkout%E6%8C%87%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">checkout指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#branch%E6%8C%87%E4%BB%A4"><span class="nav-number">4.4.</span> <span class="nav-text">branch指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge%E6%8C%87%E4%BB%A4"><span class="nav-number">4.5.</span> <span class="nav-text">merge指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase%E6%8C%87%E4%BB%A4"><span class="nav-number">4.6.</span> <span class="nav-text">rebase指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reset%E6%8C%87%E4%BB%A4"><span class="nav-number">4.7.</span> <span class="nav-text">reset指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag%E6%8C%87%E4%BB%A4"><span class="nav-number">4.8.</span> <span class="nav-text">tag指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash%E6%8C%87%E4%BB%A4"><span class="nav-number">4.9.</span> <span class="nav-text">stash指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E4%BA%BA%E5%8D%8F%E4%BD%9C%E4%BB%A5github%E4%B8%BA%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">多人协作——以GitHub为例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E5%8C%BA%E5%88%AB%E5%9C%A8%E5%93%AA"><span class="nav-number">5.1.</span> <span class="nav-text">远程仓库与本地仓库管理区别在哪？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullpush%E4%B8%8Efetch%E6%8C%87%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">pull,push与fetch指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull-requestpr"><span class="nav-number">5.3.</span> <span class="nav-text">Pull Request(PR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#issue"><span class="nav-number">5.4.</span> <span class="nav-text">Issue</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9"><span class="nav-number">6.</span> <span class="nav-text">进阶内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">钩子函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95"><span class="nav-number">7.</span> <span class="nav-text">常见操作记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%BB%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2-gitk"><span class="nav-number">7.1.</span> <span class="nav-text">内建图形化界面-gitk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%AE%B0%E5%BD%95"><span class="nav-number">8.</span> <span class="nav-text">疑难杂症记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#footprint%E6%9B%B4%E6%94%B9"><span class="nav-number">8.1.</span> <span class="nav-text">footprint更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E6%8F%90%E4%BA%A4"><span class="nav-number">8.2.</span> <span class="nav-text">大文件的提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#detached-head"><span class="nav-number">8.3.</span> <span class="nav-text">detached HEAD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB"><span class="nav-number">9.</span> <span class="nav-text">扩展阅读</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%8F%8A%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E5%88%9D%E6%AD%A5%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">Git及代码托管平台初步使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.1.</span> <span class="nav-text">准备步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA%E5%8F%8A%E5%90%8C%E6%AD%A5"><span class="nav-number">2.2.</span> <span class="nav-text">仓库创建及同步</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0%E4%B8%8A%E7%9A%84%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA"><span class="nav-number">2.2.1.</span> <span class="nav-text">托管平台上的仓库创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8E%A8%E9%80%81"><span class="nav-number">2.2.2.</span> <span class="nav-text">本地仓库创建与远程仓库推送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%8F%8A%E8%BF%9C%E5%A4%84%E4%BB%93%E5%BA%93%E6%9B%B4%E6%96%B0"><span class="nav-number">2.2.3.</span> <span class="nav-text">本地仓库及远处仓库更新</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.</span> <span class="nav-text">git基础概念介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E7%9A%84git"><span class="nav-number">3.1.</span> <span class="nav-text">本地的git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%99%91%E4%B8%8A%E4%BB%A3%E7%A0%81%E6%89%98%E7%AE%A1%E5%B9%B3%E5%8F%B0"><span class="nav-number">3.2.</span> <span class="nav-text">考虑上代码托管平台</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%8F%8A%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">分支及版本管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#vscode%E6%89%A9%E5%B1%95---git-graph"><span class="nav-number">4.1.</span> <span class="nav-text">VsCode扩展 - Git Graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#checkout%E6%8C%87%E4%BB%A4"><span class="nav-number">4.2.</span> <span class="nav-text">checkout指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#branch%E6%8C%87%E4%BB%A4"><span class="nav-number">4.3.</span> <span class="nav-text">branch指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#merge%E6%8C%87%E4%BB%A4"><span class="nav-number">4.4.</span> <span class="nav-text">merge指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase%E6%8C%87%E4%BB%A4"><span class="nav-number">4.5.</span> <span class="nav-text">rebase指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reset%E6%8C%87%E4%BB%A4"><span class="nav-number">4.6.</span> <span class="nav-text">reset指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tag%E6%8C%87%E4%BB%A4"><span class="nav-number">4.7.</span> <span class="nav-text">tag指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stash%E6%8C%87%E4%BB%A4"><span class="nav-number">4.8.</span> <span class="nav-text">stash指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E4%BF%9D%E6%8A%A4"><span class="nav-number">4.9.</span> <span class="nav-text">分支保护</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E4%BA%BA%E5%8D%8F%E4%BD%9C%E4%BB%A5github%E4%B8%BA%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">多人协作——以GitHub为例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8E%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E7%AE%A1%E7%90%86%E5%8C%BA%E5%88%AB%E5%9C%A8%E5%93%AA"><span class="nav-number">5.1.</span> <span class="nav-text">远程仓库与本地仓库管理区别在哪？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pullpush%E4%B8%8Efetch%E6%8C%87%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">pull,push与fetch指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pull-requestpr"><span class="nav-number">5.3.</span> <span class="nav-text">Pull Request(PR)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#issue"><span class="nav-number">5.4.</span> <span class="nav-text">Issue</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E5%86%85%E5%AE%B9"><span class="nav-number">6.</span> <span class="nav-text">进阶内容</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">钩子函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C%E8%AE%B0%E5%BD%95"><span class="nav-number">7.</span> <span class="nav-text">常见操作记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%BB%BA%E5%9B%BE%E5%BD%A2%E5%8C%96%E7%95%8C%E9%9D%A2-gitk"><span class="nav-number">7.1.</span> <span class="nav-text">内建图形化界面-gitk</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87%E8%AE%B0%E5%BD%95"><span class="nav-number">8.</span> <span class="nav-text">疑难杂症记录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#footprint%E6%9B%B4%E6%94%B9"><span class="nav-number">8.1.</span> <span class="nav-text">footprint更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%96%87%E4%BB%B6%E7%9A%84%E6%8F%90%E4%BA%A4"><span class="nav-number">8.2.</span> <span class="nav-text">大文件的提交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#detached-head"><span class="nav-number">8.3.</span> <span class="nav-text">detached HEAD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB"><span class="nav-number">9.</span> <span class="nav-text">扩展阅读</span></a></li></ol>
 
     </div>
 </div>
