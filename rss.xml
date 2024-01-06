@@ -1210,6 +1210,7 @@ A：&lt;br&gt;
 &lt;li&gt;如果您遇到了任何问题，请移步&lt;a href=&#34;#section-4---疑难杂症记录&#34;&gt;疑难杂症记录&lt;/a&gt;，那里记录了作者使用git以来的各种问题，希望能帮助倒您&lt;/li&gt;
 &lt;li&gt;如果您需要进行多人协作的开发，请移步&lt;a href=&#34;#section-2---多人协作&#34;&gt;多人协作&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;如果您需要查找常用指令的各种用法及作用，请移步&lt;a href=&#34;#section-3---常见操作记录&#34;&gt;常见操作记录&lt;/a&gt;，并善于运用&lt;code&gt;git xxx --help&lt;/code&gt;指令（其中&lt;code&gt;xxx&lt;/code&gt;是您想使用的操作）。&lt;/li&gt;
+&lt;li&gt;如果你需要熟练操作，可以尝试&lt;a class=&#34;link&#34; href=&#34;https://learngitbranching.js.org/?locale=zh_CN&#34;&gt;这个 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;！&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;git及代码托管平台初步使用&#34;&gt;Git及代码托管平台初步使用&lt;/h1&gt;
 &lt;p&gt;本节介绍&lt;strong&gt;单人&lt;/strong&gt;从git开始到拥有一个完整的仓库，并如何将本地数据同步上去。&lt;/p&gt;
