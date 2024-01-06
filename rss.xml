@@ -16,7 +16,6 @@
         <category>正则表达式</category>
         <category>Hexo</category>
         <category>Misc</category>
-        <category>量化研究方法</category>
         <category>读书笔记</category>
         <category>linux基本操作</category>
         <category>gdb</category>
@@ -25,7 +24,7 @@
             <guid isPermalink="true">http://example.com/2023/11/30/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95_ch4_%E5%90%91%E9%87%8F%E4%B8%8ESIMD/</guid>
             <title>【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</title>
             <link>http://example.com/2023/11/30/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95_ch4_%E5%90%91%E9%87%8F%E4%B8%8ESIMD/</link>
-            <category>量化研究方法</category>
+            <category>计算机系统结构</category>
             <category>读书笔记</category>
             <pubDate>Thu, 30 Nov 2023 12:31:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
@@ -1140,6 +1139,9 @@ A： 需要图床。作者使用的是铁锈图床（能用就行）（不知道
 &lt;p&gt;Q：Hexo放置Pdf？&lt;br&gt;
 A：参考：&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_43827595/article/details/104574959&#34;&gt;【如何在网页中实现pdf在线预览】10分钟学会如何利用Hexo博客上传本地pdf文件并在线预览pdf_白马金羁侠少年的博客-CSDN博客 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
+&lt;p&gt;后面编辑文档的时候看到了，这里说一下，基于hexo生成的网页全部放在public文件夹下面的，路径索引根据这个来就好。但是由于之前使用的是particleX主题，索引方式为何这么勾把奇怪，我也不知道。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;注意：对于particleX，由于生成的文件编排方式不同，文件路径应该为：&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;../../../../file/{pdfName}.pdf&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;注意file放置在写博客的source文件夹下，与_posts同级&lt;/p&gt;
@@ -1184,7 +1186,9 @@ https://blog.csdn.net/m0_46916422/article/details/124065600&lt;br&gt;
  &lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Q：如何插入图片？&lt;br&gt;
 A：参考这篇&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/265077468&#34;&gt;博客 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img lazyload src=&#34;/images/loading.svg&#34; data-src=&#34;testPic.png&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;后面编辑文档的时候看到了，particleX使用的方式是&lt;code&gt;testpic.png&lt;/code&gt;，然后在&lt;code&gt;source/_posts/hexoStarter/testpic.png&lt;/code&gt;放置图片，后面使用的redefine主题，直接根目录索引就可以了= =&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;Q：如何插入pdf文档？&lt;br&gt;
 A：首先需要安装插件，然后在source文件夹下创建文件夹file，然后在正文输入：&lt;br&gt;
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Text&#34;&gt;&lt;figure class=&#34;iseeu highlight text&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;{% pdf ../../../../file/fileName.pdf %}&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[笔记地址](../../../../file/fileName.pdf)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/p&gt;
