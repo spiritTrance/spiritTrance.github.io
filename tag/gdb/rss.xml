@@ -8,18 +8,19 @@
         <pubDate>Tue, 03 Oct 2023 22:33:07 +0800</pubDate>
         <lastBuildDate>Tue, 03 Oct 2023 22:33:07 +0800</lastBuildDate>
         <category>cpp</category>
-        <category>链接</category>
         <category>Makefile</category>
         <category>CMake</category>
+        <category>链接</category>
         <category>Docker</category>
-        <category>计算机系统结构</category>
-        <category>正则表达式</category>
         <category>Hexo</category>
+        <category>正则表达式</category>
         <category>Misc</category>
+        <category>计算机系统结构</category>
         <category>读书笔记</category>
-        <category>linux基本操作</category>
+        <category>课程复习</category>
         <category>gdb</category>
         <category>git</category>
+        <category>linux基本操作</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/03/cpp_4_gdb%E8%B0%83%E8%AF%95/</guid>
             <title>【cpp查漏补缺】4-gdb的使用</title>

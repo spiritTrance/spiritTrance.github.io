@@ -8,18 +8,19 @@
         <pubDate>Thu, 30 Nov 2023 12:31:00 +0800</pubDate>
         <lastBuildDate>Thu, 30 Nov 2023 12:31:00 +0800</lastBuildDate>
         <category>cpp</category>
-        <category>链接</category>
         <category>Makefile</category>
         <category>CMake</category>
+        <category>链接</category>
         <category>Docker</category>
-        <category>计算机系统结构</category>
-        <category>正则表达式</category>
         <category>Hexo</category>
+        <category>正则表达式</category>
         <category>Misc</category>
+        <category>计算机系统结构</category>
         <category>读书笔记</category>
-        <category>linux基本操作</category>
+        <category>课程复习</category>
         <category>gdb</category>
         <category>git</category>
+        <category>linux基本操作</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/11/30/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95_ch4_%E5%90%91%E9%87%8F%E4%B8%8ESIMD/</guid>
             <title>【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</title>

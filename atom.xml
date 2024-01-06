@@ -5,18 +5,19 @@
     <link href="http://example.com" />
     <updated>2023-11-30T04:31:00.000Z</updated>
     <category term="cpp" />
-    <category term="链接" />
     <category term="Makefile" />
     <category term="CMake" />
+    <category term="链接" />
     <category term="Docker" />
-    <category term="计算机系统结构" />
-    <category term="正则表达式" />
     <category term="Hexo" />
+    <category term="正则表达式" />
     <category term="Misc" />
+    <category term="计算机系统结构" />
     <category term="读书笔记" />
-    <category term="linux基本操作" />
+    <category term="课程复习" />
     <category term="gdb" />
     <category term="git" />
+    <category term="linux基本操作" />
     <entry>
         <id>http://example.com/2023/11/30/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95_ch4_%E5%90%91%E9%87%8F%E4%B8%8ESIMD/</id>
         <title>【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</title>
@@ -1103,6 +1104,7 @@ Busy&lt;br&gt;
 &lt;h2 id=&#34;待补&#34;&gt;待补&lt;/h2&gt;
 </content>
         <category term="计算机系统结构" />
+        <category term="课程复习" />
         <updated>2023-07-29T07:47:19.000Z</updated>
     </entry>
     <entry>
