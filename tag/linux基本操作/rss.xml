@@ -8,18 +8,19 @@
         <pubDate>Mon, 21 Aug 2023 15:33:07 +0800</pubDate>
         <lastBuildDate>Mon, 21 Aug 2023 15:33:07 +0800</lastBuildDate>
         <category>cpp</category>
-        <category>Makefile</category>
         <category>链接</category>
-        <category>Docker</category>
+        <category>Makefile</category>
         <category>CMake</category>
-        <category>Hexo</category>
+        <category>Docker</category>
+        <category>计算机系统结构</category>
         <category>正则表达式</category>
+        <category>Hexo</category>
         <category>Misc</category>
         <category>量化研究方法</category>
         <category>读书笔记</category>
+        <category>linux基本操作</category>
         <category>gdb</category>
         <category>git</category>
-        <category>linux基本操作</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</guid>
             <title>linux基本操作学习</title>

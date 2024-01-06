@@ -8,18 +8,19 @@
         <pubDate>Thu, 05 Oct 2023 22:24:01 +0800</pubDate>
         <lastBuildDate>Thu, 05 Oct 2023 22:24:01 +0800</lastBuildDate>
         <category>cpp</category>
-        <category>Makefile</category>
         <category>链接</category>
-        <category>Docker</category>
+        <category>Makefile</category>
         <category>CMake</category>
-        <category>Hexo</category>
+        <category>Docker</category>
+        <category>计算机系统结构</category>
         <category>正则表达式</category>
+        <category>Hexo</category>
         <category>Misc</category>
         <category>量化研究方法</category>
         <category>读书笔记</category>
+        <category>linux基本操作</category>
         <category>gdb</category>
         <category>git</category>
-        <category>linux基本操作</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/05/docker_1_docker%E5%AE%89%E8%A3%85/</guid>
             <title>docker安装</title>
@@ -27,9 +28,9 @@
             <category>Docker</category>
             <pubDate>Thu, 05 Oct 2023 22:24:01 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;docker在linux平台上的安装&#34;&gt;docker在Linux平台上的安装&lt;/h1&gt;
-&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;curl -fsSL https://get.docker.com -o get-docker.sh  &lt;span class=&#34;comment&#34;&gt;# 从官网获取安装脚本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo sh get-docker.sh           &lt;span class=&#34;comment&#34;&gt;# 安装 docker&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo groupadd docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo gpasswd -a &lt;span class=&#34;variable&#34;&gt;$USER&lt;/span&gt; docker    &lt;span class=&#34;comment&#34;&gt;# 将当前用户加入 docker 用户组&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;newgrp docker                   &lt;span class=&#34;comment&#34;&gt;# 使修改立即生效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# reboot                          # 重启（其实我也不知道要重启什么服务）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;curl -fsSL https://get.docker.com -o get-docker.sh  &lt;span class=&#34;comment&#34;&gt;# 从官网获取安装脚本&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo sh get-docker.sh           &lt;span class=&#34;comment&#34;&gt;# 安装 docker&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo groupadd docker&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo gpasswd -a &lt;span class=&#34;variable&#34;&gt;$USER&lt;/span&gt; docker    &lt;span class=&#34;comment&#34;&gt;# 将当前用户加入 docker 用户组，避免总是需要走 root&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;newgrp docker                   &lt;span class=&#34;comment&#34;&gt;# 使修改立即生效&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# reboot                        # 重启（其实我也不知道要重启什么服务）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 &lt;h1 id=&#34;docker根目录迁移&#34;&gt;docker根目录迁移&lt;/h1&gt;
-&lt;p&gt;docker的根目录在&lt;code&gt;/var/lib/docker&lt;/code&gt;下面，这个文件夹增长速度很快，如果根目录没有设置过大的空间，那么迟早会占满，而根目录占满的后果是无法开机。因此，需要对这个目录进行迁移，使用&lt;code&gt;mv&lt;/code&gt;即可`。&lt;br&gt;
+&lt;p&gt;docker的根目录在&lt;code&gt;/var/lib/docker&lt;/code&gt;下面，这个文件夹增长速度很快，如果根目录没有设置过大的空间，那么迟早会占满，而根目录占满的后果是无法开机。因此，需要对这个目录进行迁移，使用&lt;code&gt;mv&lt;/code&gt;即可`。需要注意的是，作者的docker版本为23.0.1，不同版本的解决方案可能不同，请注意。&lt;br&gt;
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sudo service docker stop&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo vim /etc/docker/daemon.json&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 在文件里面加入如下内容，其中路径为迁移后的路径&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#   {&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#       &#34;data-root&#34;: &#34;/path/to/new/docker-root&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#   }&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sudo service docker start&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;docker info                     &lt;span class=&#34;comment&#34;&gt;# Docker Root Dir 发生改变即可 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;&lt;/p&gt;
  ]]></description>
         </item>
