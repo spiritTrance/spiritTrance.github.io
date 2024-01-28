@@ -18,6 +18,7 @@
     <category term="基本操作" />
     <category term="gdb" />
     <category term="git" />
+    <category term="Vscode" />
     <entry>
         <id>http://example.com/2023/11/30/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95_ch4_%E5%90%91%E9%87%8F%E4%B8%8ESIMD/</id>
         <title>【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</title>

@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "spiritTranceの小窝 • All posts by \"疑难杂症\" category",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/",
+            "url": "http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/",
+            "title": "【疑难杂症】记录VsCode使用的疑难杂症",
+            "date_published": "2024-01-11T12:33:00.000Z",
+            "content_html": "<h1 id=\"python的左键快速跳转\">Python的左键快速跳转</h1>\n<p>我在一个地方安装了一个库，但是为了便于管理，我并未将其放置在<code>/envs/lib/python3.*/site-packages</code>下面，而是其他地方，左键应当如何跳转？编辑extraPaths即可。可以去设置，也可以创建文件：</p>\n<div class=\"highlight-container\" data-rel=\"Bash\"><figure class=\"iseeu highlight bash\"><table><tr><td class=\"gutter\"><pre><span class=\"line\">1</span><br><span class=\"line\">2</span><br><span class=\"line\">3</span><br><span class=\"line\">4</span><br><span class=\"line\">5</span><br></pre></td><td class=\"code\"><pre><span class=\"line\">{</span><br><span class=\"line\">  <span class=\"string\">\"python.analysis.extraPaths\"</span>: [</span><br><span class=\"line\">    <span class=\"string\">\"./software/nest-simulator/3.4-gcc-8.4.0\"</span></span><br><span class=\"line\">  ]</span><br><span class=\"line\">}</span><br></pre></td></tr></table></figure></div>\n",
+            "tags": [
+                "Vscode"
+            ]
+        }
+    ]
+}

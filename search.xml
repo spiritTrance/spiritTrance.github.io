@@ -1214,7 +1214,24 @@ Busy<br>
   <entry>
     <title>git快速入门</title>
     <url>/2022/07/18/git_gitStarter/</url>
-    <content><![CDATA[<h1 id="前言">前言</h1>
+    <content><![CDATA[<h1 id="前言的前言">前言的前言</h1>
+<p>由于关于Git的介绍实在过多，反复记录意义不大，因此本文将不再作大幅度更新（大概弃坑了）。下面是一些学习资料的推荐：</p>
+<ul>
+<li><a class="link" href="https://learngitbranching.js.org/?locale=zh_CN">Learning Git <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>：强烈推荐！交互式的操作和可视化的界面，仅需三个小时就可以完全掌握Git。</li>
+<li><a class="link" href="https://zhuanlan.zhihu.com/p/679533665">我看谁还不懂 Git ！(万字干货) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 知乎上刷到的一篇博文，很详细细致，有大量绘制的图。</li>
+<li><a class="link" href="https://github.com/progit/progit2">Pro Git <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>：有大佬推荐，貌似很出名，但是本人没有看过。</li>
+</ul>
+<p>本文以后主要更新一些作者在实践过程中遇到的各种各样的问题（如100MB文件提交限制），以及一些进阶内容（说白了就是很少用的内容），如钩子函数。</p>
+<p>在学习过程中，带着问题更有效，下面是作者提出的一些基础问题，在学习过程中需要思考：</p>
+<ul>
+<li>Git是什么？Github又是什么？两者有什么关系？你还知道哪些代码托管平台和版本管理工具？</li>
+<li>本地仓库是如何管理的？工作区，暂存区等概念是什么？</li>
+<li>本地仓库和远程仓库的概念是什么？两者间如何交互？</li>
+<li>本地仓库的分支是如何管理的？有哪些常见操作？这些操作需要注意什么？什么时候会出现数据丢失的风险？</li>
+<li>为什么不建议在仓库中提交Word，图片等文件？</li>
+</ul>
+<p>希望在学习过程中思考这些问题。当然，如果仅仅是刚开始入门，那么仅需参考本文的<strong>Git及代码托管平台初步使用</strong>一章即可。</p>
+<h1 id="前言">前言</h1>
 <p>如果：</p>
 <ul>
 <li>您是git用户的新手，希望能快速上手使用，那么阅读完<a href="#section-1---git及代码托管平台初步使用">Git及代码托管平台初步使用</a>章节即可</li>
@@ -1438,6 +1455,20 @@ do so (now or later) by using -c with the switch command. Example:</p>
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【疑难杂症】记录VsCode使用的疑难杂症</title>
+    <url>/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</url>
+    <content><![CDATA[<h1 id="python的左键快速跳转">Python的左键快速跳转</h1>
+<p>我在一个地方安装了一个库，但是为了便于管理，我并未将其放置在<code>/envs/lib/python3.*/site-packages</code>下面，而是其他地方，左键应当如何跳转？编辑extraPaths即可。可以去设置，也可以创建文件：</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">{</span><br><span class="line">  <span class="string">"python.analysis.extraPaths"</span>: [</span><br><span class="line">    <span class="string">"./software/nest-simulator/3.4-gcc-8.4.0"</span></span><br><span class="line">  ]</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+]]></content>
+      <categories>
+        <category>疑难杂症</category>
+      </categories>
+      <tags>
+        <tag>Vscode</tag>
       </tags>
   </entry>
 </search>

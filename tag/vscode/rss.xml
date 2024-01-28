@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>spiritTranceの小窝 • Posts by &#34;vscode&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
+        <lastBuildDate>Thu, 11 Jan 2024 20:33:00 +0800</lastBuildDate>
+        <category>cpp</category>
+        <category>Makefile</category>
+        <category>链接</category>
+        <category>docker</category>
+        <category>CMake</category>
+        <category>Hexo</category>
+        <category>Misc</category>
+        <category>计算机系统结构</category>
+        <category>读书笔记</category>
+        <category>正则表达式</category>
+        <category>课程复习</category>
+        <category>基本操作</category>
+        <category>gdb</category>
+        <category>git</category>
+        <category>Vscode</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</guid>
+            <title>【疑难杂症】记录VsCode使用的疑难杂症</title>
+            <link>http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</link>
+            <category>Vscode</category>
+            <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;python的左键快速跳转&#34;&gt;Python的左键快速跳转&lt;/h1&gt;
+&lt;p&gt;我在一个地方安装了一个库，但是为了便于管理，我并未将其放置在&lt;code&gt;/envs/lib/python3.*/site-packages&lt;/code&gt;下面，而是其他地方，左键应当如何跳转？编辑extraPaths即可。可以去设置，也可以创建文件：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&#34;python.analysis.extraPaths&#34;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&#34;./software/nest-simulator/3.4-gcc-8.4.0&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

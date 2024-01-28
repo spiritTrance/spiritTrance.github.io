@@ -5,8 +5,8 @@
         <link>http://example.com</link>
         <description></description>
         <language>en</language>
-        <pubDate>Thu, 30 Nov 2023 12:31:00 +0800</pubDate>
-        <lastBuildDate>Thu, 30 Nov 2023 12:31:00 +0800</lastBuildDate>
+        <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
+        <lastBuildDate>Thu, 11 Jan 2024 20:33:00 +0800</lastBuildDate>
         <category>cpp</category>
         <category>Makefile</category>
         <category>链接</category>
@@ -21,6 +21,18 @@
         <category>基本操作</category>
         <category>gdb</category>
         <category>git</category>
+        <category>Vscode</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</guid>
+            <title>【疑难杂症】记录VsCode使用的疑难杂症</title>
+            <link>http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</link>
+            <category>Vscode</category>
+            <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;python的左键快速跳转&#34;&gt;Python的左键快速跳转&lt;/h1&gt;
+&lt;p&gt;我在一个地方安装了一个库，但是为了便于管理，我并未将其放置在&lt;code&gt;/envs/lib/python3.*/site-packages&lt;/code&gt;下面，而是其他地方，左键应当如何跳转？编辑extraPaths即可。可以去设置，也可以创建文件：&lt;/p&gt;
+&lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&#34;python.analysis.extraPaths&#34;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&#34;./software/nest-simulator/3.4-gcc-8.4.0&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2023/11/30/%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95_ch4_%E5%90%91%E9%87%8F%E4%B8%8ESIMD/</guid>
             <title>【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</title>
@@ -1205,7 +1217,24 @@ A：&lt;br&gt;
             <link>http://example.com/2022/07/18/git_gitStarter/</link>
             <category>git</category>
             <pubDate>Mon, 18 Jul 2022 00:05:11 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;前言的前言&#34;&gt;前言的前言&lt;/h1&gt;
+&lt;p&gt;由于关于Git的介绍实在过多，反复记录意义不大，因此本文将不再作大幅度更新（大概弃坑了）。下面是一些学习资料的推荐：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learngitbranching.js.org/?locale=zh_CN&#34;&gt;Learning Git &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;：强烈推荐！交互式的操作和可视化的界面，仅需三个小时就可以完全掌握Git。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/679533665&#34;&gt;我看谁还不懂 Git ！(万字干货) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt; 知乎上刷到的一篇博文，很详细细致，有大量绘制的图。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/progit/progit2&#34;&gt;Pro Git &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;：有大佬推荐，貌似很出名，但是本人没有看过。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;本文以后主要更新一些作者在实践过程中遇到的各种各样的问题（如100MB文件提交限制），以及一些进阶内容（说白了就是很少用的内容），如钩子函数。&lt;/p&gt;
+&lt;p&gt;在学习过程中，带着问题更有效，下面是作者提出的一些基础问题，在学习过程中需要思考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Git是什么？Github又是什么？两者有什么关系？你还知道哪些代码托管平台和版本管理工具？&lt;/li&gt;
+&lt;li&gt;本地仓库是如何管理的？工作区，暂存区等概念是什么？&lt;/li&gt;
+&lt;li&gt;本地仓库和远程仓库的概念是什么？两者间如何交互？&lt;/li&gt;
+&lt;li&gt;本地仓库的分支是如何管理的？有哪些常见操作？这些操作需要注意什么？什么时候会出现数据丢失的风险？&lt;/li&gt;
+&lt;li&gt;为什么不建议在仓库中提交Word，图片等文件？&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;希望在学习过程中思考这些问题。当然，如果仅仅是刚开始入门，那么仅需参考本文的&lt;strong&gt;Git及代码托管平台初步使用&lt;/strong&gt;一章即可。&lt;/p&gt;
+&lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;如果：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;您是git用户的新手，希望能快速上手使用，那么阅读完&lt;a href=&#34;#section-1---git及代码托管平台初步使用&#34;&gt;Git及代码托管平台初步使用&lt;/a&gt;章节即可&lt;/li&gt;

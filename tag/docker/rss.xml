@@ -21,6 +21,7 @@
         <category>基本操作</category>
         <category>gdb</category>
         <category>git</category>
+        <category>Vscode</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/05/docker_1_docker%E5%AE%89%E8%A3%85/</guid>
             <title>docker安装</title>

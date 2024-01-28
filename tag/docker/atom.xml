@@ -18,6 +18,7 @@
     <category term="基本操作" />
     <category term="gdb" />
     <category term="git" />
+    <category term="Vscode" />
     <entry>
         <id>http://example.com/2023/10/05/docker_1_docker%E5%AE%89%E8%A3%85/</id>
         <title>docker安装</title>
