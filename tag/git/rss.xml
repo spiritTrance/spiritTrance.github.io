@@ -205,14 +205,16 @@
 &lt;h2 id=&#34;stash指令&#34;&gt;stash指令&lt;/h2&gt;
 &lt;p&gt;使用场景：你正在dev分支工作，然后突然告知release分支出现问题需要马上修复，然而你dev上已经做了修改但还不能commit，此时你希望能先暂存你的进度，那么可以考虑&lt;code&gt;stash&lt;/code&gt;指令。&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/117553180&#34;&gt;使用参考 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;cherry-pick&#34;&gt;cherry-pick&lt;/h2&gt;
-&lt;h2 id=&#34;分支保护&#34;&gt;分支保护&lt;/h2&gt;
-&lt;h1 id=&#34;多人协作以github为例&#34;&gt;多人协作——以GitHub为例&lt;/h1&gt;
+&lt;h1 id=&#34;远程仓库操作&#34;&gt;远程仓库操作&lt;/h1&gt;
 &lt;h2 id=&#34;远程仓库与本地仓库管理区别在哪&#34;&gt;远程仓库与本地仓库管理区别在哪？&lt;/h2&gt;
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/git/git-basic-operations.html&#34;&gt;图片参考 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
 https://www.runoob.com/w3cnote/git-guide.html&lt;/p&gt;
 &lt;h2 id=&#34;pullpush与fetch指令&#34;&gt;pull,push与fetch指令&lt;/h2&gt;
+&lt;h1 id=&#34;多人协作以github为例&#34;&gt;多人协作——以GitHub为例&lt;/h1&gt;
+&lt;h2 id=&#34;分支保护&#34;&gt;分支保护&lt;/h2&gt;
 &lt;h2 id=&#34;pull-requestpr&#34;&gt;Pull Request(PR)&lt;/h2&gt;
 &lt;h2 id=&#34;issue&#34;&gt;Issue&lt;/h2&gt;
+&lt;h2 id=&#34;release&#34;&gt;Release&lt;/h2&gt;
 &lt;h1 id=&#34;进阶内容&#34;&gt;进阶内容&lt;/h1&gt;
 &lt;h2 id=&#34;钩子函数&#34;&gt;钩子函数&lt;/h2&gt;
 &lt;p&gt;钩子函数的位置在&lt;code&gt;.git/hooks&lt;/code&gt;下面，钩子函数是一个特别强大的工具，可以帮助你在进行对应操作之前进行检查，如大文件提交问题可以通过设置钩子函数解决。&lt;/p&gt;
