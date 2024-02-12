@@ -22,6 +22,8 @@
         <category>gdb</category>
         <category>git</category>
         <category>Vscode</category>
+        <category>MIT6.172</category>
+        <category>环境配置</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/02/cpp_3_CMake%E7%94%A8%E6%B3%95/</guid>
             <title>【cpp查漏补缺】3-CMake入门</title>

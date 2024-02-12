@@ -19,6 +19,8 @@
     <category term="gdb" />
     <category term="git" />
     <category term="Vscode" />
+    <category term="MIT6.172" />
+    <category term="环境配置" />
     <entry>
         <id>http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</id>
         <title>【疑难杂症】记录VsCode使用的疑难杂症</title>

@@ -13,6 +13,16 @@
             "tags": [
                 "Vscode"
             ]
+        },
+        {
+            "id": "http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/",
+            "url": "http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/",
+            "title": "【疑难杂症】记录从源码构建项目时碰到的一些坑",
+            "date_published": "2024-01-11T12:33:00.000Z",
+            "content_html": "<h1 id=\"cmake构建环境\">CMake构建环境</h1>\n<h2 id=\"关于cmakecache.txt引发的一些坑\">关于CMakeCache.txt引发的一些坑</h2>\n<p>作者在配置环境时，因为某些原因删除了某些依赖，但是CMake仍然检测到依赖的存在。原因是CMakeCache保存了一些记录，下次重新CMake的时候会从这里获取内容。因此，如果改变了依赖，务必删除CMakeCache.txt。</p>\n<h1 id=\"configure构建环境\">configure构建环境</h1>\n",
+            "tags": [
+                "环境配置"
+            ]
         }
     ]
 }

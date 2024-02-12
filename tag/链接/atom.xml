@@ -19,6 +19,8 @@
     <category term="gdb" />
     <category term="git" />
     <category term="Vscode" />
+    <category term="MIT6.172" />
+    <category term="环境配置" />
     <entry>
         <id>http://example.com/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/</id>
         <title>【cpp查漏补缺】1-cpp是如何跑起来的？</title>

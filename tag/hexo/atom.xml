@@ -19,6 +19,8 @@
     <category term="gdb" />
     <category term="git" />
     <category term="Vscode" />
+    <category term="MIT6.172" />
+    <category term="环境配置" />
     <entry>
         <id>http://example.com/2022/08/26/hexo_HexoStarter/</id>
         <title>Hexo快速入门</title>

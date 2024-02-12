@@ -19,6 +19,8 @@
     <category term="gdb" />
     <category term="git" />
     <category term="Vscode" />
+    <category term="MIT6.172" />
+    <category term="环境配置" />
     <entry>
         <id>http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</id>
         <title>【疑难杂症】记录VsCode使用的疑难杂症</title>
@@ -40,6 +42,18 @@
 &lt;p&gt;好，最近突然也出现了打开cmd闪退的问题，直接聚焦到最后一点，尝试解决cmd闪退问题。Google一下，改了注册表参数：&lt;code&gt;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&lt;/code&gt;的&lt;code&gt;AutoRun&lt;/code&gt;的参数改为空（即删除），再试一下，成功。&lt;/p&gt;
 </content>
         <category term="Vscode" />
+        <updated>2024-01-11T12:33:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</id>
+        <title>【疑难杂症】记录从源码构建项目时碰到的一些坑</title>
+        <link rel="alternate" href="http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/"/>
+        <content type="html">&lt;h1 id=&#34;cmake构建环境&#34;&gt;CMake构建环境&lt;/h1&gt;
+&lt;h2 id=&#34;关于cmakecache.txt引发的一些坑&#34;&gt;关于CMakeCache.txt引发的一些坑&lt;/h2&gt;
+&lt;p&gt;作者在配置环境时，因为某些原因删除了某些依赖，但是CMake仍然检测到依赖的存在。原因是CMakeCache保存了一些记录，下次重新CMake的时候会从这里获取内容。因此，如果改变了依赖，务必删除CMakeCache.txt。&lt;/p&gt;
+&lt;h1 id=&#34;configure构建环境&#34;&gt;configure构建环境&lt;/h1&gt;
+</content>
+        <category term="环境配置" />
         <updated>2024-01-11T12:33:00.000Z</updated>
     </entry>
 </feed>

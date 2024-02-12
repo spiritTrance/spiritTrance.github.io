@@ -22,6 +22,8 @@
         <category>gdb</category>
         <category>git</category>
         <category>Vscode</category>
+        <category>MIT6.172</category>
+        <category>环境配置</category>
         <item>
             <guid isPermalink="true">http://example.com/2022/07/18/git_gitStarter/</guid>
             <title>git快速入门</title>
@@ -29,7 +31,7 @@
             <category>git</category>
             <pubDate>Mon, 18 Jul 2022 00:05:11 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;前言的前言&#34;&gt;前言的前言&lt;/h1&gt;
-&lt;p&gt;由于关于Git的介绍实在过多，反复记录意义不大，因此本文将不再作大幅度更新（大概弃坑了）。下面是一些学习资料的推荐：&lt;/p&gt;
+&lt;p&gt;由于关于Git的介绍实在过多，反复记录意义不大，因此本文将不再作大幅度更新（大概弃坑了，可能会介绍一些不太常见的内容，例如钩子函数）。下面是一些学习资料的推荐：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learngitbranching.js.org/?locale=zh_CN&#34;&gt;Learning Git &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;：强烈推荐！交互式的操作和可视化的界面，仅需三个小时就可以完全掌握Git。&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/679533665&#34;&gt;我看谁还不懂 Git ！(万字干货) &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt; 知乎上刷到的一篇博文，很详细细致，有大量绘制的图。&lt;/li&gt;
@@ -45,6 +47,9 @@
 &lt;li&gt;为什么不建议在仓库中提交Word，图片等文件？&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;希望在学习过程中思考这些问题。当然，如果仅仅是刚开始入门，那么仅需参考本文的&lt;strong&gt;Git及代码托管平台初步使用&lt;/strong&gt;一章即可。&lt;/p&gt;
+&lt;p&gt;【挖坑】后面想探索一下：&lt;br&gt;
+- 基于github的多人协作，重点介绍分支保护，PR，issue等等，预计会开个新帖&lt;br&gt;
+- github action这些玩意是什么东西（跟博客有关），以及Wiki，release等等，预计会开个新贴介绍。&lt;/p&gt;
 &lt;h1 id=&#34;前言&#34;&gt;前言&lt;/h1&gt;
 &lt;p&gt;如果：&lt;/p&gt;
 &lt;ul&gt;
@@ -210,11 +215,6 @@
 &lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.runoob.com/git/git-basic-operations.html&#34;&gt;图片参考 &lt;i class=&#34;fa-regular fa-arrow-up-right-from-square fa-sm&#34;&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
 https://www.runoob.com/w3cnote/git-guide.html&lt;/p&gt;
 &lt;h2 id=&#34;pullpush与fetch指令&#34;&gt;pull,push与fetch指令&lt;/h2&gt;
-&lt;h1 id=&#34;多人协作以github为例&#34;&gt;多人协作——以GitHub为例&lt;/h1&gt;
-&lt;h2 id=&#34;分支保护&#34;&gt;分支保护&lt;/h2&gt;
-&lt;h2 id=&#34;pull-requestpr&#34;&gt;Pull Request(PR)&lt;/h2&gt;
-&lt;h2 id=&#34;issue&#34;&gt;Issue&lt;/h2&gt;
-&lt;h2 id=&#34;release&#34;&gt;Release&lt;/h2&gt;
 &lt;h1 id=&#34;进阶内容&#34;&gt;进阶内容&lt;/h1&gt;
 &lt;h2 id=&#34;钩子函数&#34;&gt;钩子函数&lt;/h2&gt;
 &lt;p&gt;钩子函数的位置在&lt;code&gt;.git/hooks&lt;/code&gt;下面，钩子函数是一个特别强大的工具，可以帮助你在进行对应操作之前进行检查，如大文件提交问题可以通过设置钩子函数解决。&lt;/p&gt;

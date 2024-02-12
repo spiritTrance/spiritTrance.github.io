@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>spiritTranceの小窝 • Posts by &#34;环境配置&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
+        <lastBuildDate>Thu, 11 Jan 2024 20:33:00 +0800</lastBuildDate>
+        <category>cpp</category>
+        <category>Makefile</category>
+        <category>链接</category>
+        <category>docker</category>
+        <category>CMake</category>
+        <category>Hexo</category>
+        <category>Misc</category>
+        <category>计算机系统结构</category>
+        <category>读书笔记</category>
+        <category>正则表达式</category>
+        <category>课程复习</category>
+        <category>基本操作</category>
+        <category>gdb</category>
+        <category>git</category>
+        <category>Vscode</category>
+        <category>MIT6.172</category>
+        <category>环境配置</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</guid>
+            <title>【疑难杂症】记录从源码构建项目时碰到的一些坑</title>
+            <link>http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</link>
+            <category>环境配置</category>
+            <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;cmake构建环境&#34;&gt;CMake构建环境&lt;/h1&gt;
+&lt;h2 id=&#34;关于cmakecache.txt引发的一些坑&#34;&gt;关于CMakeCache.txt引发的一些坑&lt;/h2&gt;
+&lt;p&gt;作者在配置环境时，因为某些原因删除了某些依赖，但是CMake仍然检测到依赖的存在。原因是CMakeCache保存了一些记录，下次重新CMake的时候会从这里获取内容。因此，如果改变了依赖，务必删除CMakeCache.txt。&lt;/p&gt;
+&lt;h1 id=&#34;configure构建环境&#34;&gt;configure构建环境&lt;/h1&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

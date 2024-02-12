@@ -22,6 +22,8 @@
         <category>gdb</category>
         <category>git</category>
         <category>Vscode</category>
+        <category>MIT6.172</category>
+        <category>环境配置</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/</guid>
             <title>linux基本操作学习</title>

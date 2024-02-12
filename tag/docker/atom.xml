@@ -19,6 +19,8 @@
     <category term="gdb" />
     <category term="git" />
     <category term="Vscode" />
+    <category term="MIT6.172" />
+    <category term="环境配置" />
     <entry>
         <id>http://example.com/2023/10/05/docker_1_docker%E5%AE%89%E8%A3%85/</id>
         <title>docker安装</title>
