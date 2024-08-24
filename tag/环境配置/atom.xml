@@ -4,23 +4,25 @@
     <title>spiritTranceの小窝 • Posts by &#34;环境配置&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-01-11T12:33:00.000Z</updated>
-    <category term="cpp" />
-    <category term="Makefile" />
-    <category term="链接" />
-    <category term="docker" />
-    <category term="CMake" />
-    <category term="Hexo" />
-    <category term="Misc" />
-    <category term="计算机系统结构" />
-    <category term="读书笔记" />
-    <category term="正则表达式" />
-    <category term="课程复习" />
-    <category term="基本操作" />
-    <category term="gdb" />
-    <category term="git" />
-    <category term="Vscode" />
     <category term="MIT6.172" />
+    <category term="cpp" />
+    <category term="链接" />
+    <category term="Makefile" />
+    <category term="gdb" />
+    <category term="CMake" />
+    <category term="docker" />
+    <category term="git" />
+    <category term="Hexo" />
+    <category term="基本操作" />
+    <category term="Misc" />
     <category term="环境配置" />
+    <category term="正则表达式" />
+    <category term="计算机系统结构" />
+    <category term="课程复习" />
+    <category term="Vscode" />
+    <category term="读书笔记" />
+    <category term="ChatGPT4" />
+    <category term="Apple ID" />
     <entry>
         <id>http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</id>
         <title>【疑难杂症】记录从源码构建项目时碰到的一些坑</title>

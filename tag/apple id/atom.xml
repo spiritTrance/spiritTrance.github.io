@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>spiritTranceの小窝 • Posts by &#34;apple id&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2024-05-22T16:00:53.000Z</updated>
+    <category term="MIT6.172" />
+    <category term="cpp" />
+    <category term="链接" />
+    <category term="Makefile" />
+    <category term="gdb" />
+    <category term="CMake" />
+    <category term="docker" />
+    <category term="git" />
+    <category term="Hexo" />
+    <category term="基本操作" />
+    <category term="Misc" />
+    <category term="环境配置" />
+    <category term="正则表达式" />
+    <category term="计算机系统结构" />
+    <category term="课程复习" />
+    <category term="Vscode" />
+    <category term="读书笔记" />
+    <category term="ChatGPT4" />
+    <category term="Apple ID" />
+    <entry>
+        <id>http://example.com/2024/05/23/misc_%E7%BE%8E%E5%8C%BA%E8%8B%B9%E6%9E%9CID%E6%B3%A8%E5%86%8C%E6%95%99%E7%A8%8B/</id>
+        <title>美区苹果ID注册教程</title>
+        <link rel="alternate" href="http://example.com/2024/05/23/misc_%E7%BE%8E%E5%8C%BA%E8%8B%B9%E6%9E%9CID%E6%B3%A8%E5%86%8C%E6%95%99%E7%A8%8B/"/>
+        <content type="html">&lt;h1 id=&#34;准备&#34;&gt;准备&lt;/h1&gt;
+&lt;p&gt;无&lt;/p&gt;
+&lt;h1 id=&#34;步骤&#34;&gt;步骤&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;登陆&lt;code&gt;https://appleid.apple.com/&lt;/code&gt;，选择&lt;strong&gt;【创建你的 Apple ID】&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;注意：邮箱可以使用163以及gmail邮箱，地区选美国，号码可以使用中国大陆号码&lt;/li&gt;
+&lt;li&gt;之后进行邮箱何中国大陆号码双重验证即可&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;然后在你的iOS主机上登录刚刚注册的账号，打开&lt;strong&gt;App Store&lt;/strong&gt;，下载任意一款软件，会要求你验证，同意，然后点击下一步，填写相应信息
+&lt;ul&gt;
+&lt;li&gt;注意点：
+&lt;ul&gt;
+&lt;li&gt;**一定不要选择任何付款方式，即PayPal和Credit Card&lt;/li&gt;
+&lt;li&gt;注意要选择免税州，我选择的是蒙太拿州(Montana)，邮政编号为59043&lt;/li&gt;
+&lt;li&gt;其他信息下面这个网站生成，需要注意的是电话号码的填写，此时&lt;strong&gt;不是中国大陆电话号码&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;https://www.dizhishengcheng.com/&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;然后就完成了所有准备步骤了&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;最后，记得用美区账号下载一个梯子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考教程&#34;&gt;参考教程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;https://www.zhihu.com/question/19727065/answer/2107953708&lt;/li&gt;
+&lt;li&gt;https://mp.weixin.qq.com/s?__biz=MzU2NTkwMjIwNw==&amp;amp;mid=2247483734&amp;amp;idx=1&amp;amp;sn=5299b5721367a125194fe6653c579e7c&amp;amp;chksm=fcb5ef46cbc2665086926f707f545ed753b28bcb3365d5380b51169fea6060344891db8519cd&amp;amp;token=569394499&amp;amp;lang=zh_CN#rd&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="Apple ID" />
+        <updated>2024-05-22T16:00:53.000Z</updated>
+    </entry>
+</feed>

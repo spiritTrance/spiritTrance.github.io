@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>spiritTranceの小窝 • Posts by &#34;chatgpt4&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Thu, 23 May 2024 00:00:53 +0800</pubDate>
+        <lastBuildDate>Thu, 23 May 2024 00:00:53 +0800</lastBuildDate>
+        <category>MIT6.172</category>
+        <category>cpp</category>
+        <category>链接</category>
+        <category>Makefile</category>
+        <category>gdb</category>
+        <category>CMake</category>
+        <category>docker</category>
+        <category>git</category>
+        <category>Hexo</category>
+        <category>基本操作</category>
+        <category>Misc</category>
+        <category>环境配置</category>
+        <category>正则表达式</category>
+        <category>计算机系统结构</category>
+        <category>课程复习</category>
+        <category>Vscode</category>
+        <category>读书笔记</category>
+        <category>ChatGPT4</category>
+        <category>Apple ID</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/</guid>
+            <title>ChatGPT4开通教程</title>
+            <link>http://example.com/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/</link>
+            <category>ChatGPT4</category>
+            <pubDate>Thu, 23 May 2024 00:00:53 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;前置条件&#34;&gt;前置条件&lt;/h1&gt;
+&lt;p&gt;美区账号，以及美国机场&lt;/p&gt;
+&lt;h1 id=&#34;chatgpt4开通步骤&#34;&gt;ChatGPT4开通步骤&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;下载支付宝
+&lt;ul&gt;
+&lt;li&gt;支付宝定位改到&lt;strong&gt;旧金山&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;搜索&lt;strong&gt;出境&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;找到&lt;strong&gt;【折扣礼卡】&lt;/strong&gt;&lt;br&gt;
+&lt;img lazyload src=&#34;/images/loading.svg&#34; data-src=&#34;/img/misc/chatgpt4/1.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;找到&lt;strong&gt;App Store &amp;amp; iTunes US&lt;/strong&gt;&lt;br&gt;
+&lt;img lazyload src=&#34;/images/loading.svg&#34; data-src=&#34;/img/misc/chatgpt4/2.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;接着会跳转到Pockyt Shop进行简单的注册，最后购买即可&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;返回&lt;strong&gt;App Store&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索&lt;strong&gt;ChatGPT&lt;/strong&gt;并下载&lt;/li&gt;
+&lt;li&gt;ChatGPT登录自己的账号，注意要挂美国节点&lt;/li&gt;
+&lt;li&gt;进入设置，找到&lt;strong&gt;【升级到Plus版本】&lt;/strong&gt;之类的字眼，升级即可&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;完成！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考教程&#34;&gt;参考教程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;https://zhuanlan.zhihu.com/p/686235951&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

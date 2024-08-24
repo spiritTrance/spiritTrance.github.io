@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title>spiritTranceの小窝 • Posts by &#34;chatgpt4&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2024-05-22T16:00:53.000Z</updated>
+    <category term="MIT6.172" />
+    <category term="cpp" />
+    <category term="链接" />
+    <category term="Makefile" />
+    <category term="gdb" />
+    <category term="CMake" />
+    <category term="docker" />
+    <category term="git" />
+    <category term="Hexo" />
+    <category term="基本操作" />
+    <category term="Misc" />
+    <category term="环境配置" />
+    <category term="正则表达式" />
+    <category term="计算机系统结构" />
+    <category term="课程复习" />
+    <category term="Vscode" />
+    <category term="读书笔记" />
+    <category term="ChatGPT4" />
+    <category term="Apple ID" />
+    <entry>
+        <id>http://example.com/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/</id>
+        <title>ChatGPT4开通教程</title>
+        <link rel="alternate" href="http://example.com/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/"/>
+        <content type="html">&lt;h1 id=&#34;前置条件&#34;&gt;前置条件&lt;/h1&gt;
+&lt;p&gt;美区账号，以及美国机场&lt;/p&gt;
+&lt;h1 id=&#34;chatgpt4开通步骤&#34;&gt;ChatGPT4开通步骤&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;下载支付宝
+&lt;ul&gt;
+&lt;li&gt;支付宝定位改到&lt;strong&gt;旧金山&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;搜索&lt;strong&gt;出境&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;找到&lt;strong&gt;【折扣礼卡】&lt;/strong&gt;&lt;br&gt;
+&lt;img lazyload src=&#34;/images/loading.svg&#34; data-src=&#34;/img/misc/chatgpt4/1.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;找到&lt;strong&gt;App Store &amp;amp; iTunes US&lt;/strong&gt;&lt;br&gt;
+&lt;img lazyload src=&#34;/images/loading.svg&#34; data-src=&#34;/img/misc/chatgpt4/2.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;接着会跳转到Pockyt Shop进行简单的注册，最后购买即可&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;返回&lt;strong&gt;App Store&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;搜索&lt;strong&gt;ChatGPT&lt;/strong&gt;并下载&lt;/li&gt;
+&lt;li&gt;ChatGPT登录自己的账号，注意要挂美国节点&lt;/li&gt;
+&lt;li&gt;进入设置，找到&lt;strong&gt;【升级到Plus版本】&lt;/strong&gt;之类的字眼，升级即可&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;完成！&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;参考教程&#34;&gt;参考教程&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;https://zhuanlan.zhihu.com/p/686235951&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="ChatGPT4" />
+        <updated>2024-05-22T16:00:53.000Z</updated>
+    </entry>
+</feed>

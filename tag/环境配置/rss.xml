@@ -7,23 +7,25 @@
         <language>en</language>
         <pubDate>Thu, 11 Jan 2024 20:33:00 +0800</pubDate>
         <lastBuildDate>Thu, 11 Jan 2024 20:33:00 +0800</lastBuildDate>
-        <category>cpp</category>
-        <category>Makefile</category>
-        <category>链接</category>
-        <category>docker</category>
-        <category>CMake</category>
-        <category>Hexo</category>
-        <category>Misc</category>
-        <category>计算机系统结构</category>
-        <category>读书笔记</category>
-        <category>正则表达式</category>
-        <category>课程复习</category>
-        <category>基本操作</category>
-        <category>gdb</category>
-        <category>git</category>
-        <category>Vscode</category>
         <category>MIT6.172</category>
+        <category>cpp</category>
+        <category>链接</category>
+        <category>Makefile</category>
+        <category>gdb</category>
+        <category>CMake</category>
+        <category>docker</category>
+        <category>git</category>
+        <category>Hexo</category>
+        <category>基本操作</category>
+        <category>Misc</category>
         <category>环境配置</category>
+        <category>正则表达式</category>
+        <category>计算机系统结构</category>
+        <category>课程复习</category>
+        <category>Vscode</category>
+        <category>读书笔记</category>
+        <category>ChatGPT4</category>
+        <category>Apple ID</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/01/11/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E8%B8%A9%E5%9D%91/</guid>
             <title>【疑难杂症】记录从源码构建项目时碰到的一些坑</title>

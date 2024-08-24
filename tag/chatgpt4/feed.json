@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "spiritTranceの小窝 • All posts by \"chatgpt4\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/",
+            "url": "http://example.com/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/",
+            "title": "ChatGPT4开通教程",
+            "date_published": "2024-05-22T16:00:53.000Z",
+            "content_html": "<h1 id=\"前置条件\">前置条件</h1>\n<p>美区账号，以及美国机场</p>\n<h1 id=\"chatgpt4开通步骤\">ChatGPT4开通步骤</h1>\n<ul>\n<li>下载支付宝\n<ul>\n<li>支付宝定位改到<strong>旧金山</strong></li>\n<li>搜索<strong>出境</strong></li>\n<li>找到<strong>【折扣礼卡】</strong><br>\n<img lazyload src=\"/images/loading.svg\" data-src=\"/img/misc/chatgpt4/1.png\"></li>\n<li>找到<strong>App Store &amp; iTunes US</strong><br>\n<img lazyload src=\"/images/loading.svg\" data-src=\"/img/misc/chatgpt4/2.png\"></li>\n<li>接着会跳转到Pockyt Shop进行简单的注册，最后购买即可</li>\n</ul></li>\n<li>返回<strong>App Store</strong>\n<ul>\n<li>搜索<strong>ChatGPT</strong>并下载</li>\n<li>ChatGPT登录自己的账号，注意要挂美国节点</li>\n<li>进入设置，找到<strong>【升级到Plus版本】</strong>之类的字眼，升级即可</li>\n</ul></li>\n<li>完成！</li>\n</ul>\n<h1 id=\"参考教程\">参考教程</h1>\n<ul>\n<li>https://zhuanlan.zhihu.com/p/686235951</li>\n</ul>\n",
+            "tags": [
+                "ChatGPT4"
+            ]
+        }
+    ]
+}

@@ -4,23 +4,25 @@
     <title>spiritTranceの小窝 • Posts by &#34;cpp&#34; tag</title>
     <link href="http://example.com" />
     <updated>2023-10-03T14:33:07.000Z</updated>
-    <category term="cpp" />
-    <category term="Makefile" />
-    <category term="链接" />
-    <category term="docker" />
-    <category term="CMake" />
-    <category term="Hexo" />
-    <category term="Misc" />
-    <category term="计算机系统结构" />
-    <category term="读书笔记" />
-    <category term="正则表达式" />
-    <category term="课程复习" />
-    <category term="基本操作" />
-    <category term="gdb" />
-    <category term="git" />
-    <category term="Vscode" />
     <category term="MIT6.172" />
+    <category term="cpp" />
+    <category term="链接" />
+    <category term="Makefile" />
+    <category term="gdb" />
+    <category term="CMake" />
+    <category term="docker" />
+    <category term="git" />
+    <category term="Hexo" />
+    <category term="基本操作" />
+    <category term="Misc" />
     <category term="环境配置" />
+    <category term="正则表达式" />
+    <category term="计算机系统结构" />
+    <category term="课程复习" />
+    <category term="Vscode" />
+    <category term="读书笔记" />
+    <category term="ChatGPT4" />
+    <category term="Apple ID" />
     <entry>
         <id>http://example.com/2023/10/03/cpp_4_gdb%E8%B0%83%E8%AF%95/</id>
         <title>【cpp查漏补缺】4-gdb的使用</title>

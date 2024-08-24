@@ -4,23 +4,25 @@
     <title>spiritTranceの小窝 • Posts by &#34;vscode&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-01-11T12:33:00.000Z</updated>
-    <category term="cpp" />
-    <category term="Makefile" />
-    <category term="链接" />
-    <category term="docker" />
-    <category term="CMake" />
-    <category term="Hexo" />
-    <category term="Misc" />
-    <category term="计算机系统结构" />
-    <category term="读书笔记" />
-    <category term="正则表达式" />
-    <category term="课程复习" />
-    <category term="基本操作" />
-    <category term="gdb" />
-    <category term="git" />
-    <category term="Vscode" />
     <category term="MIT6.172" />
+    <category term="cpp" />
+    <category term="链接" />
+    <category term="Makefile" />
+    <category term="gdb" />
+    <category term="CMake" />
+    <category term="docker" />
+    <category term="git" />
+    <category term="Hexo" />
+    <category term="基本操作" />
+    <category term="Misc" />
     <category term="环境配置" />
+    <category term="正则表达式" />
+    <category term="计算机系统结构" />
+    <category term="课程复习" />
+    <category term="Vscode" />
+    <category term="读书笔记" />
+    <category term="ChatGPT4" />
+    <category term="Apple ID" />
     <entry>
         <id>http://example.com/2024/01/11/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87_1_vscode/</id>
         <title>【疑难杂症】记录VsCode使用的疑难杂症</title>
@@ -29,35 +31,18 @@
 &lt;p&gt;我在一个地方安装了一个库，但是为了便于管理，我并未将其放置在&lt;code&gt;/envs/lib/python3.*/site-packages&lt;/code&gt;下面，而是其他地方，左键应当如何跳转？编辑extraPaths即可。可以去设置，也可以创建文件：&lt;/p&gt;
 &lt;div class=&#34;highlight-container&#34; data-rel=&#34;Bash&#34;&gt;&lt;figure class=&#34;iseeu highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;{&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;string&#34;&gt;&#34;python.analysis.extraPaths&#34;&lt;/span&gt;: [&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;string&#34;&gt;&#34;./software/nest-simulator/3.4-gcc-8.4.0&#34;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;}&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/div&gt;
 &lt;h1 id=&#34;remote-ssh连不上cmd闪退&#34;&gt;Remote SSH连不上（cmd闪退）&lt;/h1&gt;
-&lt;p&gt;Remote
-SSH突然有一天连不上服务器了，但是可以用XShell连接。OUTPUT报错有什么什么async啥啥啥的报错（没记录，复现不了了），于是求助于chatGPT：&lt;/p&gt;
+&lt;p&gt;Remote SSH突然有一天连不上服务器了，但是可以用XShell连接。OUTPUT报错有什么什么async啥啥啥的报错（没记录，复现不了了），于是求助于chatGPT：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;你遇到的问题是 Visual Studio Code 的 Remote SSH
-扩展突然无法连接，并显示错误信息“Error: Got bad result from install
-script”。根据从不同的 GitHub
-问题讨论中获得的信息，这个问题可能由多种原因引起，解决方案也各不相同。以下是基于用户经验的几种可能的解决方案：&lt;br&gt;
-&lt;strong&gt;Windows 注册表问题&lt;/strong&gt;：一些用户发现问题与他们的 Windows
-注册表设置有关。具体来说，修改或清除注册表键 HKEY_LOCAL_MACHINEProcessor
-和 HKEY_CURRENT_USERProcessor 中的 AutoRun
-值解决了他们的问题。这些键默认情况下不应该存在，或者可能包含需要修复或删除的命令字符串。&lt;br&gt;
-&lt;strong&gt;权限和 SSH 访问问题&lt;/strong&gt;：另一个常见的原因与权限或 SSH
-访问差异有关。确保你的 SSH
-密钥正确设置，并且你有权限访问远程机器。有时，重新配置或更新 SSH
-密钥可以解决问题。&lt;br&gt;
-&lt;strong&gt;重新安装 VS Code 或 Remote SSH
-扩展&lt;/strong&gt;：一些用户通过重新安装 Visual Studio Code 或 Remote SSH
-扩展解决了问题。如果问题是由于软件安装损坏或版本过旧，这可以帮助解决。&lt;br&gt;
-&lt;strong&gt;检查 cmd.exe 功能&lt;/strong&gt;：在少数情况下，问题与用户本地机器上的
-cmd.exe 问题有关。用户发现他们的 cmd.exe
-崩溃或功能不正常，这反过来影响了 Remote SSH 扩展。修复 cmd.exe
-的问题，如确保它可以正确打开和运行，可能是一个解决方案。&lt;br&gt;
+&lt;p&gt;你遇到的问题是 Visual Studio Code 的 Remote SSH 扩展突然无法连接，并显示错误信息“Error: Got bad result from install script”。根据从不同的 GitHub 问题讨论中获得的信息，这个问题可能由多种原因引起，解决方案也各不相同。以下是基于用户经验的几种可能的解决方案：&lt;br&gt;
+&lt;strong&gt;Windows 注册表问题&lt;/strong&gt;：一些用户发现问题与他们的 Windows 注册表设置有关。具体来说，修改或清除注册表键 HKEY_LOCAL_MACHINEProcessor 和 HKEY_CURRENT_USERProcessor 中的 AutoRun 值解决了他们的问题。这些键默认情况下不应该存在，或者可能包含需要修复或删除的命令字符串。&lt;br&gt;
+&lt;strong&gt;权限和 SSH 访问问题&lt;/strong&gt;：另一个常见的原因与权限或 SSH 访问差异有关。确保你的 SSH 密钥正确设置，并且你有权限访问远程机器。有时，重新配置或更新 SSH 密钥可以解决问题。&lt;br&gt;
+&lt;strong&gt;重新安装 VS Code 或 Remote SSH 扩展&lt;/strong&gt;：一些用户通过重新安装 Visual Studio Code 或 Remote SSH 扩展解决了问题。如果问题是由于软件安装损坏或版本过旧，这可以帮助解决。&lt;br&gt;
+&lt;strong&gt;检查 cmd.exe 功能&lt;/strong&gt;：在少数情况下，问题与用户本地机器上的 cmd.exe 问题有关。用户发现他们的 cmd.exe 崩溃或功能不正常，这反过来影响了 Remote SSH 扩展。修复 cmd.exe 的问题，如确保它可以正确打开和运行，可能是一个解决方案。&lt;br&gt;
 请记住，具体的解决方案可能会根据你的本地和远程机器的具体配置和环境而有所不同。如果这些步骤不能解决你的问题，你可能需要查看你收到的具体日志和错误信息，以便进行更详细的故障排除。&lt;br&gt;
-有关此问题的更多详细信息和特定用户经验，你可以参考 GitHub 上的讨论：问题
-#5693、问题 #5803 和 问题 #5722。&lt;/p&gt;
+有关此问题的更多详细信息和特定用户经验，你可以参考 GitHub 上的讨论：问题 #5693、问题 #5803 和 问题 #5722。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;好，最近突然也出现了打开cmd闪退的问题，直接聚焦到最后一点，尝试解决cmd闪退问题。Google一下，改了注册表参数：&lt;code&gt;HKEY_CURRENT_USER\Software\Microsoft\Command Processor&lt;/code&gt;的&lt;code&gt;AutoRun&lt;/code&gt;的参数改为空（即删除），再试一下，成功。&lt;/p&gt;
-&lt;h1 id=&#34;remote-ssh又连不上更新服务器端侧vscode-server&#34;&gt;Remote
-SSH又连不上（更新服务器端侧VsCode-Server）&lt;/h1&gt;
+&lt;h1 id=&#34;remote-ssh又连不上更新服务器端侧vscode-server&#34;&gt;Remote SSH又连不上（更新服务器端侧VsCode-Server）&lt;/h1&gt;
 &lt;p&gt;需要打开本地顶部bar的&lt;code&gt;Help-About&lt;/code&gt;，找到VsCode版本对应的SHA值，比如我当前的SHA值是&lt;code&gt;863d2581ecda6849923a2118d93a088b0745d9d6&lt;/code&gt;，之后使用&lt;code&gt;ssh -i &amp;lt;密钥路径&amp;gt; &amp;lt;用户名&amp;gt;@&amp;lt;ip地址&amp;gt;&lt;/code&gt;登录服务器，进入&lt;code&gt;~/.vscode-server/bin/&amp;lt;SHA&amp;gt;&lt;/code&gt;，之后在里面使用&lt;code&gt;wget -c https://update.code.visualstudio.com/commit:&amp;lt;SHA&amp;gt;/server-linux-x64/stable&lt;/code&gt;（如果服务器不连接外网，则可以考虑本地scp或者使用xftp等工具传输过去），然后在里面解压，保证&lt;code&gt;~/.vscode-server/bin/&amp;lt;SHA&amp;gt;&lt;/code&gt;路径下的目录结构是&lt;code&gt;bin&lt;/code&gt;，&lt;code&gt;extension&lt;/code&gt;...（也就是解压出来的东西直接在这个目录下面），然后重新连接，完成。（注意尖括号需要换成对应的内容）。&lt;/p&gt;
 </content>
         <category term="Vscode" />

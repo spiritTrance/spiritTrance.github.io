@@ -7,23 +7,25 @@
         <language>en</language>
         <pubDate>Sun, 01 Oct 2023 15:33:07 +0800</pubDate>
         <lastBuildDate>Sun, 01 Oct 2023 15:33:07 +0800</lastBuildDate>
-        <category>cpp</category>
-        <category>Makefile</category>
-        <category>链接</category>
-        <category>docker</category>
-        <category>CMake</category>
-        <category>Hexo</category>
-        <category>Misc</category>
-        <category>计算机系统结构</category>
-        <category>读书笔记</category>
-        <category>正则表达式</category>
-        <category>课程复习</category>
-        <category>基本操作</category>
-        <category>gdb</category>
-        <category>git</category>
-        <category>Vscode</category>
         <category>MIT6.172</category>
+        <category>cpp</category>
+        <category>链接</category>
+        <category>Makefile</category>
+        <category>gdb</category>
+        <category>CMake</category>
+        <category>docker</category>
+        <category>git</category>
+        <category>Hexo</category>
+        <category>基本操作</category>
+        <category>Misc</category>
         <category>环境配置</category>
+        <category>正则表达式</category>
+        <category>计算机系统结构</category>
+        <category>课程复习</category>
+        <category>Vscode</category>
+        <category>读书笔记</category>
+        <category>ChatGPT4</category>
+        <category>Apple ID</category>
         <item>
             <guid isPermalink="true">http://example.com/2023/10/01/cpp_2_Makefile%E7%94%A8%E6%B3%95/</guid>
             <title>【cpp查漏补缺】2-Makefile入门</title>
