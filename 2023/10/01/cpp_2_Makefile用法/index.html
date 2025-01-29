@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="spiritTrance">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/10/01/cpp_2_makefile用法/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta property="og:type" content="article">
+<meta property="og:title" content="【cpp查漏补缺】2-Makefile入门">
+<meta property="og:url" content="http://example.com/2023/10/01/cpp_2_Makefile%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:site_name" content="spiritTranceの小窝">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-01T07:33:07.000Z">
+<meta property="article:modified_time" content="2025-01-29T02:43:44.515Z">
+<meta property="article:author" content="spiritTrance">
+<meta property="article:tag" content="cpp">
+<meta property="article:tag" content="Makefile">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4">
+    <meta name="theme-color" content="#763dff">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+    <!--- Page Info-->
+    
+    <title>
+        
+            【cpp查漏补缺】2-Makefile入门 | spiritTranceの小窝
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":false,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":true,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#763dff","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"400px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"spiritTranceの小窝","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#36adf7","right":"#966df7","transparency":60},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Articles":{"path":"/archives","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/spiritTrance","Blog":"https://spirittrance.github.io/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"欢迎来到spiritTranceの小窝！","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                spiritTranceの小窝
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARTICLES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/spiritTrance">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://spirittrance.github.io/">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Articles"
+                        >
+                            <span>
+                                ARTICLES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Articles">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/spiritTrance">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://spirittrance.github.io/">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【cpp查漏补缺】2-Makefile入门</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">spiritTrance</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1"></span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-01 15:33:07</span>
+        <span class="mobile">2023-10-01 15:33:07</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-29 10:43:44</span>
+            <span class="mobile">2025-01-29 10:43:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/cpp/">cpp</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Makefile/">Makefile</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="前言">前言</h1>
+<p><a target="_blank" rel="noopener" href="https://spirittrance.github.io/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/">上一节</a>中我们简单介绍了cpp是如何一步步构建出可执行文件的。但在大型工程中，我们常用Make来构建项目。本文简单介绍Makefile的编写规则。</p>
+<h1 id="入门级makefile介绍">入门级Makefile介绍</h1>
+<h2 id="宝宝级的项目结构">宝宝级的项目结构</h2>
+<p>项目结构如下：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">spirittrance@hexadecimal:~/Desktop/learnMakefile$ tree</span><br><span class="line">.</span><br><span class="line">├── bin</span><br><span class="line">├── build</span><br><span class="line">├── include</span><br><span class="line">│   └── calc.h</span><br><span class="line">├── lib</span><br><span class="line">├── Makefile</span><br><span class="line">└── src</span><br><span class="line">    ├── add.cpp</span><br><span class="line">    ├── div.cpp</span><br><span class="line">    ├── main.cpp</span><br><span class="line">    ├── mul.cpp</span><br><span class="line">    └── sub.cpp</span><br></pre></td></tr></table></figure></p>
+<p>其中<code>main.cpp</code>内容如下<br>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;calc.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Add: &quot;</span> &lt;&lt; <span class="built_in">myadd</span>(<span class="number">9</span>, <span class="number">3</span>) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Sub: &quot;</span> &lt;&lt; <span class="built_in">mysub</span>(<span class="number">9</span>, <span class="number">3</span>) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Mul: &quot;</span> &lt;&lt; <span class="built_in">mymul</span>(<span class="number">9</span>, <span class="number">3</span>) &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Div: &quot;</span> &lt;&lt; <span class="built_in">mydiv</span>(<span class="number">9</span>, <span class="number">3</span>) &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>calc.h</code>内容如下：<br>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> __CALC_H__</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> __CALC_H__</span></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">myadd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mysub</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mymul</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">mydiv</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure><br>
+除此之外，如果使用的是Vscode，请记得使用相关扩展，进行相应配置。如C++ Extension，以便于进行快速查找。</p>
+<h2 id="最简单的makefile">最简单的Makefile</h2>
+<p>在本节开始，我首先给出最简单的示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Easy Makefile</span></span><br><span class="line">main: src/main.cpp src/add.cpp src/sub.cpp src/mul.cpp src/div.cpp</span><br><span class="line">	g++ -I ./include src/adda.cpp src/sub.cpp src/mul.cpp src/div.cpp src/main.cpp -o bin/main</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">	<span class="built_in">rm</span> -rf bin/*</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意cpp文件需要使用g++，如果是gcc的话会报错（因为使用了iostream，gcc貌似找不到）</p>
+</blockquote>
+<p>关于Makefile的编写规则，有三个要素：目标，依赖，执行语句（动作）。<br>
+如上例，<code>main</code>即为目标，后面紧跟的一长串为依赖，下面那个是执行语句。需要在这里强调的是，执行语句前面的符号是制表符<code>\t</code>而不是四个空格，这一点务必注意，否则你会看到<code>missing separator</code>的错误。</p>
+<p>在终端输入<code>make main</code>后，可以发现<code>bin</code>下面多了可执行文件。另外如果只使用<code>make</code>，那么默认执行第一个语句。如果输入<code>make clean</code>，那么会执行clean后的语句<code>rm -rf bin/*</code>，会清除<code>bin</code>目录下的二进制文件。</p>
+<p>话说回来，所谓的依赖有什么用呢？你可以尝试把<code>add.cpp</code>重命名为<code>add_.cpp</code>，然后在构建语句中修改<code>add.cpp</code>为<code>add_.cpp</code>，但不要修改依赖。之后执行<code>make</code>，你会发现有如下报错：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make: *** 没有规则可制作目标“src/add.cpp”，由“main” 需求。 停止。</span><br></pre></td></tr></table></figure><br>
+然后将依赖删除，再次执行<code>make</code>，你会发现能够顺利编译出可执行文件。因此，依赖的作用是检查源文件是否存在。如果不存在，则会阻止执行相应语句。</p>
+<h2 id="wildcard函数">wildcard函数</h2>
+<p>在上一小节中，我们用"紧跟的一长串"来描述那后面的一大堆源文件，这确实很长。如果项目再大一点，我们也不可能把所有文件一一罗列出来。那么，我们是否有更好的编写方法呢？答案是有，那就是使用wildcard函数。下面给出修改后的示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SOURCE=$(wildcard src/*.cpp)</span><br><span class="line">main: $(SOURCE)</span><br><span class="line">	g++ -I ./include $(SOURCE) -o bin/main</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">	<span class="built_in">rm</span> -rf bin/*</span><br></pre></td></tr></table></figure>
+<p>其中，我们用SOURCE变量来标识源文件，之后按照<code>$(SOURCE)</code>的方式来引用变量，之后是wildcard函数的用法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(wildcard pattern)</span><br></pre></td></tr></table></figure>
+<p>wildcard函数的作用在于匹配所有模式，如<code>*.cpp</code>会匹配所有以<code>.cpp</code>结尾的文件。</p>
+<p>最后，我们介绍一下其他的赋值方法：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a=sub</span><br><span class="line">a+=<span class="built_in">set</span>      <span class="comment"># 增添赋值，a的结果为subset</span></span><br><span class="line"><span class="built_in">echo</span> $(a)   <span class="comment"># subset</span></span><br><span class="line">b?=superset</span><br><span class="line">a?=superset <span class="comment"># 条件赋值，如果该变量未被赋值，那么使用后面给定的值</span></span><br><span class="line"><span class="built_in">echo</span> $(a)   <span class="comment"># subset</span></span><br><span class="line"><span class="built_in">echo</span> $(b)   <span class="comment"># superset</span></span><br></pre></td></tr></table></figure>
+<h1 id="进阶makefile">进阶Makefile</h1>
+<h2 id="更复杂的项目结构">更复杂的项目结构</h2>
+<p>实际项目的项目结构只会更复杂，比如，源文件下还有多层文件夹，每个文件夹下面又有很多文件夹和源文件，这种情况，应该怎么办呢？<br>
+这里我们修改一下项目结构：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── bin                         <span class="comment"># 存放二进制可执行文件</span></span><br><span class="line">│   └── main</span><br><span class="line">├── include                     <span class="comment"># 存放头文件</span></span><br><span class="line">│   └── calc.h</span><br><span class="line">├── lib                         <span class="comment"># 存放相应的库</span></span><br><span class="line">│   └── libcalc.a</span><br><span class="line">├── Makefile                    <span class="comment"># Makefile</span></span><br><span class="line">├── output                      <span class="comment"># 中间代码文件</span></span><br><span class="line">│   └── src</span><br><span class="line">│       └── calc</span><br><span class="line">│           ├── add_sub</span><br><span class="line">│           │   ├── add.o</span><br><span class="line">│           │   └── sub.o</span><br><span class="line">│           └── mul_div</span><br><span class="line">│               ├── div.o</span><br><span class="line">│               └── mul.o</span><br><span class="line">└── src                         <span class="comment"># 源文件</span></span><br><span class="line">    ├── calc</span><br><span class="line">    │   ├── add_sub</span><br><span class="line">    │   │   ├── add.cpp</span><br><span class="line">    │   │   └── sub.cpp</span><br><span class="line">    │   └── mul_div</span><br><span class="line">    │       ├── div.cpp</span><br><span class="line">    │       └── mul.cpp</span><br><span class="line">    └── main.cpp</span><br></pre></td></tr></table></figure><br>
+没错，我们把add.cpp和sub.cpp移动到了<code>src/calc/add_sub</code>下面，而<code>mul.cpp</code>和<code>div.cpp</code>移动到了<code>src/calc/mul_div</code>下面。</p>
+<h2 id="foreach函数">foreach函数</h2>
+<p>现在应该怎么做呢？我们可以选用foreach函数。现在仍然放出修改后的Makefile.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">SOURCE_DIR=src src/calc/add_sub src/calc/mul_div    <span class="comment"># 定义了包含源代码的所有文件夹</span></span><br><span class="line">SOURCE=$(foreach <span class="built_in">dir</span>,$(SOURCE_DIR),$(wildcard $(<span class="built_in">dir</span>)/*.cpp))    <span class="comment"># foreach函数的应用</span></span><br><span class="line">INCLUDE=./include                                   <span class="comment"># include的文件夹</span></span><br><span class="line">TARGET_DIR=bin                                      <span class="comment"># 目标文件所在文件夹</span></span><br><span class="line">TARGET=main                                         <span class="comment"># 目标文件名</span></span><br><span class="line">FLAGS=-Og -I $(INCLUDE)                             <span class="comment"># 所有标记</span></span><br><span class="line">FLAGS+=$(OPTFLAGS)                                  <span class="comment"># 可扩展性要求</span></span><br><span class="line"></span><br><span class="line">$(TARGET): $(SOURCE)                                <span class="comment"># 这里进行了相应的修改，请注意</span></span><br><span class="line">	g++ $(FLAGS) $(SOURCE) -o $(TARGET_DIR)/$(TARGET)</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">	<span class="built_in">rm</span> -rf bin/*</span><br><span class="line"></span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    <span class="built_in">echo</span> $(SOURCE)</span><br></pre></td></tr></table></figure>
+<p>这里我们先介绍一下foreach函数的用法：</p>
+<blockquote>
+<p>foreach(var,list,text)<br>
+该函数的用法是：从list逐个取出值赋值给var，之后使用text进行相应的展开。注意text可以引用变量var。如果你想知道上例的结果，可以使用<code>make test</code>查看结果。<br>
+注意到Makefile多了一个OPTFLAGS的变量，但该变量未定义，该怎么用呢？你可以在命令行输入<code>make OPTFLAGS=-Wall</code>（用途是打开警告信息），然后观察编译结果有何不同。<br>
+如果你不加以定义，即直接输入<code>make</code>，那么默认是空，没有影响。</p>
+</blockquote>
+<blockquote>
+<p>如果对源代码的结构不熟悉，但是希望把所有的cpp文件包含进来（也就是不知道层级结构是啥情况），又应该怎么办呢？待补充。（也许会用到函数）</p>
+</blockquote>
+<h2 id="patsubst函数">patsubst函数</h2>
+<p>在<a target="_blank" rel="noopener" href="https://spirittrance.github.io/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/">1-cpp是如何跑起来的</a>中，我们介绍了cpp的构建过程，一般来说，我们希望拿到目标文件并加以保存，减少编译时间。现在，我们希望能够生成中间代码并进行编译，应该如何做呢？你会想到<code>g++</code>的<code>-c</code>选项，但如果是Makefile，如何进行相应的编写呢？这就需要patsubst函数了。下面给出修改后的Makefile：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Advanced Makefile</span></span><br><span class="line"><span class="comment"># - source variables</span></span><br><span class="line">SOURCE_DIR=src                                  <span class="comment"># 源代码目录</span></span><br><span class="line">SOURCE_MAIN=$(SOURCE_DIR)/main.cpp              <span class="comment"># 源代码main函数路径</span></span><br><span class="line">SOURCE_CALC=$(foreach <span class="built_in">source</span>,$(wildcard src/calc/*), $(wildcard $(<span class="built_in">source</span>)/*.cpp))   <span class="comment"># 源代码计算函数相关路径</span></span><br><span class="line"><span class="comment"># - obj file variables</span></span><br><span class="line">OBJECT_DIR=output                                                   <span class="comment"># 目标代码文件目录</span></span><br><span class="line">OBJECT_CALC=$(patsubst %.cpp,./$(OBJECT_DIR)/%.o,$(SOURCE_CALC))    <span class="comment"># 与计算函数相关的目标代码文件路径</span></span><br><span class="line"><span class="comment"># - library file variables</span></span><br><span class="line">LIB_NAME=calc                                                       <span class="comment"># 库名称</span></span><br><span class="line">LIB_DIR=lib                                                         <span class="comment"># 库所在的目录</span></span><br><span class="line">LIB_CALC=$(LIB_DIR)/lib$(LIB_NAME).a                                <span class="comment"># 库所在的路径</span></span><br><span class="line"><span class="comment"># - target binary file variables</span></span><br><span class="line">TARGET=bin/main                                                     <span class="comment"># 可执行文件的路径</span></span><br><span class="line"><span class="comment"># - include variables</span></span><br><span class="line">INCS=./include                                                      <span class="comment"># 包含文件所在目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># generate target binary executable file</span></span><br><span class="line">$(TARGET): $(SOURCE_MAIN) $(LIB_CALC)                               </span><br><span class="line">	g++ -I $(INCS) -L ./lib $(SOURCE_MAIN) -l$(LIB_NAME) -o $(TARGET) </span><br><span class="line"></span><br><span class="line"><span class="comment"># generate static library</span></span><br><span class="line">$(LIB_CALC): $(OBJECT_CALC)</span><br><span class="line">	ar -rcs $(LIB_CALC) $(OBJECT_CALC)</span><br><span class="line"></span><br><span class="line"><span class="comment"># generate object file</span></span><br><span class="line">./$(OBJECT_DIR)/%.o: %.cpp</span><br><span class="line">	@<span class="built_in">mkdir</span> -p $(<span class="built_in">dir</span> <span class="variable">$@</span>)</span><br><span class="line">	g++ -c $&lt; -o <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clean</span></span><br><span class="line">clean:</span><br><span class="line">	<span class="built_in">rm</span> -rf bin/*</span><br><span class="line"></span><br><span class="line">testPatsubst:</span><br><span class="line">    @<span class="built_in">echo</span> $(OBJECT_CALC)</span><br></pre></td></tr></table></figure>
+<p>上面所给出的示例有相当大的变化，我们首先解释patsubst函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patsubst %.cpp,str%.o,$(var)</span><br></pre></td></tr></table></figure>
+<p>这一函数接受一个var，其中var应当是一个列表（linux的字符串列表），在列表中寻找后缀为<code>.cpp</code>的元素，并保留<code>.cpp</code>前的字符串，并在前面拼接上<code>str</code>的字符串，将后缀改为<code>.o</code>，然后输出一系列列表。本例中，你可以尝试<code>make testPatsubst</code>观察输出。</p>
+<blockquote>
+<p>结果为<code>./output/src/calc/add_sub/add.o ./output/src/calc/add_sub/sub.o ./output/src/calc/mul_div/div.o ./output/src/calc/mul_div/mul.o</code></p>
+</blockquote>
+<h2 id="依赖问题">依赖问题</h2>
+<p>在开始后面几节之前，我先介绍一下这个Makefile做了什么事：首先，将<code>add.cpp,sub.cpp,mul.cpp</code>和<code>div.cpp</code>分别生成相应的目标文件，之后将四个目标文件进行归档，生成静态库<code>libcalc.a</code>，最后编译<code>main.cpp</code>并与该静态库链接，生成可执行文件<code>main</code>。可以看到，所有行前后都有依赖关系：<code>$(TARGET)</code>依赖<code>$(LIB_CALC)</code>，<code>$(LIB_CALC)</code>依赖<code>$(OBJECT_CALC)</code>，而<code>$(OBJECT_CALC)</code>依赖<code>$(SOURCE_CALC)</code>（在Makefile中用<code>./$(OBJECT_DIR)/%.o: %.cpp</code>表示，这一行语句的含义将马上介绍），构成了级联的依赖关系。</p>
+<blockquote>
+<p>在开始下一节内容之前，我希望你能在编译完整的基础上，依次做如下事情：<br>
+1.删除<code>lib/libcalc.a</code>，但保留<code>output/*</code>，之后<code>make</code><br>
+2.不删除<code>lib/libcalc.a</code>，但删除<code>output/*</code>，之后<code>make</code><br>
+3.删除<code>lib/libcalc.a</code>，同时删除<code>output</code>下的一个或多个文件，之后<code>make</code><br>
+4.删除<code>lib/*</code>和<code>output/*</code>，之后<code>make</code><br>
+5.修改任意源文件，然后<code>make</code><br>
+6.修改头文件，然后<code>make</code><br>
+做完这三件事后，你会对cpp的编译过程有更深的理解，以及能够体会到为什么Makefile要维护所谓的依赖关系。比较特殊的是第6条，这一条我们在【自动生成依赖】一节讨论。</p>
+</blockquote>
+<h2 id="模式匹配与变量">模式匹配与变量</h2>
+<p>在上一节中，我们注意到如下语句：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./$(OBJECT_DIR)/%.o: %.cpp  <span class="comment"># OBJECT_DIR=output</span></span><br><span class="line">	@<span class="built_in">mkdir</span> -p $(<span class="built_in">dir</span> <span class="variable">$@</span>)</span><br><span class="line">	g++ -c $&lt; -o <span class="variable">$@</span></span><br></pre></td></tr></table></figure><br>
+首先介绍一下，目标和依赖的<code>%</code>是什么意思。回忆<code>patsubst</code>函数，不难猜出这一句话的含义是：</p>
+<blockquote>
+<p>如果要生成形如<code>./output/src/str.o</code>的目标文件，需要依赖形如<code>./src/str.cpp</code>的源文件，其中str是可以任意更换的，因此用%表示。这一种形式实际上是在做模式匹配。</p>
+</blockquote>
+<p>之后我们把注意力留在<code>$@</code>和<code>$&lt;</code>这两个变量上面。根据第二条执行语句，不难猜出，<code>$@</code>代指目标，<code>$&lt;</code>代指依赖。准确来说，是<strong>第一个</strong>依赖。</p>
+<p>最后，我们把注意力留在第一条执行语句。<code>mkdir</code>是一条linux的指令，前面加上<code>@</code>，意思是不要打印执行的语句。而<code>dir</code>函数和linux的dir函数含义不同。在Makefile里面，指的是<strong>返回相应文件所在的目录</strong>。如<code>$@</code>为<code>./output/src/str.o</code>的情况下，<code>dir $@</code>返回<code>./output/src</code>。</p>
+<p>到这里，这一部分的关键之处便解释完毕。最后需要指出的是，使用<code>./$(OBJECT_DIR)/%.o</code>而不是<code>%.o</code>的原因在于，希望不要将生成文件和源文件混合存放。因此，在本小节的项目结构里面，你可以看见<code>output</code>下面有<code>src</code>目录。</p>
+<h2 id="伪目标">伪目标</h2>
+<p>在最后，我们调用<code>clean</code>的时候，我们通常都能成功执行。但如果该目标缺少依赖，并且目录下同样有一个名为<code>clean</code>的文件，进行<code>make clean</code>的时候，你会得到：</p>
+<blockquote>
+<p>make: “clean”已是最新。</p>
+</blockquote>
+<p>这个时候，你需要在前面加上：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.PHONY:clean</span><br></pre></td></tr></table></figure>
+<p>表明clean并不是一个真正的目标，只是一个伪目标。之后每次<code>make clean</code>都一定能成功。</p>
+<h2 id="自动生成依赖">自动生成依赖</h2>
+<p>在【依赖】这一小节，我们提过修改文件头，观察编译情况。答案是不会更新。如果我们希望修改文件头会引发重新编译，应当如何设计呢？可以做如下修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$(TARGET): $(SOURCE_MAIN) $(LIB_CALC) $(INCS)/calc.h</span><br><span class="line">	g++ -I $(INCS) -L ./lib $(SOURCE_MAIN) -l$(LIB_NAME) -o $(TARGET) </span><br></pre></td></tr></table></figure>
+<p>也就是将头文件直接加入依赖。问题是，大型项目里面维护这样的依赖是很痛苦的事情。这里有一个更好的解决方案：gcc提供了几个选项，可以生成<code>*.d</code>文件，记录依赖关系：</p>
+<ul>
+<li><code>-MMD</code>:生成的文件记录的依赖只包括用户文件。（注意包含头文件）</li>
+<li><code>-MD</code>：生成的文件记录的依赖包括用户文件和系统文件</li>
+<li><code>-MP</code>：基于<code>-MMD</code>或<code>-MD</code>之外的选项，为每个依赖添加一个没有依赖的伪目标。可以避免删除头文件时，Makefile因找不到目标来更新依赖报错。</li>
+</ul>
+<p>示例如下：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt; g++ -MMD -I ./include -L ./lib/ ./src/main.cpp  -lcalc -o main</span><br><span class="line">&gt; <span class="built_in">cat</span> main.d</span><br><span class="line">main: src/main.cpp include/calc.h</span><br><span class="line">&gt; g++ -MD -I ./include -L ./lib/ ./src/main.cpp  -lcalc -o main</span><br><span class="line">&gt; <span class="built_in">cat</span> main.d</span><br><span class="line">main: src/main.cpp /usr/include/stdc-predef.h \</span><br><span class="line"> /usr/include/c++/11/iostream \</span><br><span class="line"> /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \</span><br><span class="line">...     <span class="comment"># 100 more lines was omitted</span></span><br><span class="line"> /usr/include/c++/11/bits/basic_ios.tcc \</span><br><span class="line"> /usr/include/c++/11/bits/ostream.tcc /usr/include/c++/11/istream \</span><br><span class="line"> /usr/include/c++/11/bits/istream.tcc include/calc.h</span><br><span class="line">&gt; g++ -MMD -MP -I ./include -L ./lib/ ./src/main.cpp  -lcalc -o main</span><br><span class="line">&gt; <span class="built_in">cat</span> main.d</span><br><span class="line">main: src/main.cpp include/calc.h</span><br><span class="line">include/calc.h:</span><br></pre></td></tr></table></figure></p>
+<p>因此，我们可以继续对之前的Makefile做如下修改：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment"># - dependency file</span></span><br><span class="line">DEPS=$(patsubst ./$(OBJECT_DIR)/%.o,./$(OBJECT_DIR)/%.d,$(OBJECT_CALC))</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line">./$(OBJECT_DIR)/%.o: %.cpp</span><br><span class="line">	@<span class="built_in">mkdir</span> -p $(<span class="built_in">dir</span> <span class="variable">$@</span>)</span><br><span class="line">	g++ -MMD -MP -c $&lt; -o <span class="variable">$@</span></span><br><span class="line"></span><br><span class="line">-include: $(DEPS)</span><br></pre></td></tr></table></figure><br>
+include用于<strong>将指定文件的内容插入到当前文本中</strong>。include 前加了-符号，其作用是指示make 在 include 操作出错时<strong>忽略这个错误</strong>，并继续执行接下来的操作。出错的原因是<code>*.d</code>尚未产生的时候，这通常在初次编译和clean后编译产生。</p>
+<h2 id="链接先后问题的补充">链接先后问题的补充</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g++ -I ./include -L ./lib/ ./src/main.cpp -lcalc -o main    <span class="comment"># 编译通过</span></span><br><span class="line">g++ -I ./include -L ./lib/ -lcalc ./src/main.cpp -o main    <span class="comment"># 编译不通过，提示找不到引用</span></span><br></pre></td></tr></table></figure>
+<p>需要注意的是，源文件需要放在库文件之前。这一细节在《深入理解计算机系统》7.6.3 链接器如何使用静态库来解析引用 一节中有所解释，其给出的准则如下：</p>
+<blockquote>
+<p>关于库的一般准则是它们放在命令行的结尾。库之间如果是：</p>
+<ul>
+<li>相互独立的：库可以以任何顺序放在命令行中</li>
+<li>不是相互独立的：具体规则是，前面库中产生的引用需要在后面的库中能找到相应定义<br>
+如果需要满足依赖需求，可以在命令行上重复库。如libx.a和liby.a构成循环依赖，可以使用<code>gcc foo.c libx.a liby.a libx.a</code>，但更好的方式是将两者合并成一个单独的存档文件。<br>
+关于a.o-&gt;liba.a-&gt;libb.a-&gt;liba.a-&gt;a.o的依赖，解决方式是<code>gcc -o main a.o liba.a libb.a liba.a</code>而没有<code>a.o</code>，`需要思考一下为什么</li>
+</ul>
+</blockquote>
+<h1 id="总结">总结</h1>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/618350718">写给初学者的Makefile入门指南</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cntofu.com/book/25/ex28.md">Learn C the hard way - 练习28：Makefile 进阶</a></li>
+</ul>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 【cpp查漏补缺】2-Makefile入门</li>
+        <li><strong>Author:</strong> spiritTrance</li>
+        <li><strong>Created at
+                :</strong> 2023-10-01 15:33:07</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-01-29 10:43:44
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://spirittrance.github.io/2023/10/01/cpp_2_Makefile用法/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/cpp/">#cpp</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Makefile/">#Makefile</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/10/02/cpp_3_CMake用法/" title="【cpp查漏补缺】3-CMake入门" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】3-CMake入门" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】3-CMake入门</span>
+</a><a class="recommended-article-item" href="/2023/10/01/cpp_1_链接/" title="【cpp查漏补缺】1-cpp是如何跑起来的？" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】1-cpp是如何跑起来的？" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】1-cpp是如何跑起来的？</span>
+</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/10/02/cpp_3_CMake用法/" title="【cpp查漏补缺】3-CMake入门" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】3-CMake入门" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】3-CMake入门</span>
+</a><a class="recommended-article-item" href="/2023/10/01/cpp_1_链接/" title="【cpp查漏补缺】1-cpp是如何跑起来的？" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】1-cpp是如何跑起来的？" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】1-cpp是如何跑起来的？</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/10/02/cpp_3_CMake%E7%94%A8%E6%B3%95/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">【cpp查漏补缺】3-CMake入门</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">【cpp查漏补缺】1-cpp是如何跑起来的？</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c67a7c5121c94079c84b',
+                    clientSecret: '4b69f6ad1d11b93e12a3d466fb4c0dd05c58c641',
+                    repo: 'blogComment',
+                    owner: 'spiritTrance',
+                    admin: ['spiritTrance'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">【cpp查漏补缺】2-Makefile入门</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%A5%E9%97%A8%E7%BA%A7makefile%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">入门级Makefile介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9D%E5%AE%9D%E7%BA%A7%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">宝宝级的项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84makefile"><span class="nav-number">2.2.</span> <span class="nav-text">最简单的Makefile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wildcard%E5%87%BD%E6%95%B0"><span class="nav-number">2.3.</span> <span class="nav-text">wildcard函数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6makefile"><span class="nav-number">3.</span> <span class="nav-text">进阶Makefile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="nav-number">3.1.</span> <span class="nav-text">更复杂的项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#foreach%E5%87%BD%E6%95%B0"><span class="nav-number">3.2.</span> <span class="nav-text">foreach函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#patsubst%E5%87%BD%E6%95%B0"><span class="nav-number">3.3.</span> <span class="nav-text">patsubst函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="nav-number">3.4.</span> <span class="nav-text">依赖问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D%E4%B8%8E%E5%8F%98%E9%87%8F"><span class="nav-number">3.5.</span> <span class="nav-text">模式匹配与变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E7%9B%AE%E6%A0%87"><span class="nav-number">3.6.</span> <span class="nav-text">伪目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BE%9D%E8%B5%96"><span class="nav-number">3.7.</span> <span class="nav-text">自动生成依赖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E5%85%88%E5%90%8E%E9%97%AE%E9%A2%98%E7%9A%84%E8%A1%A5%E5%85%85"><span class="nav-number">3.8.</span> <span class="nav-text">链接先后问题的补充</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">spiritTrance</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        19 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

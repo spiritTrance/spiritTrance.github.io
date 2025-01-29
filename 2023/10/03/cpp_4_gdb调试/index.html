@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="spiritTrance">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/10/03/cpp_4_gdb调试/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta property="og:type" content="article">
+<meta property="og:title" content="【cpp查漏补缺】4-gdb的使用">
+<meta property="og:url" content="http://example.com/2023/10/03/cpp_4_gdb%E8%B0%83%E8%AF%95/index.html">
+<meta property="og:site_name" content="spiritTranceの小窝">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-03T14:33:07.000Z">
+<meta property="article:modified_time" content="2025-01-29T02:43:44.523Z">
+<meta property="article:author" content="spiritTrance">
+<meta property="article:tag" content="cpp">
+<meta property="article:tag" content="gdb">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4">
+    <meta name="theme-color" content="#763dff">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+    <!--- Page Info-->
+    
+    <title>
+        
+            【cpp查漏补缺】4-gdb的使用 | spiritTranceの小窝
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":false,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":true,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#763dff","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"400px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"spiritTranceの小窝","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#36adf7","right":"#966df7","transparency":60},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Articles":{"path":"/archives","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/spiritTrance","Blog":"https://spirittrance.github.io/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"欢迎来到spiritTranceの小窝！","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                spiritTranceの小窝
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARTICLES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/spiritTrance">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://spirittrance.github.io/">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Articles"
+                        >
+                            <span>
+                                ARTICLES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Articles">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/spiritTrance">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://spirittrance.github.io/">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【cpp查漏补缺】4-gdb的使用</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">spiritTrance</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1"></span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-03 22:33:07</span>
+        <span class="mobile">2023-10-03 22:33:07</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-29 10:43:44</span>
+            <span class="mobile">2025-01-29 10:43:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/cpp/">cpp</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/gdb/">gdb</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="为什么要使用gdb而不是打印大法">为什么要使用GDB，而不是打印大法？</h1>
+<p>这是来自于ChatGPT的回答：</p>
+<blockquote>
+<p>GDB（GNU Debugger）是一个功能强大的调试工具，相对于简单地通过打印输出来进行调试，它具有以下优势：<br>
+1.<strong>实时交互性</strong>： GDB允许您在程序执行期间随时停止程序的执行，检查变量的值，执行特定的命令（如单步执行、继续执行、设置断点等），并进行实时交互。这可以帮助您更深入地了解程序的内部状态，而不仅仅是静态地查看输出。<br>
+2.<strong>非侵入性</strong>： 使用打印调试时，您需要在代码中插入打印语句，然后重新编译和运行程序。这可能会导致不必要的代码污染和额外的工作。相比之下，GDB允许您在不修改源代码的情况下进行调试。<br>
+3.<strong>回溯和堆栈跟踪</strong>： GDB可以帮助您查找程序中的错误并跟踪它们的根本原因。它提供了堆栈跟踪功能，允许您查看调用堆栈，找出错误发生的位置，以及如何到达错误点的路径。这通常比简单的打印输出更容易找到问题。<br>
+4.<strong>变量监视</strong>： GDB允许您监视变量的值，而不需要在代码中插入打印语句。这对于跟踪特定变量的值在程序执行期间如何变化非常有用。<br>
+5.<strong>条件断点</strong>： GDB允许您设置条件断点，只有当特定条件满足时才会触发断点。这对于跟踪特定情况下的程序行为非常有用。<br>
+6.<strong>内存检查</strong>： GDB可以帮助您检查程序中的内存错误，如缓冲区溢出、内存泄漏等。这些问题很难通过简单的打印调试来发现。<br>
+7.<strong>多线程调试</strong>： 如果程序涉及多线程，GDB能够帮助您调试多个线程之间的交互和竞争条件，以及线程的状态和调用堆栈。<br>
+8.<strong>脚本支持</strong>： GDB支持Python脚本，您可以使用它们来自动化和扩展调试过程。<br>
+总之，GDB相对于简单的打印调试提供了更强大、更灵活和更全面的调试工具，可以帮助您更快速、更有效地发现和解决程序中的问题。当您需要深入了解程序执行过程、排除复杂问题或进行更高级的调试时，GDB通常是一个更好的选择。但对于某些简单问题，打印调试仍然可以是一个有效的快速解决方案。</p>
+</blockquote>
+<p>总的来说，最为方便的地方是只用编译一次代码。打印大法确实舒服，但是每添加一个打印语句就需要重新编译一次项目，这对于大项目来说是非常耗时的。除此之外，脚本也是值得留意的。这为进一步提升效率提供了可能。</p>
+<h1 id="elf文件">ELF文件</h1>
+<blockquote>
+<p>待补</p>
+</blockquote>
+<h1 id="gdb基本使用">GDB基本使用</h1>
+<h2 id="调试信息">调试信息</h2>
+<p>首先，编译程序需要开启<code>-g</code>选项，否则不会带上调试信息。</p>
+<blockquote>
+<p>你可以尝试一下<code>readelf -S &lt;目标文件&gt; | grep debug</code>指令，尝试带上<code>-g</code>和不带上<code>-g</code>选项，观察区别。你会发现少了几段。<br>
+同时你也可以试一下<code>file &lt;目标文件&gt;</code>，如果提示是<code>stripped</code>，那么说明符号表信息和调试信息被去除，不能调试。但没有去除不代表可以调试（因为除了debug段还有其他段）。</p>
+</blockquote>
+<p>之后，你可以输入<code>gdb &lt;目标程序&gt;</code>，然后输入<code>run</code>，开始运行程序并进行调试。</p>
+<h2 id="输入设置">输入设置</h2>
+<p>如果需要命令行参数，你可以在<code>run</code>指令后面跟上命令行参数，或者使用<code>set args</code>，后面跟上命令行参数，然后<code>run</code>并执行。注意，<code>set args</code>可以使用重定向，从一个文件读取输入。<br>
+如果需要从标准输入里面读取数据，可以使用<code>set args</code>并重定向。</p>
+<h2 id="进入调试">进入调试</h2>
+<h3 id="直接调试">直接调试</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># case 1</span></span><br><span class="line">&gt; gdb &lt;obj_file&gt;</span><br><span class="line">(gdb) [some <span class="built_in">command</span>] <span class="comment"># You may need to set args, set breakpoints, etc...</span></span><br><span class="line">(gdb) run</span><br><span class="line"></span><br><span class="line"><span class="comment"># case 2</span></span><br><span class="line">&gt; gdb</span><br><span class="line">(gdb) file &lt;obj_file&gt;</span><br><span class="line">(gdb) [some <span class="built_in">command</span>] <span class="comment"># You may need to set args, set breakpoints, etc...</span></span><br><span class="line">(gdb) run</span><br></pre></td></tr></table></figure></div>
+<h3 id="调试已运行程序">调试已运行程序</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pidof &lt;obj_file&gt;    <span class="comment"># note that &lt;obj_file&gt; is running, using `pidof` to get the pid</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># note that we need to debug by attaching the process, so we need to sudo or edit /etc/sysctl.d/10-ptrace.conf:kernel.yama.ptrace_scope to zero</span></span><br><span class="line"><span class="comment"># case 1:</span></span><br><span class="line">gdb &lt;obj_file&gt; &lt;pid&gt;</span><br><span class="line"><span class="comment"># case 2:</span></span><br><span class="line">gdb &lt;obj_file&gt; --pid &lt;pid&gt;</span><br><span class="line"><span class="comment"># case 3:</span></span><br><span class="line">gdb &lt;obj_file&gt;</span><br><span class="line">(gdb) file &lt;obj_file&gt;</span><br><span class="line">(gdb) attach &lt;pid&gt;</span><br></pre></td></tr></table></figure></div>
+<p>这里值得提醒的是，第三种方式可以解决已运行程序没有debug段的问题：首先重新编译一个有debug段的程序，然后attach到正在运行的，没有debug段的程序，这样就可以调试已运行的程序。</p>
+<h2 id="断点设置">断点设置</h2>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">(gdb) info breakpoints      <span class="comment"># 查看已设置断点相关信息</span></span><br><span class="line"><span class="comment"># 注意：方括号表示可选项</span></span><br><span class="line"><span class="comment"># break - 普通断点</span></span><br><span class="line">(gdb) <span class="built_in">break</span> [test.cpp:]9            <span class="comment"># 在[test.cpp这个文件的]第 9 行设置断点 </span></span><br><span class="line">(gdb) b func                        <span class="comment"># 在【进入】func函数处设置断点，注意break可以简写为b</span></span><br><span class="line">(gdb) <span class="built_in">break</span> * <span class="keyword">if</span> a==0               <span class="comment"># 在 条件表达式 满足时，设置断点， * 为设置的断点</span></span><br><span class="line">(gdb) condition &lt;num&gt; <span class="keyword">if</span> a==0       <span class="comment"># 为编号为 num 的断点附加条件表达式</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># rbreak - 正则表达式断点</span></span><br><span class="line">(gdb) rbreak [test.cpp:]^<span class="built_in">print</span>*     <span class="comment"># (regex break) 为所有[test.cpp中的，]以print开头的函数设置断点</span></span><br><span class="line">(gdb) rbreak [test.cpp:].           <span class="comment"># (regex break) 为[test.cpp中的]所有函数设置断点</span></span><br><span class="line"><span class="comment"># tbreak - 临时断点，只会生效一次</span></span><br><span class="line">tbreak *                            <span class="comment"># 与 break 的用法大同小异</span></span><br><span class="line"><span class="comment"># ignore - 到达该断点时忽略掉</span></span><br><span class="line">ignore num 30                       <span class="comment"># 跳过编号为 num 的断点 30 次</span></span><br><span class="line"><span class="comment"># *watch - 观测某个变量，设置断点，注意程序需要在运行中</span></span><br><span class="line">watch var                           <span class="comment"># 用于监视变量 var 的更改</span></span><br><span class="line">awatch var                          <span class="comment"># 用于监视变量 var 的读取或写入</span></span><br><span class="line">rwatch var                          <span class="comment"># 监视特定内存地址</span></span><br><span class="line"><span class="comment"># rwatch *0x12345678</span></span><br><span class="line"><span class="comment"># *able - 禁用或启用断点</span></span><br><span class="line"><span class="built_in">enable</span> / <span class="built_in">enable</span> [num]               <span class="comment"># 启用所有断点/标号为num的断点</span></span><br><span class="line"><span class="built_in">disable</span> / <span class="built_in">disable</span> [num]             <span class="comment"># 禁用用所有断点/标号为num的断点</span></span><br><span class="line"><span class="comment"># clear - 清除断点</span></span><br><span class="line">clear                               <span class="comment"># 删除所有breakpoints</span></span><br><span class="line">clear [test.cpp:]func               <span class="comment"># 删除[test.cpp中的]函数名为function处的断点</span></span><br><span class="line">clear [test.cpp:]lineNum            <span class="comment"># 删除[test.cpp中的]行号为lineNum处的断点</span></span><br><span class="line"><span class="comment"># delete - 清除断点</span></span><br><span class="line">delete                              <span class="comment"># 删除所有breakpoints,watchpoints和catchpoints</span></span><br><span class="line">delete lineNum                      <span class="comment"># 删除断点号为 lineNum 的断点</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="查看变量">查看变量</h2>
+<h3 id="手动查看变量">手动查看变量</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p [<span class="string">&#x27;file&#x27;</span>::][<span class="string">&#x27;func&#x27;</span>::]var       <span class="comment"># 查看[file文件中][func函数中]变量var的值</span></span><br><span class="line">p [<span class="string">&#x27;file&#x27;</span>::][<span class="string">&#x27;func&#x27;</span>::]*var      <span class="comment"># 查看[file文件中][func函数中]**指针**var所指向的值</span></span><br><span class="line">p [<span class="string">&#x27;file&#x27;</span>::][<span class="string">&#x27;func&#x27;</span>::]*var@10   <span class="comment"># 查看[file文件中][func函数中]**指针**var所指向的值，并向后打印10个值（一般是指针指向了数组用）</span></span><br><span class="line">p [<span class="string">&#x27;file&#x27;</span>::][<span class="string">&#x27;func&#x27;</span>::]*var@a    <span class="comment"># 查看[file文件中][func函数中]**指针**var所指向的值，并向后打印a个值</span></span><br><span class="line">p $                             <span class="comment"># $表示上一个查看的变量</span></span><br><span class="line"><span class="built_in">set</span> <span class="variable">$index</span>=0                    <span class="comment"># 设置变量</span></span><br><span class="line">p b[<span class="variable">$index</span>++]</span><br><span class="line"><span class="comment"># 按照特定格式打印变量：</span></span><br><span class="line"><span class="comment"># x d o t 十六/十/八/二进制显示变量，u 十六进制显示无符号整型</span></span><br><span class="line"><span class="comment"># a 十六进制 c 字符格式 f 浮点数格式</span></span><br><span class="line">p/x var                         <span class="comment"># 按照十六进制打印变量 var</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="查看内存内容">查看内存内容</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># n内存单元数</span></span><br><span class="line"><span class="comment"># f打印格式，在上面提过</span></span><br><span class="line"><span class="comment"># u打印的单元长度，有b,h,w,g，分别为一字节，二字节，四字节和八字节</span></span><br><span class="line"><span class="comment"># addr 地址</span></span><br><span class="line">x/[n][f][u] addr</span><br><span class="line">x/4tb &amp;e        <span class="comment"># e 变量 打印内容</span></span><br><span class="line"><span class="comment"># 0x7fffffffdbd4:    00000000    00000000    00001000    01000001</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="自动显示变量">自动显示变量</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 程序中断时就会显示 display 定义的变量</span></span><br><span class="line">display e</span><br><span class="line">info display            <span class="comment"># 查看相应变量信息</span></span><br><span class="line">delete display num      <span class="comment"># num 为前面变量前的编号，不带 num 时清除所有</span></span><br><span class="line"><span class="built_in">disable</span> display num</span><br><span class="line"><span class="built_in">enable</span> display num</span><br></pre></td></tr></table></figure></div>
+<h3 id="查看寄存器内容">查看寄存器内容</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info registers</span><br></pre></td></tr></table></figure></div>
+<h2 id="源码比对">源码比对</h2>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">l                               <span class="comment"># 看 1 - listsize 行</span></span><br><span class="line">l +                             <span class="comment"># 看 后面的 listsize 行</span></span><br><span class="line">l -                             <span class="comment"># 看 前面的 listsize 行</span></span><br><span class="line">l [file:]lineNum                <span class="comment"># 看 [指定文件file的] lineNum 行 附近的 listsize 行</span></span><br><span class="line">l [file:]func                   <span class="comment"># 看 [指定文件file的] func 函数 后面的 listsize 行</span></span><br><span class="line"><span class="built_in">set</span> listsize 20                 <span class="comment"># 设置 listsize 行 为 20</span></span><br><span class="line">show listsize                   <span class="comment"># 查看 listsize</span></span><br><span class="line">l lineNum_begin,lineNum_end     <span class="comment"># 查看 lineNum_begin 到 lineNum_end 的内容，如果缺一个，则向前或向后看 listsize 行</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="调试">调试</h2>
+<h3 id="基本的步进调试">基本的步进调试</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">gdb gdbStep     <span class="comment"># 启动调试</span></span><br><span class="line"><span class="comment"># some breakpoints config</span></span><br><span class="line">n 9             <span class="comment"># 执行 9 次</span></span><br><span class="line">n               <span class="comment"># 执行 1 次</span></span><br><span class="line"></span><br><span class="line">s               <span class="comment"># 进入函数内部，但函数必须有调试信息</span></span><br><span class="line">finish          <span class="comment"># 完成函数调用</span></span><br><span class="line">show step-mode  <span class="comment"># step-mode 用来表示碰到没有调试信息函数的行为，默认是跳过，即off。如果需要修改，使用set命令即可</span></span><br><span class="line">si              <span class="comment"># 执行一条机器指令（stepi）</span></span><br><span class="line">c               <span class="comment"># continue，执行到下一个断点</span></span><br><span class="line"><span class="built_in">fg</span>              <span class="comment"># 也是continue</span></span><br><span class="line">u 29            <span class="comment"># until 29，执行到29行停住</span></span><br><span class="line">skip <span class="keyword">function</span> add   <span class="comment"># 跳过add函数</span></span><br><span class="line">skip file calc.cpp  <span class="comment"># 跳过calc.cpp中的函数</span></span><br><span class="line">info skip           <span class="comment"># 查看跳过信息</span></span><br><span class="line">skip delete [num]</span><br><span class="line">skip <span class="built_in">enable</span> [num]   <span class="comment"># 使能编号为num（或所有）的跳点</span></span><br><span class="line">skip <span class="built_in">disable</span> [num]  </span><br></pre></td></tr></table></figure></div>
+<h3 id="堆栈调用调试">堆栈调用调试</h3>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bt              <span class="comment"># backtrace，可以查看完整的调用堆栈</span></span><br><span class="line">frame 2         <span class="comment"># 切换到第2个帧</span></span><br><span class="line">info locals     <span class="comment"># 查看当前帧本地变量的值 </span></span><br><span class="line">info args       <span class="comment"># 查看当前帧函数参数的值</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="指定源码路径">指定源码路径</h2>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 切换至源码移动后的路径</span></span><br><span class="line"><span class="built_in">dir</span> new_directory</span><br><span class="line"><span class="comment"># 更改内建变量</span></span><br><span class="line"><span class="built_in">set</span> substitute-path old_path new_path   <span class="comment"># old_path 为原来的路径，new_path 为更改后的路径</span></span><br><span class="line">show substitute-path</span><br></pre></td></tr></table></figure></div>
+<h2 id="源代码比对">源代码比对</h2>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">layout src</span><br><span class="line">layout <span class="built_in">split</span></span><br><span class="line">ctrl + x -&gt; A   <span class="comment"># 退出</span></span><br><span class="line">ctrl + x -&gt; 1   <span class="comment"># 一个窗口</span></span><br><span class="line">ctrl + x -&gt; 2   <span class="comment"># 两个窗口</span></span><br></pre></td></tr></table></figure></div>
+<h2 id="core文件调试">core文件调试</h2>
+<p>首先，core文件是core dump时产生的。首先需要修改core dump文件的大小：<br>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c           <span class="comment"># 查看core文件大小，单位为块，一块大小默认为512字节</span></span><br><span class="line"><span class="built_in">ulimit</span> -c unlimited <span class="comment"># 表示无限制</span></span><br><span class="line"><span class="built_in">ulimit</span> -c 1024      <span class="comment"># 表示大小最大为 1024 块</span></span><br></pre></td></tr></table></figure></div></p>
+<blockquote>
+<p>core文件的具体使用见【熟悉core文件调试】一节。</p>
+</blockquote>
+<p>然后可以这样调试core文件：<br>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gdb program_file core_file</span><br></pre></td></tr></table></figure></div></p>
+<h1 id="一些示例">一些示例</h1>
+<h2 id="熟悉基本操作并查集">熟悉基本操作——并查集</h2>
+<p>下面是并查集的代码：<br>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// dsu.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> DSU_SIZE = <span class="number">10</span>;</span><br><span class="line">vector&lt;<span class="type">int</span>&gt; dsu;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">findfa</span><span class="params">(<span class="type">int</span> a)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> dsu[a] = a == dsu[a] ? a : <span class="built_in">findfa</span>(dsu[a]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">merge</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> fa = <span class="built_in">findfa</span>(a);</span><br><span class="line">    <span class="type">int</span> fb = <span class="built_in">findfa</span>(b);</span><br><span class="line">    <span class="keyword">if</span> (fa &lt; fb)&#123;</span><br><span class="line">        dsu[fb] = fa;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        dsu[fa] = fb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i&lt;DSU_SIZE; i++)&#123;</span><br><span class="line">        dsu.<span class="built_in">push_back</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">init</span>();</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">     * input format:</span></span><br><span class="line"><span class="comment">     * 1 x y: set the smaller one as bigger one&#x27;s father</span></span><br><span class="line"><span class="comment">     * 2 x: query the father of x</span></span><br><span class="line"><span class="comment">     */</span> </span><br><span class="line">    <span class="type">int</span> op;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; op)&#123;</span><br><span class="line">        <span class="type">int</span> x, y;</span><br><span class="line">        <span class="keyword">switch</span> (op)</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">            cin &gt;&gt; x &gt;&gt; y;</span><br><span class="line">            <span class="built_in">merge</span>(x, y);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">            cin &gt;&gt; x;</span><br><span class="line">            cout &lt;&lt; <span class="built_in">findfa</span>(x) &lt;&lt; endl;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><br>
+下面是测试用例：<br>
+<div class="code-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1 4 5</span><br><span class="line">2 4</span><br><span class="line">2 5</span><br><span class="line">1 2 3</span><br><span class="line">2 2</span><br><span class="line">2 3</span><br><span class="line">1 3 4</span><br><span class="line">2 2</span><br><span class="line">2 3</span><br><span class="line">2 4</span><br><span class="line">2 5</span><br><span class="line">1 1 5</span><br><span class="line">2 1</span><br><span class="line">2 2</span><br><span class="line">2 3</span><br><span class="line">2 4</span><br><span class="line">2 5</span><br></pre></td></tr></table></figure></div><br>
+下面是期望输出：<br>
+<div class="code-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">4</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">2</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">1</span><br><span class="line">1</span><br></pre></td></tr></table></figure></div></p>
+<p>现在，我们完成以下任务：<br>
+1.发生merge操作时，观察dsu的变化情况：<br>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>参考答案 </summary>
+              <div class="content">
+              <div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">gdb dsu</span><br><span class="line"><span class="built_in">set</span> args &lt; input.in</span><br><span class="line">watch dsu</span><br><span class="line">b merge</span><br><span class="line">b 32        <span class="comment"># Note that b 32 is to skip the init(), which would be boring for reallocate vector dsu. You may use disable to disable some breakpoints.</span></span><br><span class="line">info b</span><br><span class="line"><span class="comment"># repeat below for n times</span></span><br><span class="line">c       <span class="comment"># You may use `c 10` to skip some allocation for vector</span></span><br><span class="line">finish  <span class="comment"># when stop for entering the function merge</span></span><br><span class="line">p dsu   <span class="comment"># show the content of dsu array</span></span><br></pre></td></tr></table></figure></div><p>从这个例子可以看出，gdb所停顿的语句，是暂时没有执行的。这个要注意。其次，在给dsu加上watchpoint后，可以发现在init()函数里面时，都会出现一大堆不可名状的内容。原因在于vector内部的实现，会动态改变vector的大小，并重新分配空间。</p>
+              </div>
+            </details><br>
+2.每次发生findfa时，查看函数调用帧<br>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>参考答案 </summary>
+              <div class="content">
+              <div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">b findfa</span><br><span class="line">run</span><br><span class="line">c</span><br><span class="line">bt</span><br><span class="line">frame 1</span><br><span class="line">info <span class="built_in">local</span></span><br><span class="line">info args</span><br></pre></td></tr></table></figure></div><p>也许用递归程序能够更好地体现。比较重要的是<code>info local</code>，可以展现所有的局部变量。</p>
+              </div>
+            </details></p>
+<h2 id="熟悉core文件调试">熟悉core文件调试</h2>
+<p>这次是个很简单的例子：<br>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span>* p;</span><br><span class="line">    *p = <span class="number">9961</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><br>
+由于作者是边学边做，这里作者遇到了一些问题：作者使用的发行版本为ubuntu22.04，经过查阅资料，发现在<code>/proc/sys/kernel/core_pattern</code>有保存存放地址：<code>|/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E</code>，经过再进一步的查阅，发现这个地址跟apport这个东西有关。查到的大多数的资料都是修改<code>/etc</code>下面某些文件的配置。我们这里不这样做，而是使用gcore：<br>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gdb</span><br><span class="line">(gdb) file segFault</span><br><span class="line">(gdb) run</span><br><span class="line">(gdb) gcore                 <span class="comment"># 注意只有正在运行的进程可以使用 gcore ，如果run之后发生了段错误，是还会继续运行的，可以使用 gcore 生成 core 文件</span></span><br><span class="line"><span class="comment"># (gdb) gcore &lt;target_file&gt;     # 生成的文件名为target_file</span></span><br><span class="line">(gdb) q</span><br><span class="line">gdb segFault core.40540     <span class="comment"># 第三个参数是 core 文件</span></span><br></pre></td></tr></table></figure></div></p>
+<p>生成core文件并执行后，我们可以看到gdb直接报出错误原因和位置：<br>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Program received signal SIGSEGV, Segmentation fault.</span><br><span class="line">0x0000555555555175 <span class="keyword">in</span> main () at segFault.cpp:5</span><br><span class="line">5           *p = 9961;</span><br></pre></td></tr></table></figure></div><br>
+那么core文件是什么呢？core文件就是程序崩溃时的内存快照，记录了崩溃瞬间的内部状态。</p>
+<h2 id="为什么会这样">为什么会这样？</h2>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span>* p = <span class="literal">nullptr</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">    p = &amp;a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">g1</span>();</span><br><span class="line">    cout &lt;&lt; *p &lt;&lt;endl;</span><br><span class="line">    <span class="built_in">g2</span>();</span><br><span class="line">    cout &lt;&lt; *p &lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>打印的结果是3和0，也许你大概猜到是什么原因了，但我们现在希望能探究一下，这究竟是什么原因。</p>
+<details class="blue" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>参考答案 </summary>
+              <div class="content">
+              <div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">watch *p        <span class="comment"># 这是最快的做法</span></span><br><span class="line">c</span><br><span class="line"><span class="comment"># Old value = &lt;unreadable&gt;</span></span><br><span class="line"><span class="comment"># New value = 3</span></span><br><span class="line"><span class="comment"># g1 () at test.cpp:7</span></span><br><span class="line">c</span><br><span class="line"><span class="comment"># Old value = 3</span></span><br><span class="line"><span class="comment"># New value = 0</span></span><br><span class="line"><span class="comment"># _dl_runtime_resolve_xsavec () at ../sysdeps/x86_64/dl-trampoline.h:75</span></span><br><span class="line">c</span><br><span class="line"><span class="comment"># Old value = 0</span></span><br><span class="line"><span class="comment"># New value = 21845</span></span><br><span class="line"><span class="comment"># 0x00007ffff7d3d09a in std::ostream&amp; std::ostream::_M_insert&lt;long&gt;(long) () from /lib/x86_64-linux-gnu/libstdc++.so.6</span></span><br><span class="line">c</span><br><span class="line"><span class="comment"># Old value = 21845</span></span><br><span class="line"><span class="comment"># New value = 0</span></span><br><span class="line"><span class="comment"># _dl_runtime_resolve_xsavec () at ../sysdeps/x86_64/dl-trampoline.h:75</span></span><br><span class="line">c</span><br><span class="line"><span class="comment"># Old value = 0</span></span><br><span class="line"><span class="comment"># New value = 21845</span></span><br><span class="line"><span class="comment"># 0x00007ffff7d3d09a in std::ostream&amp; std::ostream::_M_insert&lt;long&gt;(long) () from /lib/x86_64-linux-gnu/libstdc++.so.6</span></span><br><span class="line">c</span><br><span class="line"><span class="comment"># Continuing.</span></span><br><span class="line"><span class="comment"># 0</span></span><br><span class="line"><span class="comment"># [Inferior 1 (process 43738) exited normally]</span></span><br></pre></td></tr></table></figure></div><p>不难知道这个p所在的地址被反复发生未知读写的原因是<code>g1</code>函数的栈帧释放后，后面调用的函数又使用了这一块内存，导致内容被反复读写。从调试结果可以看出来，这个值的改变有两个来源：一个是来自<code>../sysdeps/x86_64/dl-trampoline.h</code>，一个是来自<code>/lib/x86_64-linux-gnu/libstdc++.so.6</code>。后者结合输出不难猜出是cout的原因。那前者是什么呢？经过查阅资料，发现是管理动态链接库用的。</p><p>那么我们继续修改代码如下：<br><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* p = <span class="literal">nullptr</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g1</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">    p = &amp;a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">g2</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">9</span>;</span><br><span class="line">    p = <span class="literal">nullptr</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">g1</span>();</span><br><span class="line">    <span class="built_in">g2</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><br>emm，发现还是有<code>../sysdeps/x86_64/dl-trampoline.h</code>参与，不知道是什么原因，动态链接库是哪里来的？是不是跟加载有关？还是？先把疑问留在这里吧。</p>
+              </div>
+            </details>
+<h2 id="其他">其他</h2>
+<p>【编译原理】课程项目——未修复的bug</p>
+<h1 id="参考资料">参考资料</h1>
+<p><a class="link" target="_blank" rel="noopener" href="https://www.zhihu.com/question/65306462/answer/2602659870">大佬们都是怎么用gdb的？或者用吗？ - 张小方的回答<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>(介绍了GDB在大型项目里面的实战？有空看看。)<br>
+<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/74897601">GDB调试入门指南<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 【cpp查漏补缺】4-gdb的使用</li>
+        <li><strong>Author:</strong> spiritTrance</li>
+        <li><strong>Created at
+                :</strong> 2023-10-03 22:33:07</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-01-29 10:43:44
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://spirittrance.github.io/2023/10/03/cpp_4_gdb调试/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/cpp/">#cpp</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/gdb/">#gdb</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/08/21/linux_linux基本操作学习/" title="linux基本操作学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="linux基本操作学习" class="!max-w-none">
+  <span class="title">linux基本操作学习</span>
+</a><a class="recommended-article-item" href="/2023/10/01/cpp_2_Makefile用法/" title="【cpp查漏补缺】2-Makefile入门" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】2-Makefile入门</span>
+</a><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch1/" title="【MIT6.172】学习笔记（1）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（1）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（1）</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/08/21/linux_linux基本操作学习/" title="linux基本操作学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="linux基本操作学习" class="!max-w-none">
+  <span class="title">linux基本操作学习</span>
+</a><a class="recommended-article-item" href="/2023/10/01/cpp_2_Makefile用法/" title="【cpp查漏补缺】2-Makefile入门" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】2-Makefile入门</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/10/05/docker_1_docker%E5%AE%89%E8%A3%85/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">docker安装</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/10/02/cpp_3_CMake%E7%94%A8%E6%B3%95/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">【cpp查漏补缺】3-CMake入门</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c67a7c5121c94079c84b',
+                    clientSecret: '4b69f6ad1d11b93e12a3d466fb4c0dd05c58c641',
+                    repo: 'blogComment',
+                    owner: 'spiritTrance',
+                    admin: ['spiritTrance'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">【cpp查漏补缺】4-gdb的使用</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8gdb%E8%80%8C%E4%B8%8D%E6%98%AF%E6%89%93%E5%8D%B0%E5%A4%A7%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">为什么要使用GDB，而不是打印大法？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#elf%E6%96%87%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">ELF文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gdb%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">GDB基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF"><span class="nav-number">3.1.</span> <span class="nav-text">调试信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">输入设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E8%B0%83%E8%AF%95"><span class="nav-number">3.3.</span> <span class="nav-text">进入调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%8E%A5%E8%B0%83%E8%AF%95"><span class="nav-number">3.3.1.</span> <span class="nav-text">直接调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%83%E8%AF%95%E5%B7%B2%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.3.2.</span> <span class="nav-text">调试已运行程序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%AD%E7%82%B9%E8%AE%BE%E7%BD%AE"><span class="nav-number">3.4.</span> <span class="nav-text">断点设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F"><span class="nav-number">3.5.</span> <span class="nav-text">查看变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%8B%E5%8A%A8%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F"><span class="nav-number">3.5.1.</span> <span class="nav-text">手动查看变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E5%86%85%E5%AE%B9"><span class="nav-number">3.5.2.</span> <span class="nav-text">查看内存内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%98%BE%E7%A4%BA%E5%8F%98%E9%87%8F"><span class="nav-number">3.5.3.</span> <span class="nav-text">自动显示变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%AF%84%E5%AD%98%E5%99%A8%E5%86%85%E5%AE%B9"><span class="nav-number">3.5.4.</span> <span class="nav-text">查看寄存器内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E6%AF%94%E5%AF%B9"><span class="nav-number">3.6.</span> <span class="nav-text">源码比对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E8%AF%95"><span class="nav-number">3.7.</span> <span class="nav-text">调试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%9A%84%E6%AD%A5%E8%BF%9B%E8%B0%83%E8%AF%95"><span class="nav-number">3.7.1.</span> <span class="nav-text">基本的步进调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A0%86%E6%A0%88%E8%B0%83%E7%94%A8%E8%B0%83%E8%AF%95"><span class="nav-number">3.7.2.</span> <span class="nav-text">堆栈调用调试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E6%BA%90%E7%A0%81%E8%B7%AF%E5%BE%84"><span class="nav-number">3.8.</span> <span class="nav-text">指定源码路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81%E6%AF%94%E5%AF%B9"><span class="nav-number">3.9.</span> <span class="nav-text">源代码比对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#core%E6%96%87%E4%BB%B6%E8%B0%83%E8%AF%95"><span class="nav-number">3.10.</span> <span class="nav-text">core文件调试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">一些示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%86%9F%E6%82%89%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="nav-number">4.1.</span> <span class="nav-text">熟悉基本操作——并查集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%86%9F%E6%82%89core%E6%96%87%E4%BB%B6%E8%B0%83%E8%AF%95"><span class="nav-number">4.2.</span> <span class="nav-text">熟悉core文件调试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E8%BF%99%E6%A0%B7"><span class="nav-number">4.3.</span> <span class="nav-text">为什么会这样？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">4.4.</span> <span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">5.</span> <span class="nav-text">参考资料</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">spiritTrance</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        19 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

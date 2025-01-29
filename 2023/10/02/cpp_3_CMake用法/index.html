@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="spiritTrance">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/10/02/cpp_3_cmake用法/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta property="og:type" content="article">
+<meta property="og:title" content="【cpp查漏补缺】3-CMake入门">
+<meta property="og:url" content="http://example.com/2023/10/02/cpp_3_CMake%E7%94%A8%E6%B3%95/index.html">
+<meta property="og:site_name" content="spiritTranceの小窝">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-10-02T13:40:00.000Z">
+<meta property="article:modified_time" content="2025-01-29T02:43:44.519Z">
+<meta property="article:author" content="spiritTrance">
+<meta property="article:tag" content="cpp">
+<meta property="article:tag" content="CMake">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4">
+    <meta name="theme-color" content="#763dff">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+    <!--- Page Info-->
+    
+    <title>
+        
+            【cpp查漏补缺】3-CMake入门 | spiritTranceの小窝
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":false,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":true,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#763dff","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"400px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"spiritTranceの小窝","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#36adf7","right":"#966df7","transparency":60},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Articles":{"path":"/archives","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/spiritTrance","Blog":"https://spirittrance.github.io/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"欢迎来到spiritTranceの小窝！","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                spiritTranceの小窝
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARTICLES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/spiritTrance">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://spirittrance.github.io/">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Articles"
+                        >
+                            <span>
+                                ARTICLES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Articles">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/spiritTrance">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://spirittrance.github.io/">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/img/cover/cpp.png" alt="【cpp查漏补缺】3-CMake入门" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【cpp查漏补缺】3-CMake入门</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">spiritTrance</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1"></span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-02 21:40</span>
+        <span class="mobile">2023-10-02 21:40</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-29 10:43:44</span>
+            <span class="mobile">2025-01-29 10:43:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/cpp/">cpp</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/CMake/">CMake</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="前言">前言</h1>
+<p><a target="_blank" rel="noopener" href="https://spirittrance.github.io/2023/10/01/cpp_2_Makefile%E7%94%A8%E6%B3%95/">上一节</a>介绍了Makefile的用法，但由于Makefile编写过于复杂，于是CMake工具出现了。CMake用法比Makefile更为简单，其作用是生成Makefile文件。除此之外，CMake允许开发者编写一种平台无关的 CMakeList.txt 文件来定制整个编译流程，然后再根据目标用户的平台进一步生成所需的本地化Makefile和工程文件。本文将介绍CMake的基本用法。</p>
+<p>由于CMake的功能十分强大，本篇文章采用增量式更新的形式（即：作者用到的时候才进行更新）。</p>
+<h1 id="cmake常用函数一览">CMake常用函数一览</h1>
+<p>这里先扔出一大堆常见函数，先了解其用法，留下一个印象，之后在后面具体实操。</p>
+<h2 id="编译相关">编译相关</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基本信息设置相关</span></span><br><span class="line">cmake_minimum_required(VERSION 2.8) <span class="comment"># 规定 CMake 的最低版本</span></span><br><span class="line">project(Demo2 VERSION 0.1)          <span class="comment"># 定义 项目 名为Demo2，版本为0.1</span></span><br><span class="line"><span class="built_in">set</span>(var 1)                          <span class="comment"># 变量定义，类似于var=1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 添加源代码相关</span></span><br><span class="line"><span class="comment"># - 指定 生成目标，第一个是目标名，后面的为源代码</span></span><br><span class="line">add_executable(main main.cc MathFunctions.cc)</span><br><span class="line"><span class="comment"># - 指定 源代码所在目录，第一个是目录路径，后面的为相应的变量，注意不会递归查找文件</span></span><br><span class="line"><span class="comment"># - 使用$&#123;SOURCE&#125;来引用变量SOURCE：add_executable(main $&#123;SOURCE&#125;)</span></span><br><span class="line">aux_source_directory(./src SOURCE)</span><br><span class="line"><span class="comment"># - 添加子目录，请注意，子目录的CMakeLists.txt因为此函数也会被处理，且在子目录设置的变量会传播到本目录</span></span><br><span class="line">add_subdirectory(./src/calc)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 库与链接相关</span></span><br><span class="line"><span class="comment"># - 生成链接库：第一个是库名，第二个参数是类型</span></span><br><span class="line"><span class="comment">#   默认是STATIC静态链接库，SHARED为动态链接库，后面为源代码</span></span><br><span class="line">add_library(MathFunctions [STATIC] <span class="variable">$&#123;DIR_LIB_SRCS&#125;</span>)</span><br><span class="line"><span class="comment"># - 向目标添加相应库，第一个是目标名，第二个是静态链接库名</span></span><br><span class="line">target_link_libraries(main MathFunctions)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 头文件管理相关</span></span><br><span class="line"><span class="comment"># - 用于给指定目标设置头文件包含目录，其中第二个参数是权限控制：</span></span><br><span class="line"><span class="comment"># - - 1.PUBLIC:允许当前目标和依赖于当前目标的其他目标访问指定的包含目录，且指定目标会加入当前目标的编译过程</span></span><br><span class="line"><span class="comment"># - - 2.INTERFACE:包含目录可以被当前目标和依赖于当前目标的其他目标访问，通常使用于库，不会影响库本身的编译过程</span></span><br><span class="line"><span class="comment"># - - 3.PRIVATE:包含目录仅在当前目标内可见</span></span><br><span class="line">target_include_directories(main PRIVATE /path/to/include)</span><br><span class="line"><span class="comment"># - 给整个项目的【所有目标】设置包含目录，一般不推荐使用</span></span><br><span class="line">include_directories(/path/to/include)</span><br><span class="line"><span class="comment"># - 设置用户可配置的选项，value默认为`OFF`关闭，可选`ON`</span></span><br><span class="line">option(&lt;option_variable&gt; <span class="string">&quot;option_description&quot;</span> [value])</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目配置相关</span></span><br><span class="line"><span class="comment"># 根据*.h.in内容，生成*.h的内容，具体用法见后</span></span><br><span class="line">configure_file(<span class="string">&quot;config.h.in&quot;</span> <span class="string">&quot;config.h&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="安装相关">安装相关</h2>
+<p>这里仅放置一些常见用法，具体见<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/install.html#install">此</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install 命令用于处理在CMake中生成的一系列目标</span></span><br><span class="line"><span class="comment"># 安装可执行文件和库</span></span><br><span class="line">install(TARGETS main DESTINATION ./bin)</span><br><span class="line">install(TARGETS lib DESTINATION ./lib)</span><br><span class="line"><span class="comment"># 安装头文件</span></span><br><span class="line">install(DIRECTORY include/ DESTINATION .)</span><br></pre></td></tr></table></figure>
+<h2 id="测试相关">测试相关</h2>
+<blockquote>
+<p>待补充</p>
+</blockquote>
+<h2 id="特殊内建变量">特殊内建变量</h2>
+<p>更多内建变量请查阅<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/manual/cmake-variables.7.html">官方文档</a>，下面列出常用的内建变量。</p>
+<blockquote>
+<p><code>CMAKE_SOURCE_DIR</code>：处理源代码时，整个项目的最顶层目录<br>
+<code>PROJECT_SOURCE_DIR</code>：处理源代码时，最后一个调用Project()的CMakeLists.txt所在的目录<br>
+<code>CMAKE_CURRENT_SOURCE_DIR</code>：处理源代码时，当前CMakeLists.txt所在目录<br>
+<code>CMAKE_BINARY_DIR</code>：构建过程中，整个项目的顶层目录<br>
+<code>CMAKE_LIBRARY_OUTPUT_DIRECTORY</code>：动态链接库的输出目录，默认目录为<code>pwd</code><br>
+<code>CMAKE_ARCHIVE_OUTPUT_DIRECTORY</code>：静态链接库的输出目录，默认目录为<code>pwd</code><br>
+<code>CMAKE_RUNTIME_OUTPUT_DIRECTORY</code>：目标文件的输出目录，默认目录为<code>pwd</code><br>
+<code>CMAKE_CXX_FLAGS</code>：gcc的编译选项，如<code>-O1 -g -Wall</code>等等附加选项<br>
+<code>CMAKE_CXX_STANDARD</code>：c++的标准<br>
+<code>CMAKE_CXX_STANDARD_REQUIRED</code>：是否强制需要，True或False</p>
+</blockquote>
+<p>举例：我在<code>./build</code>中执行<code>cmake ..</code>，而根目录有<code>CMakeLists.txt</code>，那么<code>CMAKE_SOURCE_DIR</code>为<code>.</code>，<code>CMAKE_BINARY_DIR</code>为<code>./build</code><br>
+如果还是不明白，可以使用<code>message()</code>函数进行打印。</p>
+<h1 id="初探cmake">初探CMake</h1>
+<p>这里沿用我们在<a target="_blank" rel="noopener" href="https://spirittrance.github.io/2023/10/01/cpp_2_Makefile%E7%94%A8%E6%B3%95/">上一节</a>中用到的项目，目录结构如下：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── bin</span><br><span class="line">├── build                   <span class="comment"># CMake 构建的工作目录</span></span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── config                  <span class="comment"># 配置文件目录</span></span><br><span class="line">│   └── conf.h.in</span><br><span class="line">├── include</span><br><span class="line">│   └── calc.h</span><br><span class="line">├── lib</span><br><span class="line">└── src</span><br><span class="line">    ├── calc</span><br><span class="line">    │   ├── add_sub</span><br><span class="line">    │   │   ├── add.cpp</span><br><span class="line">    │   │   └── sub.cpp</span><br><span class="line">    │   ├── CMakeLists.txt</span><br><span class="line">    │   └── mul_div</span><br><span class="line">    │       ├── div.cpp</span><br><span class="line">    │       └── mul.cpp</span><br><span class="line">    └── main.cpp</span><br></pre></td></tr></table></figure></p>
+<p>其次，我们应该如何使用CMake呢？首先创建名为<code>CMakeLists.txt</code>的文件，然后开始编写内容。</p>
+<h2 id="基本信息维护">基本信息维护</h2>
+<p>首先，我们应该考虑加入基本信息：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cmake_minimum_required(VERSION 3.0)    <span class="comment"># 用于规定 cmake 工具的最低版本</span></span><br><span class="line">project(demo VERSION 0.1)              <span class="comment"># 用于定义 project 的名称，注意 demo 是定义的变量名，标识一个 project，后面的 VERSION 标识项目的版本</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span>(CMAKE_CXX_FLAGS   <span class="string">&quot;-g -Wall&quot;</span>)       <span class="comment"># 开启警告信息</span></span><br><span class="line"><span class="built_in">set</span>(CMAKE_CXX_STANDARD 11)             <span class="comment"># set 用于设置变量，CMAKE_CXX_STANDARD 用于标识 c++ 标准库的版本，这里设置的是c++11版本</span></span><br><span class="line"><span class="built_in">set</span>(CMAKE_CXX_STANDARD_REQUIRED True)  <span class="comment"># CMAKE_CXX_STANDARD_REQUIRED 表示这个标准是否被需要，这里设置为 True </span></span><br></pre></td></tr></table></figure><br>
+这里我们用了几个函数，我们现在来一一介绍。</p>
+<blockquote>
+<p><code>cmake_minimum_required</code>：对CMake的最小版本要求。值得注意的是，如果版本设置过低，其会因为兼容性的原因而不允许进行构建。<br>
+<code>project</code>：定义项目名，后面可以跟版本号<br>
+<code>set()</code>：这一函数用于设置变量名。值得注意的是，我们经常使用这个函数修改内建变量，以便于我们项目的构建。</p>
+</blockquote>
+<h2 id="配置选项">配置选项</h2>
+<p>接下来，我们进行一些配置选项的设定。<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置</span></span><br><span class="line">option(ECHO <span class="string">&quot;echo test&quot;</span> OFF)</span><br><span class="line"><span class="keyword">if</span>(ECHO)</span><br><span class="line">    message(<span class="string">&quot;Echo on!&quot;</span>)</span><br><span class="line">    <span class="built_in">set</span>(testVar <span class="string">&quot;This is a test&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">    message(<span class="string">&quot;Echo off!&quot;</span>)</span><br><span class="line">    <span class="built_in">set</span>(testVar <span class="string">&quot;This is a fail&quot;</span>)</span><br><span class="line">endif()</span><br><span class="line">configure_file(<span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/config/conf.h.in&quot;</span> <span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/include/config.h&quot;</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// $&#123;PROJECT_SOURCE_DIR&#125;/config/conf.h.in</span></span><br><span class="line"><span class="meta">#cmakedefine ECHO</span></span><br><span class="line"><span class="meta">#cmakedefine testVar <span class="string">&quot;@testVar@&quot;</span> </span></span><br></pre></td></tr></table></figure>
+<p>其中我们主要用到了<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/configure_file.html#configure-file">configure_file()</a>函数。这个函数提供了一些可能的配置，第一个参数接收配置文件的路径，第二个参数接收生成头文件的路径。<br>
+下面我们重点介绍了一下配置文件的编写。首先，我们使用<code>#cmakedefine</code>，来定义一个可能的宏。注意两个宏定义有所区分：<br>
+&gt; <code>#cmakedefine ECHO</code>：这一个宏定义和option函数对应，需要注意的是option和这里的宏名称要一模一样。option函数有两个取值：ON和OFF。如果为OFF，那么生成的头文件<code>config.h</code>会被替换成<code>/* #undef ECHO */</code>，否则会替换成<code>#define ECHO</code>.<br>
+&gt; <code>#cmakedefine var1 "@var2@"</code>：注意这个宏定义，宏名称必须和CMake中设置的变量一样。其次，宏定义的内容可以任意取值。但比较特殊的是用<code>"@</code>和<code>@"</code>括起来的CMake定义过的变量。为加以区分，我们用var1和var2来表述。如果var1在CMake中被set或option为ON的话，就会使用var2定义的宏。但如果var2被<code>"@</code>和<code>@"</code>括起来的话，var2则会替换成CMake定义过的变量。</p>
+<p>最后还需要留意两个地方：有一个是if-else-endif的控制结构。另外一个是内建变量<code>$&#123;PROJECT_SOURCE_DIR&#125;</code>，这个变量的含义请查阅《特殊内建变量》一节。<br>
+下面是<code>configure_file()</code>函数生成的<code>config.h</code>的内容：<br>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> ECHO</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> testVar <span class="string">&quot;This is a test&quot;</span></span></span><br></pre></td></tr></table></figure><br>
+在这里，也许<code>#cmakedefine var1 "@var2@"</code>的含义还是不太明确。下面给出一些示例。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># case 1:</span><br><span class="line"># var=ON    # by call option()</span><br><span class="line">#cmakedefine var &quot;var&quot; =&gt; #define var &quot;var&quot;  </span><br><span class="line"></span><br><span class="line"># case 2 - 4:</span><br><span class="line"># var=OFF, var2=on   # by call option()</span><br><span class="line">#cmakedefine var &quot;var&quot; =&gt; /* #undef var */</span><br><span class="line">#cmakedefine var &quot;@var@&quot; =&gt; /* #undef var */</span><br><span class="line">#cmakedefine var &quot;@var2@&quot; =&gt; /* #undef var */</span><br><span class="line"></span><br><span class="line"># case 5 - 7:</span><br><span class="line"># var=&quot;test&quot;    # by call set()</span><br><span class="line">#cmakedefine var &quot;var&quot; =&gt; #define var &quot;var&quot;  </span><br><span class="line">#cmakedefine var &quot;@var@&quot; =&gt; #define var &quot;test&quot;  </span><br><span class="line">#cmakedefine var &quot;@var2@&quot; =&gt; #define var &quot;&quot;  </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Q：为什么我修改了OPTION的定义，但输出的头文件没有变化？<br>
+A：注意到CMake构建后产生的CMakeCache.txt文件，不难找到有：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ECHO:BOOL=OFF</span><br></pre></td></tr></table></figure>
+<p>对的，如果你不清除这个文件，下次构建时就不会依照你的OPTION设定的选项，而是直接从CMakeCache.txt里面读取结果。CMakeCache.txt还包含了众多的内建变量。值得一提的是，<code>set()</code>设定的变量不会被包括进来。</p>
+</blockquote>
+<h2 id="添加源文件">添加源文件</h2>
+<p>下一步，我们需要添加源文件了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ./CMakeLists.txt</span></span><br><span class="line"><span class="comment"># 添加目录下的所有源代码</span></span><br><span class="line">add_subdirectory(<span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/src/calc&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#./src/calc/CMakeLists.txt</span></span><br><span class="line">aux_source_directory(<span class="string">&quot;<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/add_sub&quot;</span> CALC_SRC_ADSB)</span><br><span class="line">aux_source_directory(<span class="string">&quot;<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/mul_div&quot;</span> CALC_SRC_MLDV)</span><br><span class="line">add_library(calc STATIC <span class="variable">$&#123;CALC_SRC_ADSB&#125;</span> <span class="variable">$&#123;CALC_SRC_MLDV&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>这里需要强调的是，这两份配置来自于两个CMakeLists.txt。第一份来自于根目录，而第二份来自于<code>src/calc</code>。下面介绍三个函数的作用：</p>
+<blockquote>
+<p><code>add_subdirectory(path)</code>：将指定路径path加入项目，<strong>并根据指定路径的CMakeList.txt继续进行构建</strong>。<br>
+<code>aux_source_directory(path, var)</code>：将指定目录path下的所有源代码存入变量var中。</p>
+</blockquote>
+<p>这里仍然值得注意的是路径的声明，其中用到了内建变量<code>$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</code>。其含义仍然查询《特殊内建变量》一节。可以使用<code>message()</code>函数打印。</p>
+<h2 id="添加静态库及动态库">添加静态库及动态库</h2>
+<p>上面的CMakeists.txt还有一个函数没有介绍，这个函数就是用于构建库的函数。</p>
+<blockquote>
+<p><code>add_library(lib_name, [STATIC | SHARED | MODULE], src...)</code>：用于构建目标库，其中第一个参数为库名，第二个参数默认为STATIC，用于构建静态库，后面的参数为源代码。</p>
+</blockquote>
+<h2 id="依赖配置">依赖配置</h2>
+<p>下一步是为我们的目标文件添加依赖。看过<a target="_blank" rel="noopener" href="https://spirittrance.github.io/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/">【cpp查漏补缺】1-cpp是如何跑起来的？</a>的都知道，一个目标文件的构建，需要考虑头文件，依赖库和其他所有源文件。这就是一个目标文件所有的依赖。<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">add_executable(main <span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/src/main.cpp&quot;</span>)</span><br><span class="line">target_include_directories(main PRIVATE <span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/include&quot;</span>)</span><br><span class="line">target_link_libraries(main calc)</span><br></pre></td></tr></table></figure></p>
+<p>其中我们用到了以下函数：</p>
+<blockquote>
+<p><code>add_executable</code>：用于添加可执行目标。后面为所有需要的依赖。这里仅需要<code>src/main.cpp</code><br>
+<code>target_include_directories</code>：用于向目标添加头文件依赖所在的目录，这里是<code>./include/</code>这个目录。关于PUBLIC，PRIVATE和INTERFACE的权限控制符的含义见《编译相关》一节。<br>
+<code>target_link_libraries</code>：用于向目标添加库文件依赖，这里是<code>calc</code>这个库，在src/calc/CMakeLists/txt中定义的库。</p>
+</blockquote>
+<h2 id="安装配置">安装配置</h2>
+<p>安装配置的作用是将整个CMake构建过程的中间目标，通过<code>make install</code>的方式输出到指定路径。增加配置如下：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">install(TARGETS calc DESTINATION <span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/lib&quot;</span>)</span><br><span class="line">install(TARGETS main DESTINATION <span class="string">&quot;<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/bin&quot;</span>)</span><br></pre></td></tr></table></figure><br>
+这里仅仅是一些简单示例，更多用法请查看<a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/command/install.html#install">文档</a></p>
+<h2 id="如何启动">如何启动</h2>
+<p>首先，由于CMake构建过程中会产生很多中间文件。因此，我们在build文件夹下进行构建：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> build</span><br><span class="line">cmake ..</span><br></pre></td></tr></table></figure><br>
+构建完成后，我们发现有很多中间文件，其中生成了<code>makefile</code>。我们进行make：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure></p>
+<p>执行后的项目结构如下所示：<br>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── bin</span><br><span class="line">├── build</span><br><span class="line">│   ├── CMakeCache.txt</span><br><span class="line">│   ├── CMakeFiles</span><br><span class="line">│   │   ├── 3.22.1</span><br><span class="line">│   │   │   ├── ...</span><br><span class="line">│   │   │   ├── ...</span><br><span class="line">│   │   │   └── ... (omitted)</span><br><span class="line">│   │   ├── main.dir</span><br><span class="line">│   │   │   ├── ...</span><br><span class="line">│   │   │   └── ... (omitted)</span><br><span class="line">│   │   ├── ...</span><br><span class="line">│   │   └── ... (omitted)</span><br><span class="line">│   ├── ...</span><br><span class="line">│   ├── main</span><br><span class="line">│   ├── Makefile</span><br><span class="line">│   └── src</span><br><span class="line">│       └── calc</span><br><span class="line">│           ├── CMakeFiles</span><br><span class="line">│           │   ├── ...</span><br><span class="line">│           │   ├── ...</span><br><span class="line">│           │   └── ... (omitted)</span><br><span class="line">│           ├── ...</span><br><span class="line">│           ├── libcalc.a</span><br><span class="line">│           ├── Makefile</span><br><span class="line">│           └── ... (omitted)</span><br><span class="line">├── clean_script.sh</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── config</span><br><span class="line">│   └── conf.h.in</span><br><span class="line">├── include</span><br><span class="line">│   ├── calc.h</span><br><span class="line">│   └── config.h</span><br><span class="line">├── lib</span><br><span class="line">└── src</span><br><span class="line">    ├── calc</span><br><span class="line">    │   ├── add_sub</span><br><span class="line">    │   │   ├── add.cpp</span><br><span class="line">    │   │   └── sub.cpp</span><br><span class="line">    │   ├── CMakeLists.txt</span><br><span class="line">    │   └── mul_div</span><br><span class="line">    │       ├── div.cpp</span><br><span class="line">    │       └── mul.cpp</span><br><span class="line">    └── main.cpp</span><br></pre></td></tr></table></figure><br>
+可以发现，相应的目标文件都在build里面，和其他的中间文件混在一起很乱。<br>
+如果我们在<code>build</code>目录下执行<code>make install</code>呢？由于我们进行了安装配置，可以发现main和libcalc.a分别出现在了bin和lib下面，这达到了我们的预期。<br>
+实际上，我们可以修改一些内建变量，达到执行<code>make</code>就能将相应文件放到我们想要放的地方中。在根目录下的CMakeLists.txt的前面几行加入如下内容：<br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span>(CMAKE_RUNTIME_OUTPUT_DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/bin)   <span class="comment"># 可执行文件所在位置</span></span><br><span class="line"><span class="built_in">set</span>(CMAKE_ARCHIVE_OUTPUT_DIRECTORY <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/lib)   <span class="comment"># 静态库文件(archive)所在位置</span></span><br></pre></td></tr></table></figure><br>
+再次执行<code>make</code>，可以发现相应目标文件都在根目录的bin和lib下了。但与此同时，build下面就不会出现这些目标文件了。</p>
+<blockquote>
+<p>最后一种做法是作者在《编译原理》课程上看到的框架提供的做法，不清楚是否有潜在危害。</p>
+</blockquote>
+<h1 id="测试">测试</h1>
+<blockquote>
+<p>待补充</p>
+</blockquote>
+<h2 id="cmake测试">CMake测试</h2>
+<h2 id="cmake宏">CMake宏</h2>
+<h1 id="项目迁移">项目迁移</h1>
+<blockquote>
+<p>待补充</p>
+</blockquote>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://cmake.org/cmake/help/latest/guide/tutorial/index.html">CMake tutorial</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/42-Curry/p/9752027.html">15分钟学习CMake脚本</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/473718943/answer/2091549447">C++入门后需要学习下Cmake吗？ - 马小刀的回答</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/534439206">全网最细的CMake教程！(强烈建议收藏)</a></li>
+</ul>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 【cpp查漏补缺】3-CMake入门</li>
+        <li><strong>Author:</strong> spiritTrance</li>
+        <li><strong>Created at
+                :</strong> 2023-10-02 21:40:00</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-01-29 10:43:44
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://spirittrance.github.io/2023/10/02/cpp_3_CMake用法/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/cpp/">#cpp</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/CMake/">#CMake</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/10/01/cpp_2_Makefile用法/" title="【cpp查漏补缺】2-Makefile入门" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】2-Makefile入门</span>
+</a><a class="recommended-article-item" href="/2023/10/01/cpp_1_链接/" title="【cpp查漏补缺】1-cpp是如何跑起来的？" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】1-cpp是如何跑起来的？" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】1-cpp是如何跑起来的？</span>
+</a><a class="recommended-article-item" href="/2024/01/11/环境配置踩坑/" title="【疑难杂症】记录从源码构建项目时碰到的一些坑" rel="bookmark">
+  <img src="/images/wallhaven-wqery6-light.webp" alt="【疑难杂症】记录从源码构建项目时碰到的一些坑" class="!max-w-none">
+  <span class="title">【疑难杂症】记录从源码构建项目时碰到的一些坑</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/10/01/cpp_2_Makefile用法/" title="【cpp查漏补缺】2-Makefile入门" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】2-Makefile入门</span>
+</a><a class="recommended-article-item" href="/2023/10/01/cpp_1_链接/" title="【cpp查漏补缺】1-cpp是如何跑起来的？" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】1-cpp是如何跑起来的？" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】1-cpp是如何跑起来的？</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/10/03/cpp_4_gdb%E8%B0%83%E8%AF%95/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">【cpp查漏补缺】4-gdb的使用</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/10/01/cpp_2_Makefile%E7%94%A8%E6%B3%95/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">【cpp查漏补缺】2-Makefile入门</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c67a7c5121c94079c84b',
+                    clientSecret: '4b69f6ad1d11b93e12a3d466fb4c0dd05c58c641',
+                    repo: 'blogComment',
+                    owner: 'spiritTrance',
+                    admin: ['spiritTrance'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">【cpp查漏补缺】3-CMake入门</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cmake%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%B8%80%E8%A7%88"><span class="nav-number">2.</span> <span class="nav-text">CMake常用函数一览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E7%9B%B8%E5%85%B3"><span class="nav-number">2.1.</span> <span class="nav-text">编译相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%9B%B8%E5%85%B3"><span class="nav-number">2.2.</span> <span class="nav-text">安装相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%9B%B8%E5%85%B3"><span class="nav-number">2.3.</span> <span class="nav-text">测试相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%86%85%E5%BB%BA%E5%8F%98%E9%87%8F"><span class="nav-number">2.4.</span> <span class="nav-text">特殊内建变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9D%E6%8E%A2cmake"><span class="nav-number">3.</span> <span class="nav-text">初探CMake</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF%E7%BB%B4%E6%8A%A4"><span class="nav-number">3.1.</span> <span class="nav-text">基本信息维护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E9%80%89%E9%A1%B9"><span class="nav-number">3.2.</span> <span class="nav-text">配置选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%BA%90%E6%96%87%E4%BB%B6"><span class="nav-number">3.3.</span> <span class="nav-text">添加源文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E9%9D%99%E6%80%81%E5%BA%93%E5%8F%8A%E5%8A%A8%E6%80%81%E5%BA%93"><span class="nav-number">3.4.</span> <span class="nav-text">添加静态库及动态库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E9%85%8D%E7%BD%AE"><span class="nav-number">3.5.</span> <span class="nav-text">依赖配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE"><span class="nav-number">3.6.</span> <span class="nav-text">安装配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%90%AF%E5%8A%A8"><span class="nav-number">3.7.</span> <span class="nav-text">如何启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">4.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmake%E6%B5%8B%E8%AF%95"><span class="nav-number">4.1.</span> <span class="nav-text">CMake测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cmake%E5%AE%8F"><span class="nav-number">4.2.</span> <span class="nav-text">CMake宏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E8%BF%81%E7%A7%BB"><span class="nav-number">5.</span> <span class="nav-text">项目迁移</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">参考资料</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">spiritTrance</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        19 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

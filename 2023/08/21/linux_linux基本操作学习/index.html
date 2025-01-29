@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="spiritTrance">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/08/21/linux_linux基本操作学习/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta property="og:type" content="article">
+<meta property="og:title" content="linux基本操作学习">
+<meta property="og:url" content="http://example.com/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="spiritTranceの小窝">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-08-21T07:33:07.000Z">
+<meta property="article:modified_time" content="2025-01-29T02:43:44.540Z">
+<meta property="article:author" content="spiritTrance">
+<meta property="article:tag" content="基本操作">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4">
+    <meta name="theme-color" content="#763dff">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+    <!--- Page Info-->
+    
+    <title>
+        
+            linux基本操作学习 | spiritTranceの小窝
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":false,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":true,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#763dff","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"400px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"spiritTranceの小窝","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#36adf7","right":"#966df7","transparency":60},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Articles":{"path":"/archives","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/spiritTrance","Blog":"https://spirittrance.github.io/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"欢迎来到spiritTranceの小窝！","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                spiritTranceの小窝
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARTICLES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/spiritTrance">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://spirittrance.github.io/">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Articles"
+                        >
+                            <span>
+                                ARTICLES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Articles">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/spiritTrance">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://spirittrance.github.io/">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/img/cover/linux_tools.png" alt="linux基本操作学习" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">linux基本操作学习</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">spiritTrance</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1"></span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-08-21 15:33:07</span>
+        <span class="mobile">2023-08-21 15:33:07</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-29 10:43:44</span>
+            <span class="mobile">2025-01-29 10:43:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/linux/">linux</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">基本操作</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="目录">目录</h1>
+<p>[toc]</p>
+<h1 id="前言及参考资料">前言及参考资料</h1>
+<p>这篇文章主要给出各个指令的作用，详细用法请查阅相关资料，灵活使用man指令和--help选项。仅当我认为重要的时候，会给出详细用法和示例。</p>
+<p>这篇文档会跟随着作者对linux的使用而持续更新。主要是记录一些注意的地方。</p>
+<p>参考资料：</p>
+<ul>
+<li>Linux命令行与shell脚本编程大全</li>
+<li><a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-command-manual.html">菜鸟教程-Linux指令大全</a></li>
+<li><a target="_blank" rel="noopener" href="https://nju-projectn.github.io/ics-pa-gitbook/ics2022/linux.html">linux的使用</a></li>
+<li><a target="_blank" rel="noopener" href="https://nju-projectn.github.io/ics-pa-gitbook/ics2022/man.html">man的使用</a></li>
+</ul>
+<h1 id="man的使用">man的使用</h1>
+<p>注意<code>man</code>可能会提供9个章节，每个章节有相应内容，请输入<code>man man</code>进行了解，如<br>
+- <code>man 1 man</code><br>
+- <code>man -f ls</code>：可以查看<code>ls</code>指令有什么页面。<br>
+- 章节有：<br>
+- 1 可执行程序或 shell 命令，用法查这个<br>
+- 2 系统调用(内核提供的函数)<br>
+- 3 库调用(程序库中的函数)<br>
+- 4 特殊文件(通常位于 /dev)<br>
+- 5 文件格式和规范，如 /etc/passwd，编写程序看2-5<br>
+- 6 游戏<br>
+- 7 杂项（包括宏包和规范）， 如 man(7)，groff(7), man-pages(7)<br>
+- 8 系统管理命令(通常只针对 root 用户)<br>
+- 9 内核例程 非标准</p>
+<h1 id="基本指令">基本指令</h1>
+<h2 id="echo">echo</h2>
+<h1 id="文件系统">文件系统</h1>
+<h2 id="文件管理">文件管理</h2>
+<h3 id="文件权限管理">文件权限管理</h3>
+<h3 id="文件修改">文件修改</h3>
+<h4 id="ln">ln</h4>
+<p>用于创建软硬链接。不加参数是硬链接，加上<code>-s</code>参数则是软链接。</p>
+<h3 id="文件压缩与解压缩">文件压缩与解压缩</h3>
+<h4 id="压缩文件指令">压缩文件指令</h4>
+<h5 id="gzip">gzip</h5>
+<p>可以解决后缀为Z,zip,gz等后缀的压缩文件。比较重要的参数：c（压缩数据输出到屏幕），d（解压缩），t（检查错误），v（显示具体信息），-number（压缩等级，number为1最快，压缩比最差，9反之，默认是6）。<br>
+注意其可以被windows下的winRAR和7zip等软件处理。</p>
+<blockquote>
+<p>坑点：注意压缩后会删除原来的文件！所以最好使用<code>gzip -c file &gt; file.gz</code>进行操作<br>
+另外,<code>zcat,zmore,zless</code>可以用来读取<strong>被压缩</strong>后的<strong>纯文本文件</strong></p>
+</blockquote>
+<h5 id="bzip2">bzip2</h5>
+<p>压缩效果比gzip更好，后缀名是bz2，用法与gzip2差不多<br>
+相应的，有<code>bzcat,bzmore和bzless</code></p>
+<h5 id="xz">xz</h5>
+<p>压缩效果比bzip2更好，后缀名是x2，用法与gzip2差不多<br>
+相应的，有<code>xzcat,xzmore和xzless</code></p>
+<h5 id="zip与unzip">zip与unzip</h5>
+<h4 id="tar文件打包">tar：文件打包</h4>
+<p>注意gzip等压缩对目录压缩的方式是对里面的文件分别进行压缩，导致压缩效果较差，而tar可以进行打包。</p>
+<blockquote>
+<p><code>-zjJ</code>：三种不同压缩方式，依次为gzip，bzip2，xz.<br>
+<code>-c</code>:进行压缩<br>
+<code>-x</code>:进行解压缩<br>
+<code>-t</code>:查询一个压缩包有哪些文件<br>
+<code>-C &lt;dir&gt;</code> ：解压在dir目录中<br>
+<code>-f &lt;file&gt;</code>：需要处理的压缩文件名file<br>
+<code>-v</code>:展示被处理的文件名<br>
+<code>-p</code>:保留文件原有权限（重要）<br>
+<code>--exclude=&lt;file&gt;</code>：不打包file文件，注意/etc*表示不打包/etc开头的文件</p>
+</blockquote>
+<blockquote>
+<p>压缩： <code>tar -jcv -f file.tar.bz2 &lt;要被压缩的一系列文件和目录&gt;</code><br>
+查询： <code>tar -jtv -f file.tar.bz2</code><br>
+解压缩：<code>tar -jxv -f file.tar.bz2 -C &lt;解压到的目录&gt;</code><br>
+解压指定文件：<code>tar -jxv -f file.tar.bz2 &lt;解压的文件(需要先查询压缩包内的文件)&gt;</code></p>
+</blockquote>
+<h4 id="dpkg文件解压缩">dpkg：文件解压缩</h4>
+<h4 id="光盘文件制作及刻录">光盘文件制作及刻录</h4>
+<p><code>mkisofs</code>,<code>cdrecord</code></p>
+<h4 id="其他">其他</h4>
+<p>关于备份工具，光盘写入工具和dd等指令，详见鸟哥的Linux厨房一书。</p>
+<h2 id="文档编辑">文档编辑</h2>
+<h3 id="参考文档">参考文档</h3>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/139482499">linux三剑客</a></p>
+<h3 id="find">find</h3>
+<p>作用：<strong>递归</strong>列出目录下的所有文件。常配合grep使用。详细用法见<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-find.html">此</a>，支持按照文件特征如创建时间，修改时间，创建用户，用户组等查找。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /opt/module/datax/job/export -type f -prune -exec sed -i &#x27;s/hadoop151:3306/hadoop101:3306/g&#x27; &#123;&#125; +</span><br></pre></td></tr></table></figure>
+<h3 id="sed">sed</h3>
+<p>主要用于编辑相应文件。一行一行处理。支持新增，取代，打印，删除，插入等功能。详细用法见<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-sed.html">此</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sed <span class="string">&#x27;3d&#x27;</span> xxx.txt 		<span class="comment"># 删除文件第3行</span></span><br><span class="line">sed <span class="string">&quot;<span class="variable">$d</span>&quot;</span> xxx.txt 		<span class="comment"># 删除文件最后一行</span></span><br><span class="line">sed ’s/^[ ]*//g’ xxx.txt 	<span class="comment"># 删除空格</span></span><br><span class="line">sed <span class="string">&#x27;s/test/mytest/g&#x27;</span> xxx.txt 	<span class="comment"># 替换：把test替换为mytest。如果没有g标记，则只有每行第一个匹配的test被替换成mytest。</span></span><br><span class="line">sed ‘s/pattern/&amp;\n/g’ filename 	<span class="comment"># 添加新行（向前）</span></span><br><span class="line">sed -i ‘$ a\插入字符串’ filename 	<span class="comment"># 在最后一行插入字符</span></span><br></pre></td></tr></table></figure>
+<p>选项说明：</p>
+<blockquote>
+<p><code>-i</code>，<code>-i.bak</code>:直接在源文件上修改，如果有.bak，则源文件备份到后缀名为.bak的文件里面</p>
+<p><code>'s/pattern/result/g'</code>：将符合正则表达式的 <code>pattern</code>替换成 <code>result</code>，注意s前加n,m表示只修改n到m行的内容。</p>
+<p><code>-n</code>:只打印修改的内容</p>
+<p><code>3p</code>:打印第三行的内容，配合-n使用更好，<code>2,9p</code>表示打印2到9行的内容。<code>/pattern/p</code>则是表示显示符合条件pattern的行</p>
+<p><code>2d</code>:删除第二行的内容，<code>$d</code>则是删除最后一行的内容，<code>/pattern/d</code>则是表示删除符合条件pattern的行</p>
+<p><code>-e</code>选项表示将结果输出到stdout，不修改源文件</p>
+<p><code>5a # comment</code>表示在第五行后增添 <code># comment</code>字符串一行</p>
+</blockquote>
+<h3 id="awk">awk</h3>
+<p>非常强大而又复杂的文本处理工具，支持打印相应位置文本，按照指令分隔符分割，过滤文本内容输出等作用。下面是一些简单的介绍，更多具体用法见<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-awk.html">此</a></p>
+<p>注意，awk是行处理工具，一行一行处理的。<br>
+格式：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">awk <span class="string">&#x27;PATTERN&#123;ACTIONS&#125; filename&#x27;</span></span><br><span class="line">awk -F<span class="string">&#x27;:&#x27;</span> <span class="string">&#x27;&#123;print $1,$2&#125;&#x27;</span> file                      <span class="comment"># 指定冒号为分隔符</span></span><br><span class="line">awk -v<span class="string">&#x27;FS=:&#x27;</span> <span class="string">&#x27;&#123;print $1,$2&#125;&#x27;</span> file                   <span class="comment"># 指定冒号为分隔符</span></span><br><span class="line">awk <span class="string">&#x27;BEGIN&#123;OFS=FS=&quot;\t&quot;&#125;&#123;print $0, $1;&#125;&#x27;</span> filename    <span class="comment"># 指定分隔符为制表符</span></span><br><span class="line">awk <span class="string">&#x27;&#123;if(NR&gt;=20 &amp;&amp; NR&lt;=30) print $1&#125;&#x27;</span> test.txt      <span class="comment"># 输出20行到30行的内容</span></span><br><span class="line">awk <span class="string">&#x27;NR&gt;=20 &amp;&amp; NR&lt;=30&#123;print $1&#125;&#x27;</span> test.txt           <span class="comment"># 输出20行到30行的内容</span></span><br><span class="line">awk <span class="string">&#x27;/re/ &#x27;</span> log.txt                                 <span class="comment"># 输出包含re的行</span></span><br><span class="line">awk <span class="string">&#x27;$2 ~ /th/ &#123;print $2,$4&#125;&#x27;</span> log.txt               <span class="comment"># 输出第二列包含 &quot;th&quot;，并打印第二列与第四列，～表示模式开始，!~表示模式取反（排除在外）</span></span><br></pre></td></tr></table></figure>
+<p>注意有以下变量：<br>
+<code>FS</code>输入间隔副，<code>OFS</code>输出间隔符，<code>NR</code>行号，从1开始，<code>NF</code>分隔后的字段数量。<br>
+$x表示第x个分隔后的结果，$0则是整行</p>
+<p>这里再提供一个使用脚本的示例，注意脚本文件格式为awk，第一行需要指定 <code>/bin/awk</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/awk -f</span></span><br><span class="line"><span class="comment"># here is cal.awk</span></span><br><span class="line"><span class="comment">#运行前</span></span><br><span class="line">BEGIN &#123;</span><br><span class="line">    math = 0</span><br><span class="line">    english = 0</span><br><span class="line">    computer = 0</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;NAME    NO.   MATH  ENGLISH  COMPUTER   TOTAL\n&quot;</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;---------------------------------------------\n&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#运行中</span></span><br><span class="line">&#123;</span><br><span class="line">    math+=<span class="variable">$3</span></span><br><span class="line">    english+=<span class="variable">$4</span></span><br><span class="line">    computer+=<span class="variable">$5</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;%-6s %-6s %4d %8d %8d %8d\n&quot;</span>, <span class="variable">$1</span>, <span class="variable">$2</span>, <span class="variable">$3</span>,<span class="variable">$4</span>,<span class="variable">$5</span>, <span class="variable">$3</span>+<span class="variable">$4</span>+<span class="variable">$5</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#运行后</span></span><br><span class="line">END &#123;</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;---------------------------------------------\n&quot;</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;  TOTAL:%10d %8d %8d \n&quot;</span>, math, english, computer</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&quot;AVERAGE:%10.2f %8.2f %8.2f\n&quot;</span>, math/NR, english/NR, computer/NR</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">awk -f cal.awk score.txt</span><br></pre></td></tr></table></figure>
+<p>打印乘法表的有趣示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">seq</span> 9 | sed <span class="string">&#x27;H;g&#x27;</span> | awk -v RS=<span class="string">&#x27;&#x27;</span> <span class="string">&#x27;&#123;for(i=1;i&lt;=NF;i++)printf(&quot;%dx%d=%d%s&quot;, i, NR, i*NR, i==NR?&quot;\n&quot;:&quot;\t&quot;)&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>计算文件大小的有趣示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l *.txt | awk <span class="string">&#x27;&#123;sum+=$5&#125; END &#123;print sum&#125;&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="find-1">find</h3>
+<h3 id="grep">grep</h3>
+<p>作用是将输出在<strong>命令行</strong>上的内容进行匹配筛选处理。</p>
+<p>注意 <code>grep</code>使用正则表达式有点坑。要么开 <code>-e</code>选项，要么用 <code>egrep</code>，要么注意 <code>|</code>要转义才能发挥正则匹配的作用，但 <code>^</code>和 <code>$</code>作为锚点不需要转义。</p>
+<p>-v反向匹配，匹配到的不输出</p>
+<h1 id="进程管理">进程管理</h1>
+<h3 id="kill">kill</h3>
+<p>准确地来说，kill是向相应进程发送中断信号。<code>-9</code>是强制停止。相应信号见<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-kill.html">此</a>。</p>
+<h3 id="top">top</h3>
+<h3 id="ps">ps</h3>
+<h1 id="用户管理">用户管理</h1>
+<p>useradd, groupadd</p>
+<h1 id="网络相关操作">网络相关操作</h1>
+<h2 id="ssh">ssh</h2>
+<h1 id="存储管理">存储管理</h1>
+<h2 id="基础知识">基础知识</h2>
+<h3 id="块设备文件">块设备文件</h3>
+<h3 id="文件系统介绍">文件系统介绍</h3>
+<p>文件系统驱动都在<code>/lib/modules/$(uname -r) /kernal/fs</code>目录下面</p>
+<h4 id="ext4">ext4</h4>
+<h2 id="常用指令">常用指令</h2>
+<h3 id="块设备信息查看">块设备信息查看</h3>
+<ul>
+<li><code>dumpe2fs</code>:查看ext*文件系统的信息</li>
+<li><code>blkid</code>:列出所有block的id</li>
+<li><code>lsblk</code>:列出所有block的层级关系</li>
+<li><code>df</code>:查看某文件所使用的文件系统</li>
+<li><code>du</code>:查看某文件所用量</li>
+</ul>
+<h3 id="分区管理与格式化">分区管理与格式化</h3>
+<ul>
+<li><code>parted &lt;blk_dev&gt; print</code>:列出某个block的基本信息，注意这个工具还可以进行分区操作。man一下。</li>
+<li><code>gdisk,fdisk</code>:分区工具，前者是GPT格式，后者是MBR格式，使用前使用parted指令进行查询</li>
+<li><code>partprobe -s</code>:刷新分区表，使得分区更新立即生效</li>
+<li><code>mkfs.*</code>:文件系统make工具，给新分区格式化使用
+<ul>
+<li>agcount是存储群组数量，一般设置为cpu数量</li>
+<li>务必注意所称的“大小”的单位，在有必要的时候请使用<code>man</code>进行查看。</li>
+</ul></li>
+<li><code>fsck.*</code>:对文件系统进行检查，<strong>注意只有有问题的时候才能使用，否则会造成危害</strong></li>
+</ul>
+<h3 id="挂载与卸载">挂载与卸载</h3>
+<ul>
+<li><p><code>mount -t &lt;fs&gt; UUID="" &lt;dir&gt;</code>:将设备UUID为""的设备挂载到dir下面，使用fs文件系统</p>
+<ul>
+<li>有iocharset选项，可以用utf8</li>
+<li>注意-o有很多额外选项，请使用man查看</li>
+</ul></li>
+<li><p><code>mount -n -o remount,rw /</code>根目录重新挂载，如果陷入只读模式下可以考虑使用。</p></li>
+<li><p><code>dd if="/dev/zero" of="/dev/loop0" bs=1M count=512</code> 创建一个文件为/dev/loop0（注意这可能是个设备），往里面写0进去，一个block1M，一共512个Block</p></li>
+<li><p>如果需要使用一个大文件进行挂载操作（而不是目录），可以利用dd进行初始化，然后利用mkfs对大文件进行文件系统的制作，然后用blkid来查询id，然后利用mount的<code>-o loop</code>选项进行挂载。</p></li>
+<li><p>如果需要设置启动挂载，注意开机自动挂载的文件配置在<code>/etc/fstab</code>中。如果用的是大文件而不是物理区块，请使用文件路径名标记。编辑后，请务必使用<code>mount -a</code>检查是否有语法错误。</p></li>
+<li><p><code>mkswap</code>和<code>swapon</code>可以用来制作交换分区。注意也可以使用文件来制作。</p></li>
+</ul>
+<h1 id="管道与重定向">管道与重定向</h1>
+<p><code>&gt;</code>覆盖，<code>&gt;&gt;</code>重定向，<code>2&gt;</code>表示stderr的数据重定向。<code>&lt;</code>重定向输入，<code>&lt;&lt;</code>约定EOF标志，如<code>&lt;&lt; "end"</code>约定end为EOF标志。</p>
+<p><code>/dev/null</code>：把数据输入到这里面相当于丢掉所有输出数据</p>
+<p>写入同一文件的语法：<code>echo hello &gt; test 2&gt;&amp;1</code>或<code>echo hello &amp;&gt; test</code>：stdout和stderr的数据全部输入到test中</p>
+<p>管道<code>|</code>：会将上一条指令的stdout作为下一条指令的stdin，如果希望stderr能够被下一条指令处理，需要<code>2&gt;&amp;1</code>进行重定向</p>
+<p><code>tee</code>：将数据同时输出到stdout和某个文件，双向重定向</p>
+<h2 id="xargs">xargs</h2>
+<p><code>xargs -0pne [command]</code></p>
+<blockquote>
+<p><code>-0</code>：碰到特殊符号时候转换成一般字符<br>
+<code>-p</code>：执行每个指令时进行询问<br>
+<code>-n</code>：取多少个参数执行</p>
+</blockquote>
+<h1 id="环境变量详解">环境变量详解</h1>
+<ul>
+<li>直接修改 <code>$PATH</code>：<code>export PATH=$PATH:/home/uusama/mysql/bin</code>，注意仅在当前bash有效</li>
+<li>修改 <code>~/.bashrc</code>或 <code>~/.bash_profile</code>：永久对<strong>当前用户</strong>生效，即使打开新的bash</li>
+<li>修改 <code>/etc/bashrc</code>或 <code>/etc/profile</code>或 <code>/etc/environment</code>：永久对<strong>所有用户</strong>生效，即使打开新的bash<br>
+注意需要 <code>source</code>命令或重启使改变生效。</li>
+</ul>
+<blockquote>
+<p>疑问：<code>.bashrc</code>和 <code>.bash_profile</code>的区别？加载顺序会有不同，详见<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/317282094">此处</a></p>
+</blockquote>
+<h1 id="脚本编写">脚本编写</h1>
+<h2 id="基本语法">基本语法</h2>
+<h2 id="变量">变量</h2>
+<blockquote>
+<p><code>set</code>&amp;<code>unset</code>：设置变量和删除变量<br>
+<code>readonly</code>：限定只读</p>
+</blockquote>
+<h3 id="基本运算">基本运算</h3>
+<blockquote>
+<p><code>test</code>：用于输出一个表达式的结果<br>
+<code>expr 2 + 2</code>：注意表达式之间要有空格<br>
+<code>[ $a == $b ]</code>：注意条件表达式放方括号，并且有很多空格<br>
+<code>-le</code>：使用这些命令来比较大小，因为&lt;&gt;被用于重定向了<br>
+<code>!</code>&amp;<code>-a</code>&amp;<code>-o</code>&amp;<code>&amp;&amp;</code>&amp;<code>||</code>：布尔运算<br>
+<code>-z</code>&amp;<code>-n</code>：字符串运算符，后面跟字符串，检查长度是否为0<br>
+<code>$a</code>：检查字符串a是否为空，不为空则为true<br>
+<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-shell-basic-operators.html">还有文件测试运算符</a></p>
+</blockquote>
+<h3 id="变量测试与赋值">变量测试与赋值</h3>
+<blockquote>
+<p><code>v=$&#123;var-expr&#125;</code>:var未设置则将v赋值为expr，否则为var<br>
+<code>v=$&#123;var+expr&#125;</code>:var设置则将v赋值为expr，否则为空串<br>
+<code>v=$&#123;var=expr&#125;</code>:var未设置则将var和v同时赋值为expr，否则v赋值为var<br>
+<code>v=$&#123;var?expr&#125;</code>:var未设置则expr输出到stderr，否则v赋值为var</p>
+</blockquote>
+<p>注意这些符号之前可以加冒号，此时var为空字符串也会视为没有设置相应的var变量。</p>
+<h3 id="字符串">字符串</h3>
+<h4 id="字符串种类">字符串种类</h4>
+<blockquote>
+<p>单引号字符串：原样输出，但注意awk的 <code>'&#123;print $1&#125;'</code><br>
+双引号字符串：支持变量和转义符<br>
+反引号：先执行</p>
+</blockquote>
+<h4 id="字符串变量">字符串变量</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">&quot;str&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#s&#125;</span>	<span class="comment"># 输出s的长度</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;s:1:2&#125;</span>	<span class="comment"># 输出tr</span></span><br><span class="line"><span class="built_in">echo</span> `<span class="built_in">expr</span> index <span class="string">&quot;<span class="variable">$string</span>&quot;</span> io`	<span class="comment"># 输出字符rt的下标，这里是1</span></span><br></pre></td></tr></table></figure>
+<h4 id="字符串匹配">字符串匹配</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123;var#key&#125;:从前往后，var中匹配上key的最短部分，去除</span><br><span class="line">$&#123;var##key&#125;：从前往后，var中匹配上key的最长部分，去除</span><br><span class="line">$&#123;var%key&#125;：从后往前，var中匹配上key的最短部分，去除</span><br><span class="line">$&#123;var%%key&#125;：从后往前，var中匹配上key的最长部分，去除</span><br><span class="line">$&#123;var/old_str/new_str&#125;：第一个匹配上old_str的部分用new_str替换</span><br><span class="line">$&#123;var//old_str/new_str&#125;：所有匹配上old_str的用new_str替换</span><br></pre></td></tr></table></figure>
+<p>例：<code>echo $&#123;PATH##/*:&#125;</code></p>
+<h3 id="数组">数组</h3>
+<blockquote>
+<p>注意数组分隔估计和环境变量 <code>IFS</code>有关，<code>IFS</code>是分隔符，默认是 <code>\r\n</code>三个</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">array=(1 2 3)</span><br><span class="line">array=(</span><br><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">)</span><br><span class="line">array[0]=9</span><br><span class="line">array[n]=2</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;array[@]&#125;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;array[*]&#125;</span>	<span class="comment"># 两个都是打印整个数组</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;#array[@]&#125;</span>	<span class="comment"># 打印数组长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 关联数组（实际就是个map)</span></span><br><span class="line"><span class="built_in">declare</span> -A site</span><br><span class="line">site[<span class="string">&quot;google&quot;</span>]=<span class="string">&quot;www.google.com&quot;</span></span><br><span class="line">site[<span class="string">&quot;runoob&quot;</span>]=<span class="string">&quot;www.runoob.com&quot;</span></span><br><span class="line">site[<span class="string">&quot;taobao&quot;</span>]=<span class="string">&quot;www.taobao.com&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;site[*]&#125;</span> <span class="variable">$&#123;site[@]&#125;</span> 	<span class="comment"># 获取所有值</span></span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;!site[*]&#125;</span> <span class="variable">$&#123;!site[@]&#125;</span>	<span class="comment"># 获取所有键</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<h2 id="控制结构">控制结构</h2>
+<h3 id="条件表达">条件表达</h3>
+<blockquote>
+<p><code>(( $a &gt; $b ))</code>：注意两个圆括号可以用大于符号</p>
+<p><code>((i=1;i&lt;9;i++))</code>：for循环可以用</p>
+<p><code>[ cond ]:</code>注意要有括空格，注意用变量的时候要用双引号括起来才行，但test可以直接用，大于号和小于号会当成重定向，要加转移符</p>
+<p><code>[[ cond ]]</code>:bash自己实现的，迁移性较差</p>
+<p><code>test cond</code>：</p>
+<p><code>for v in $@</code>：注意用循环结构的时候，要区分 <code>"$@" "$*" $@ $*</code>的区别</p>
+</blockquote>
+<h3 id="控制结构模板">控制结构模板</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># if</span></span><br><span class="line"><span class="keyword">if</span> [[ cond ]]; <span class="keyword">then</span></span><br><span class="line">	expr1</span><br><span class="line"><span class="keyword">elif</span> [[ cond ]]; <span class="keyword">then</span></span><br><span class="line">	expr2</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for</span></span><br><span class="line"><span class="keyword">for</span>((i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)); <span class="keyword">do</span></span><br><span class="line">	<span class="built_in">expr</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> a b c; <span class="keyword">do</span></span><br><span class="line">	<span class="built_in">expr</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> <span class="variable">$@</span>; <span class="keyword">do</span></span><br><span class="line">	<span class="built_in">expr</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># case</span></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$var</span> <span class="keyword">in</span></span><br><span class="line">1)</span><br><span class="line">	expr1;;</span><br><span class="line">2|3|4)</span><br><span class="line">	expr2</span><br><span class="line">;;</span><br><span class="line">*)</span><br><span class="line">	defaultexpr</span><br><span class="line">;;</span><br><span class="line"><span class="keyword">esac</span></span><br><span class="line"><span class="comment"># while</span></span><br></pre></td></tr></table></figure>
+<h2 id="其他-1">其他</h2>
+<h3 id="特殊变量">特殊变量</h3>
+<blockquote>
+<p><code>$&#123;p&#125;</code>：第 <code>p</code>个参数，<code>echo $0</code>的结果是 <code>echo</code>，当 <code>p</code>小于10时可以不带花括号，否则必须带<br>
+<code>$#</code>：参数个数<br>
+<code>$*</code>和 <code>$@</code>：获取参数，其中前者以<strong>字符串</strong>的形式获取，后者是加引号，然后在引号中返回每个参数。假设在脚本运行时写了三个参数 1、2、3，则 " * " 等价于 "1 2 3"（传递了一个参数），而 "@" 等价于 "1" "2" "3"（传递了三个参数）。</p>
+<p><code>$?</code>：上一个shell命令的返回状态码<br>
+<code>$$</code>：当前shell环境的进程ID号</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;-- \$* 演示 ---&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&quot;$*&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;-- \$@ 演示 ---&quot;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="string">&quot;<span class="variable">$@</span>&quot;</span>; <span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># $ chmod +x test.sh </span></span><br><span class="line"><span class="comment"># $ ./test.sh 1 2 3</span></span><br><span class="line"><span class="comment"># -- $* 演示 ---</span></span><br><span class="line"><span class="comment"># 1 2 3</span></span><br><span class="line"><span class="comment"># -- $@ 演示 ---</span></span><br><span class="line"><span class="comment"># 1</span></span><br><span class="line"><span class="comment"># 2</span></span><br><span class="line"><span class="comment"># 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="间隔符">间隔符</h3>
+<h3 id="基本符号的用法">基本符号的用法</h3>
+<h4 id="引号">引号</h4>
+<blockquote>
+<p><strong>单引号</strong>：将其中的内容全部作为字符串，忽略所有的命令和特殊字符<br>
+<strong>双引号</strong>：解析特殊字符，包括 <code>', ", $, \</code>，如果需要输出这些字符，需要转义符<br>
+<strong>反引号</strong>：包含一个命令字符串的，其中的<strong>命令会先执行</strong>，如`ls`等效于 <code>$(ls)</code></p>
+</blockquote>
+<h4 id="括号">括号</h4>
+<p>参考资料<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52425873/article/details/113052611">见此</a>。</p>
+<ul>
+<li><strong>大括号</strong>：</li>
+<li><strong>中括号</strong>：</li>
+<li><strong>小括号</strong>：注意小括号实际上开了一个子shell！</li>
+</ul>
+<h1 id="小练习">小练习</h1>
+<p>练习1：请将git status中，将所有模式处于xxx的文件，全部更改为yyy？<br>
+练习2：将所有文件名后缀为xxx中的文件里，前缀有yyy的单词，统一替换为zzz<br>
+练习3：找出大小超过500MB的所有文件，并将其在git记录中进行--uncached处理（作者遇到的问题，暂时不知道怎么处理？）</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> linux基本操作学习</li>
+        <li><strong>Author:</strong> spiritTrance</li>
+        <li><strong>Created at
+                :</strong> 2023-08-21 15:33:07</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-01-29 10:43:44
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://spirittrance.github.io/2023/08/21/linux_linux基本操作学习/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/">#基本操作</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/08/17/linux_正则表达式学习/" title="正则表达式学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="正则表达式学习" class="!max-w-none">
+  <span class="title">正则表达式学习</span>
+</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
+</a><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch1/" title="【MIT6.172】学习笔记（1）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（1）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（1）</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/08/17/linux_正则表达式学习/" title="正则表达式学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="正则表达式学习" class="!max-w-none">
+  <span class="title">正则表达式学习</span>
+</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">【cpp查漏补缺】1-cpp是如何跑起来的？</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/08/17/linux_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">正则表达式学习</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c67a7c5121c94079c84b',
+                    clientSecret: '4b69f6ad1d11b93e12a3d466fb4c0dd05c58c641',
+                    repo: 'blogComment',
+                    owner: 'spiritTrance',
+                    admin: ['spiritTrance'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">linux基本操作学习</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%E5%8F%8A%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">2.</span> <span class="nav-text">前言及参考资料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#man%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">man的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">基本指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#echo"><span class="nav-number">4.1.</span> <span class="nav-text">echo</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.</span> <span class="nav-text">文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="nav-number">5.1.1.</span> <span class="nav-text">文件权限管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E4%BF%AE%E6%94%B9"><span class="nav-number">5.1.2.</span> <span class="nav-text">文件修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="nav-number">5.1.3.</span> <span class="nav-text">文件压缩与解压缩</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E7%BC%96%E8%BE%91"><span class="nav-number">5.2.</span> <span class="nav-text">文档编辑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="nav-number">5.2.1.</span> <span class="nav-text">参考文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">5.2.2.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sed"><span class="nav-number">5.2.3.</span> <span class="nav-text">sed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#awk"><span class="nav-number">5.2.4.</span> <span class="nav-text">awk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find-1"><span class="nav-number">5.2.5.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">5.2.6.</span> <span class="nav-text">grep</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kill"><span class="nav-number">6.0.1.</span> <span class="nav-text">kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-number">6.0.2.</span> <span class="nav-text">top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-number">6.0.3.</span> <span class="nav-text">ps</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">用户管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C"><span class="nav-number">8.</span> <span class="nav-text">网络相关操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ssh"><span class="nav-number">8.1.</span> <span class="nav-text">ssh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86"><span class="nav-number">9.</span> <span class="nav-text">存储管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">9.1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%97%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6"><span class="nav-number">9.1.1.</span> <span class="nav-text">块设备文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D"><span class="nav-number">9.1.2.</span> <span class="nav-text">文件系统介绍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">9.2.</span> <span class="nav-text">常用指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9D%97%E8%AE%BE%E5%A4%87%E4%BF%A1%E6%81%AF%E6%9F%A5%E7%9C%8B"><span class="nav-number">9.2.1.</span> <span class="nav-text">块设备信息查看</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%8C%BA%E7%AE%A1%E7%90%86%E4%B8%8E%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">9.2.2.</span> <span class="nav-text">分区管理与格式化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD%E4%B8%8E%E5%8D%B8%E8%BD%BD"><span class="nav-number">9.2.3.</span> <span class="nav-text">挂载与卸载</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%A1%E9%81%93%E4%B8%8E%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">10.</span> <span class="nav-text">管道与重定向</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#xargs"><span class="nav-number">10.1.</span> <span class="nav-text">xargs</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E8%AF%A6%E8%A7%A3"><span class="nav-number">11.</span> <span class="nav-text">环境变量详解</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99"><span class="nav-number">12.</span> <span class="nav-text">脚本编写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">12.1.</span> <span class="nav-text">基本语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">12.2.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="nav-number">12.2.1.</span> <span class="nav-text">基本运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E6%B5%8B%E8%AF%95%E4%B8%8E%E8%B5%8B%E5%80%BC"><span class="nav-number">12.2.2.</span> <span class="nav-text">变量测试与赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">12.2.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">12.2.4.</span> <span class="nav-text">数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">12.3.</span> <span class="nav-text">控制结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE"><span class="nav-number">12.3.1.</span> <span class="nav-text">条件表达</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84%E6%A8%A1%E6%9D%BF"><span class="nav-number">12.3.2.</span> <span class="nav-text">控制结构模板</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96-1"><span class="nav-number">12.4.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F"><span class="nav-number">12.4.1.</span> <span class="nav-text">特殊变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%B4%E9%9A%94%E7%AC%A6"><span class="nav-number">12.4.2.</span> <span class="nav-text">间隔符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%AC%A6%E5%8F%B7%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-number">12.4.3.</span> <span class="nav-text">基本符号的用法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E7%BB%83%E4%B9%A0"><span class="nav-number">13.</span> <span class="nav-text">小练习</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">spiritTrance</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        19 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

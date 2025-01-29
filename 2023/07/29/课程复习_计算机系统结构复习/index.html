@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="spiritTrance">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/07/29/课程复习_计算机系统结构复习/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta property="og:type" content="article">
+<meta property="og:title" content="【课程复习】计算机系统结构复习">
+<meta property="og:url" content="http://example.com/2023/07/29/%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="spiritTranceの小窝">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/.com//scoreboard.png">
+<meta property="og:image" content="http://example.com/.com//tomasulo0.png">
+<meta property="og:image" content="http://example.com/.com//tomasulo1.png">
+<meta property="og:image" content="http://example.com/.com//tomasulo2.png">
+<meta property="article:published_time" content="2023-07-29T07:47:19.000Z">
+<meta property="article:modified_time" content="2025-01-29T02:43:44.569Z">
+<meta property="article:author" content="spiritTrance">
+<meta property="article:tag" content="计算机系统结构">
+<meta property="article:tag" content="课程复习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//scoreboard.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4">
+    <meta name="theme-color" content="#763dff">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+    <!--- Page Info-->
+    
+    <title>
+        
+            【课程复习】计算机系统结构复习 | spiritTranceの小窝
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[""]},"code_block":{"copy":false,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":true,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#763dff","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"400px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"spiritTranceの小窝","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#36adf7","right":"#966df7","transparency":60},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Articles":{"path":"/archives","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/spiritTrance","Blog":"https://spirittrance.github.io/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"欢迎来到spiritTranceの小窝！","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                spiritTranceの小窝
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARTICLES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/spiritTrance">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://spirittrance.github.io/">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Articles"
+                        >
+                            <span>
+                                ARTICLES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Articles">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/spiritTrance">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://spirittrance.github.io/">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">9</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			
+			
+			<img src="/img/cover/coursereview.png" alt="【课程复习】计算机系统结构复习" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
+			
+			<div class="w-full flex items-center absolute bottom-0 justify-start">
+				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【课程复习】计算机系统结构复习</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">spiritTrance</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1"></span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-07-29 15:47:19</span>
+        <span class="mobile">2023-07-29 15:47:19</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-01-29 10:43:44</span>
+            <span class="mobile">2025-01-29 10:43:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/arch/">arch</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">计算机系统结构</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/">课程复习</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="前言">前言</h1>
+<p>这篇文章是博主复习用的资料，对所教授内容不熟的<strong>几乎没有参考价值</strong>。如果有需要，可以联系博主，在相应板块详细解释（如果有时间的话）</p>
+<h1 id="引言及历史">引言及历史</h1>
+<p>计算机系统结构和计算机组成的区别：<br>
+- 计算机组成：描述对用户透明的结构实现。流水线结构，Cache都是其中的研究对象。<br>
+- 计算机结构：从用户的角度描述计算机。指令集，可见的寄存器，内存管理表的结构都是其中的研究对象。</p>
+<p>指令集架构关注的问题：寄存器，内存寻址，寻址模式，指令操作，可用操作，控制流指令，指令编码。（指令集 + 架构）</p>
+<p>摩尔定律：每18个月，处理器的性能翻番</p>
+<p>并行级别：<br>
+- 应用层面：数据级并行、任务级并行<br>
+- 架构层面：指令级并行（单个周期执行多条指令）、线程级并行、请求级并行、向量架构（GPU）</p>
+<p>并行分类：单指令单数据（SISD），单指令多数据（SIMD），如向量架构，GPU，多指令单数据（MISD），多指令多数据（紧耦合MIMD，松耦合MIMD）</p>
+<p>ISA：RISC（RISC-V，MIPS，ARM），CISC（x86）</p>
+<p>Newmann架构：主存，逻辑计算单元，程序控制单元，IO控制单元</p>
+<p>程序：一系列顺序指令</p>
+<h1 id="量化研究方法">量化研究方法</h1>
+<ul>
+<li>动态功耗：晶体管极性转换产生的功耗，<span class="math inline">\(P_{动态功耗}=\frac{1}{2}CV^2f\)</span>，其中f是翻转频率</li>
+<li>静态功耗：通电不工作产生的功耗，<span class="math inline">\(P_{静态功耗}=UI\)</span></li>
+</ul>
+<p>性能定义：<br>
+- 执行任务所需时间：执行时间，响应时间，已用时间，<strong>时延</strong><br>
+- 单位时间执行任务：执行率，带宽，<strong>吞吐量</strong></p>
+<p>计算机设计原理：局部性原理，加速常见时间，阿姆达尔原理（加速某一部分带来的增益是有限的）</p>
+<p>CPU Time = CCT * IC * CPI</p>
+<blockquote>
+<p>影响因素：<br>
+CCT（Clock Cycle Time）：硬件组织（流水线设计）和硬件技术<br>
+IC（instruction count）：Program，Compiler，ISA（只要跟指令有关，就会影响指令数量）<br>
+CPI (clock cycles per instruction)：ISA（ISA涉及到流水线架构，所以会影响）和硬件组织</p>
+</blockquote>
+<h1 id="指令">指令</h1>
+<p>ISA(Instruction Set Architecture)包括：编程寄存器、操作数访问、操作数的类型和大小、指令集、寻址模式、指令编码（是软件和硬件之间的<strong>接口</strong>，包不包括流水线架构呢？不包括吧。。。不太理解，但是首先肯定的是那一套的Inst是包括的，然后操作数相关，寻址相关也是配套的）</p>
+<p>作用：将指令集规范和硬件实现解耦开，高级编程语言和抽象机器解耦开。</p>
+<p>ISA的分类：</p>
+<blockquote>
+<p>栈式架构：有一个隐式操作数，在栈顶部<br>
+AC（Accumulator）架构：有一个隐式操作数，是累加器<br>
+通用寄存器计算机体系结构：只有显式操作数，要么在寄存器要么在内存。可以细分为操作数全来自于寄存器(MIPS)，或者一个来自于寄存器一个来自于内存的架构(80x86)，或者全来自于内存的架构（VAX，已经绝种了）</p>
+</blockquote>
+<p>（思考以上五个架构的优缺点？栈是放在内存的，Accumulator免不了前后数据的强相关使得流水线困难）</p>
+<p>对于一条指令来说，最多可含有的内存地址数和最多的操作数也是值得关注的。如x86支持一条内存地址，但MIPS不行。</p>
+<p>ISA设计应当关注的问题：寻址模式，操作数种类和大小，指令种类，指令控制流，指令集编码</p>
+<p>寻址模式：</p>
+<blockquote>
+<p>立即数寻址：operand = imm<br>
+直接寻址：operand = Mem[imm]<br>
+间接寻址：operand = Mem[Mem[imm]]<br>
+寄存器寻址：operand = R[imm]<br>
+寄存器间接寻址：operand = Mem[R[imm]]<br>
+相对寻址：operand = PC + imm<br>
+堆栈寻址：取栈顶操作数</p>
+</blockquote>
+<p>指令类型：算术&amp;逻辑、浮点数，数据传输、控制、系统</p>
+<p>MIPS所拥有的寄存器：32个GPRs，32个浮点数寄存器，PC，HI，LO，AT，GP，SP，FP，RA</p>
+<p>大小端问题：大端是数字高位存储在地址小的地方，小端是数字低位存储在地址小的地方。（如何理解记忆？寻址都是由小到大寻址，那么大端是数字高位（大）放在地址小的地方，按顺序来）</p>
+<h1 id="流水线">流水线</h1>
+<p>流水线实际要考虑的问题：</p>
+<blockquote>
+<p>流水线每个阶段的开销<br>
+流水线寄存器的延迟（寄存器也是有延迟的，见CSAPP，因为这个原因不可能实现无限加速）<br>
+时钟歪斜（同一时钟信号到达不同部件的时间不完全相同）</p>
+</blockquote>
+<p>流水线冒险：</p>
+<blockquote>
+<p>结构冒险：所需资源繁忙（如RAM在多个阶段被需要，如I-RAM和D-RAM结合在一起的这种），以及超标量流水线，一个阶段有多条指令要写寄存器堆，但寄存器堆只有一个写端口<br>
+数据冒险：RAW，WAR，WAW，五级流水线只有RAW，但超标量都会碰到。关注提交阶段（尤其是从内存读数据）相关的冒险，因为这个时候往往会出现不可前推的冒险，需要停顿。<br>
+控制冒险：因为控制流的改变无法提前得知，部分紧跟控制指令后的指令将会被取进流水线执行（但不应执行），需要消除这些指令产生的影响。</p>
+</blockquote>
+<p>异常处理：</p>
+<blockquote>
+<p>异常（Exception）：程序执行期间异常引发的<strong>内部事件</strong>，如页面错误，下溢，除零等。异常处理在五级流水线同一在提交阶段处理。<br>
+中断（Interrupt）：程序执行期间的<strong>外部事件</strong>，如IO中断，通常是异步的形式出现<br>
+陷阱（Trap）：由于异常或中断导致控制权移交给管理程序，通常是同步的形式出现</p>
+</blockquote>
+<h1 id="分支预测">分支预测</h1>
+<p>分类：</p>
+<blockquote>
+<p>静态分支预测：总是预测跳转或不跳转<br>
+动态分支预测：根据历史跳转记录判断跳不跳转</p>
+</blockquote>
+<p>2-bit Predictor：用2bit来记录分支历史状况。可以看成FSM。缺点：在某些特定程序会一直预测不成功。（在FSM的两个状态之间来回抖动）<br>
+分支历史记录表（Branch History Table, BHT）：取PC的低几位作为表的Index，每个表项为2-bit Predictor。</p>
+<p>局部动态分支预测和全局动态分支预测详见《超标量处理器设计》</p>
+<h1 id="cache设计">Cache设计</h1>
+<h2 id="存储器基础">存储器基础</h2>
+<p>随机访问：访问每个位置都是相同时间。DRAM，SRAM，磁盘。底层电路不太了解，略。</p>
+<h2 id="局部性原理">局部性原理</h2>
+<p>空间局部性和时间局部性，例子是矩阵乘法（考虑矩阵在内存里的组织形式，考虑缺失率，kij或ikj的迭代方式才是最快的）</p>
+<h2 id="cache组织">Cache组织</h2>
+<h3 id="cache与内存的相连方式">Cache与内存的相连方式</h3>
+<p>需要讨论的问题：块大小，地址编码格式？addr=tag##index##offset.<br>
+相连方式：一一映射，组相联，全相连。组相联是有<span class="math inline">\(2^{index}\)</span>个组，然后每组有个tag进行比对，比对成功则对应，否则不行。全相连是特殊情况，addr=tag##offset。<br>
+归纳一下，一一映射是多个组，一个路，组相联是多组多路，全相联是一组多路。也就是，组是分组个数，路是一组有多少个块。</p>
+<h3 id="cache的读写策略">Cache的读写策略</h3>
+<p>需要考虑的问题：读or写？命中or缺失？缺失时的块驱逐策略？<br>
+块驱逐策略：Random，LRU，PLRU，FIFO<br>
+&gt; 写透：写命中时，数据同时写入Cache和内存。（读缺失不会产生写操作）<br>
+&gt; 写回：写命中时，只写入Cache。当该块被替换时检查dirty位，如果dirty位为1则写回内存，否则不写。（读缺失会产生写操作）<br>
+&gt; 写分配：写缺失时，会发生块驱逐，然后读出相应块到Cache，然后重新写。（比较复杂）<br>
+&gt; 写不分配：写缺失时，直接将结果写入内存。</p>
+<p>写缓冲：与Cache并行放置，目的是为了让流水线不停顿（尤其是写透）。当缓冲区也爆掉的时候，会停顿CPU。<br>
+一般是写回搭配写分配，写透搭配写不分配。原因？<br>
+一般L1和L2 cache采用xxx，L3采用xxx。原因？</p>
+<h3 id="cache性能评价">Cache性能评价</h3>
+<p>平均访存时间（Average Memory Access Time，AMAT），计算和访存以及命中率有关。注意访存包括指令访存以及数据访存。<br>
+<span class="math inline">\(AMAT(L_i) = Hit Time + Miss Rate \times Miss Penalty = Hit Time + Miss Rate \times AMAT(L_{i-1})\)</span></p>
+<blockquote>
+<p>降低缺失率：扩大block size，扩大cache size，更高的相连度<br>
+降低缺失惩罚：多级cache，读优先<br>
+降低命中时间：避免在索引cache时的地址转换（如虚拟地址到物理地址的转换）</p>
+</blockquote>
+<p>多级cache的任务：L1的速度尽量跟cpu对齐，L2尽量够大，防止访问主存。分类有：<br>
+&gt; 多级包含：L1的数据全部在L2中，有利于数据的一致性，但因为L1的数据全部在L2中，故L1的缺失率会略高<br>
+&gt; 多级排除：L1的数据不一定全部在L2中，优点是防止空间浪费</p>
+<h1 id="指令级并行">指令级并行</h1>
+<h2 id="编译器技术">编译器技术</h2>
+<blockquote>
+<p>包含议题：循环展开，软件流水线，超标量处理器<br>
+基本块：一个顺序指令序列，单入口单出口<br>
+基本块内的指令级并行很小，内部很容易出现数据冒险，需要考虑循环级并行（LLP）<br>
+数据依赖：分为真数据依赖和名称依赖（反依赖，可能导致WAR和输出依赖，可能导致WAW）<br>
+名称依赖：两条指令引用相同寄存器或内存位置。WAR中出现的依赖往往被称为<strong>反依赖</strong>。（注意依赖不一定会引发数据冒险，但数据冒险一定是由于数据依赖引发的）。而WAW中出现的依赖往往称为<strong>输出依赖</strong>。利用<strong>寄存器重命名</strong>技术可以解决名称依赖。<br>
+控制依赖：某部分代码块对某些条件产生的依赖。<br>
+可以提高ILP的编译器优化技术：循环展开，软件流水线，基于编译器的分支预测<br>
+对于编译器来说，如果发现寄存器相关，可以考虑指令重排，将发生数据冒险的指令，在不改变功能的前提下分隔得尽量远。</p>
+</blockquote>
+<p>循环展开步骤：<br>
+①重复：将循环体的内容重复几次<br>
+②合并：在逻辑上将某些指令的常量参数予以修改，并合并某些不必要的操作（等效转换）<br>
+③寄存器重命名：消除寄存器前后依赖，目的是提高并行性<br>
+④调度：进行指令重排，目的是减少流水线停顿</p>
+<p>超标量处理器的分类：<br>
+&gt; 静态调度超标量处理器：由编译器实现<br>
+&gt; 动态调度超标量处理器：由特殊硬件实现，使用计分板算法或Tomasulo算法</p>
+<p>超长指令字（VLIW）处理器：VLIW<strong>并行执行多条指令</strong>（一条指令完成多个操作）。VLIW架构中，指令级并行的发现与指令执行顺序的调度（硬件中最困难的部分）完全交由编译器完成。</p>
+<p>软件流水线：对于每次循环，内部的循环如果是独立的，那么可以通过重排<strong>不同循环</strong>的指令使不同循环的指令交错，获得ILP。</p>
+<p>软件流水线与循环展开的比较：<br>
+&gt; 可以一起使用<br>
+&gt; 软件流水线占用更少的空间<br>
+&gt; 分析复杂，寄存器管理很复杂</p>
+<h2 id="动态调度算法">动态调度算法</h2>
+<p>动机：乱序执行，利用重命名技术解决依赖关系<br>
+Scoreboard没有重命名，但Tomasulo有。</p>
+<h3 id="scoreboard">ScoreBoard</h3>
+<p>策略：在一系列指令窗口内动态构建依赖关系图。<br>
+乱序执行将解码阶段细分为两个阶段：</p>
+<blockquote>
+<p>发射阶段：负责解码指令，检查结构冒险<br>
+读操作数阶段：在没有数据冒险的状况下读操作数</p>
+</blockquote>
+<p>顺序发射，乱序执行，乱序提交。<br>
+算法经历的四个阶段：</p>
+<blockquote>
+<p>①发射：检查是否有WAW冒险，结构冒险，如果有则发射停顿，否则进行解码操作<br>
+②读操作数：没有数据冒险（RAW）后进行读操作<br>
+③执行阶段<br>
+④写回阶段：该阶段检查WAR（写回的时候，之前的指令还没有读，因为是乱序发射），如果有的话则停止直到没有为止。<br>
+留意三种数据冒险在何时处理。</p>
+</blockquote>
+<p>算法相关步骤：</p>
+<blockquote>
+<p>①指令状态：发射（处理WAW），读操作数（处理RAW），执行和写回（处理WAR）。<br>
+②功能单元状态：<br>
+- 功能单元：指的是加减乘除那些机构。<br>
+- 使用九元组来表示功能单元：<br>
+- busy：该功能单元是否忙<br>
+- op：该功能单元执行的操作<br>
+- Fi：该功能单元的目的寄存器<br>
+- Fj, Fk: 该功能单元的源操作数寄存器<br>
+- Qj, Qk（Query）: 产生Fj，Fk操作数的功能单元<br>
+- Rj, Rk（Ready）: Fj，Fk操作数是否产生，产生时为1，产生后进行读，读后将该两位标志置0.<br>
+③寄存器结果状态（Result）：指示哪个功能单元要写哪个寄存器（是个映射机构），注意记录的是<strong>正在计算的</strong>，计算完了的则无需记录。</p>
+</blockquote>
+<p><img src="/.com//scoreboard.png" alt="算法执行步骤"></p>
+<blockquote>
+<p><span class="math inline">\(Issue\)</span>：Wait Until的意思是所需功能单元空闲并且当前指令的目的寄存器不能是正在执行的某条指令的目的寄存器（保证不会出现WAW），而Bookkeeping的Rj和Rk的限制保证不会出现RAW。<br>
+<span class="math inline">\(Read Operands\)</span>：需要两个操作数Ready了才能读，读后记得清空。<br>
+<span class="math inline">\(Write Result\)</span>：Wait Until的意思是任何一个功能单元的两个源寄存器（<strong>已计算好</strong>，因为可能是当前功能单元在算的）不能成为当前单元的目标寄存器（应对WAR冒险，保证WAR的顺序）。这个阶段更新所有其他指令的计分板条目内容，告知操作数已经Ready。并且清除当前指令的Result和Busy位。</p>
+</blockquote>
+<p>PPT上有Scoreboard样例，不再赘述。需要关注的是何时发射（没有WAW），何时读操作数（没有RAW），何时写回（没有WAR），何时更新计分板（发射时更新基本信息，读操作数时更新R，写回时更新计分板上所有的Q，Result和Busy）。</p>
+<p>Scoreboard算法的约束条件：可以并行执行的指令条数（即不会发生数据冒险的指令条数最多数目），计分板数据结构的大小（计分板的大小直接决定最多可并行执行的指令条目数，决定了指令窗口的大小），功能单元的数目，指令种存在依赖关系的指令数目多少。</p>
+<p>注意Scoreboard仍然是顺序发射不是乱序发射，但是是乱序执行和提交。</p>
+<p>关于硬件上的编写细节：组合逻辑？时序逻辑？想清楚。从过程上看，是时序逻辑不是组合逻辑。</p>
+<h3 id="tomasulo">Tomasulo</h3>
+<p>动机：提高浮点数单元的性能<br>
+主要特征：拥有一个保留站（reservation stations），通过寄存器重命名技术解决WAR和WAW问题，跟踪每个操作数用于解决RAW问题。</p>
+<p><img src="/.com//tomasulo0.png" alt="算法执行步骤"></p>
+<p>Tomasulo 保留站条目元素：</p>
+<blockquote>
+<p>Op:进行的操作<br>
+Vj,Vk:源操作数的值（注意这点跟Tomasulo不同）<br>
+Qj,Qk:产生源操作数的寄存器<br>
+A:保存读写内存的地址<br>
+Busy<br>
+寄存器结果状态：和计分板的一样。</p>
+</blockquote>
+<p><img src="/.com//tomasulo1.png" alt="算法执行步骤"><br>
+<img src="/.com//tomasulo2.png" alt="算法执行步骤"></p>
+<p>Tomasulo和Scoreboard算法的比较：<br>
+- 结构性冒险更少，基于Common Data Bus的旁路，对于WAR，WAW冒险无需停顿（通过寄存器重命名技术解决）</p>
+<p>Tomasulo算法的缺点：无法实现精确中断（因为乱序提交的缘故）</p>
+<p>未看完，待补。</p>
+<h1 id="数据级并行未讲待补">数据级并行（未讲，待补）</h1>
+<h2 id="simd">SIMD</h2>
+<h1 id="线程级并行未讲待补">线程级并行（未讲，待补）</h1>
+<h2 id="待补">待补</h2>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 【课程复习】计算机系统结构复习</li>
+        <li><strong>Author:</strong> spiritTrance</li>
+        <li><strong>Created at
+                :</strong> 2023-07-29 15:47:19</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-01-29 10:43:44
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://spirittrance.github.io/2023/07/29/课程复习_计算机系统结构复习/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">#计算机系统结构</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E8%AF%BE%E7%A8%8B%E5%A4%8D%E4%B9%A0/">#课程复习</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch1/" title="【MIT6.172】学习笔记（1）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（1）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（1）</span>
+</a><a class="recommended-article-item" href="/2023/11/30/量化研究方法_ch4_向量与SIMD/" title="【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行" rel="bookmark">
+  <img src="/img/cover/book_arch_quan.jpg" alt="【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行" class="!max-w-none">
+  <span class="title">【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</span>
+</a><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch2/" title="【MIT6.172】学习笔记（2）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（2）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（2）</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch1/" title="【MIT6.172】学习笔记（1）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（1）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（1）</span>
+</a><a class="recommended-article-item" href="/2023/11/30/量化研究方法_ch4_向量与SIMD/" title="【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行" rel="bookmark">
+  <img src="/img/cover/book_arch_quan.jpg" alt="【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行" class="!max-w-none">
+  <span class="title">【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/08/17/linux_%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">正则表达式学习</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2022/09/12/misc/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">杂项</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c67a7c5121c94079c84b',
+                    clientSecret: '4b69f6ad1d11b93e12a3d466fb4c0dd05c58c641',
+                    repo: 'blogComment',
+                    owner: 'spiritTrance',
+                    admin: ['spiritTrance'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">【课程复习】计算机系统结构复习</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%95%E8%A8%80%E5%8F%8A%E5%8E%86%E5%8F%B2"><span class="nav-number">2.</span> <span class="nav-text">引言及历史</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%87%8F%E5%8C%96%E7%A0%94%E7%A9%B6%E6%96%B9%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">量化研究方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="nav-number">5.</span> <span class="nav-text">流水线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E9%A2%84%E6%B5%8B"><span class="nav-number">6.</span> <span class="nav-text">分支预测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#cache%E8%AE%BE%E8%AE%A1"><span class="nav-number">7.</span> <span class="nav-text">Cache设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E5%9F%BA%E7%A1%80"><span class="nav-number">7.1.</span> <span class="nav-text">存储器基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="nav-number">7.2.</span> <span class="nav-text">局部性原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cache%E7%BB%84%E7%BB%87"><span class="nav-number">7.3.</span> <span class="nav-text">Cache组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cache%E4%B8%8E%E5%86%85%E5%AD%98%E7%9A%84%E7%9B%B8%E8%BF%9E%E6%96%B9%E5%BC%8F"><span class="nav-number">7.3.1.</span> <span class="nav-text">Cache与内存的相连方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cache%E7%9A%84%E8%AF%BB%E5%86%99%E7%AD%96%E7%95%A5"><span class="nav-number">7.3.2.</span> <span class="nav-text">Cache的读写策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cache%E6%80%A7%E8%83%BD%E8%AF%84%E4%BB%B7"><span class="nav-number">7.3.3.</span> <span class="nav-text">Cache性能评价</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E7%BA%A7%E5%B9%B6%E8%A1%8C"><span class="nav-number">8.</span> <span class="nav-text">指令级并行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%99%A8%E6%8A%80%E6%9C%AF"><span class="nav-number">8.1.</span> <span class="nav-text">编译器技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%B0%83%E5%BA%A6%E7%AE%97%E6%B3%95"><span class="nav-number">8.2.</span> <span class="nav-text">动态调度算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scoreboard"><span class="nav-number">8.2.1.</span> <span class="nav-text">ScoreBoard</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tomasulo"><span class="nav-number">8.2.2.</span> <span class="nav-text">Tomasulo</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%9C%AA%E8%AE%B2%E5%BE%85%E8%A1%A5"><span class="nav-number">9.</span> <span class="nav-text">数据级并行（未讲，待补）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#simd"><span class="nav-number">9.1.</span> <span class="nav-text">SIMD</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%BA%A7%E5%B9%B6%E8%A1%8C%E6%9C%AA%E8%AE%B2%E5%BE%85%E8%A1%A5"><span class="nav-number">10.</span> <span class="nav-text">线程级并行（未讲，待补）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%85%E8%A1%A5"><span class="nav-number">10.1.</span> <span class="nav-text">待补</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">spiritTrance</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        19 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
