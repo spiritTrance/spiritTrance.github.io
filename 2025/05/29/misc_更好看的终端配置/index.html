@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="spiritTrance">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://spirittrance.github.io/2025/05/29/misc_更好看的终端配置/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【花里胡哨】更好看的终端配置 - fish">
+<meta property="og:url" content="https://spirittrance.github.io/2025/05/29/misc_%E6%9B%B4%E5%A5%BD%E7%9C%8B%E7%9A%84%E7%BB%88%E7%AB%AF%E9%85%8D%E7%BD%AE/index.html">
+<meta property="og:site_name" content="spiritTranceの小窝">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://spirittrance.github.io/images/redefine-og.webp">
+<meta property="article:published_time" content="2025-05-28T16:00:01.000Z">
+<meta property="article:modified_time" content="2025-05-28T16:13:24.380Z">
+<meta property="article:author" content="spiritTrance">
+<meta property="article:tag" content="fish">
+<meta property="article:tag" content="bash">
+<meta property="article:tag" content="折腾">
+<meta property="article:tag" content="鼓捣">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://spirittrance.github.io/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://avatars.githubusercontent.com/u/107790528?s=400&amp;u=0a209963edc27837d0e6711f216684337f4b52bb&amp;v=4">
+    <meta name="theme-color" content="#763dff">
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+    <!--- Page Info-->
+    
+    <title>
+        
+            【花里胡哨】更好看的终端配置 - fish | spiritTranceの小窝
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"spirittrance.github.io","root":"/","language":"en"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":true,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#763dff","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"400px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"spiritTranceの小窝","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#36adf7","right":"#966df7","transparency":60},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Articles":{"path":"/archives","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"About":{"icon":"fa-regular fa-user","submenus":{"Me":"/about","Github":"https://github.com/spiritTrance","Blog":"https://spirittrance.github.io/"}}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"menu","announcement":"欢迎来到spiritTranceの小窝！","show_on_mobile":true,"links":{"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+                <a class="logo-image h-8 w-8 sm:w-10 sm:h-10 mr-3" href="/">
+                    <img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4" class="w-full h-full rounded-sm">
+                </a>
+            
+            <a class="logo-title" href="/">
+                
+                spiritTranceの小窝
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARTICLES
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/archives">
+                                                    ARCHIVES
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/tags">
+                                                    TAGS
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="/categories">
+                                                    CATEGORIES
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown"
+                                   href="#"
+                                        onClick=&#34;return false;&#34;>
+                                    <i class="fa-regular fa-user fa-fw"></i>
+                                    ABOUT
+                                    <i class="fa-solid fa-chevron-down fa-fw"></i>
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                        
+                                            <li>
+                                                <a href="/about">
+                                                    ME
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a target="_blank" rel="noopener" href="https://github.com/spiritTrance">
+                                                    GITHUB
+                                                </a>
+                                            </li>
+                                        
+                                            <li>
+                                                <a href="https://spirittrance.github.io/">
+                                                    BLOG
+                                                </a>
+                                            </li>
+                                        
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-Articles"
+                        >
+                            <span>
+                                ARTICLES
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-Articles">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/archives">ARCHIVES</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/tags">TAGS</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/categories">CATEGORIES</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item-sub text-base my-1.5 flex flex-col w-full">
+                        
+                        <div class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary cursor-pointer text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                             navbar-data-toggle="submenu-About"
+                        >
+                            <span>
+                                ABOUT
+                            </span>
+                            
+                                <i class="fa-solid fa-chevron-right fa-sm fa-fw transition-all"></i>
+                            
+                        </div>
+                        
+
+                        
+                            <div class="flex-col items-start px-2 py-2 hidden" data-target="submenu-About">
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="/about">ME</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           target="_blank" rel="noopener" href="https://github.com/spiritTrance">GITHUB</a>
+                                    </div>
+                                
+                                    <div class="drawer-navbar-item text-base flex flex-col justify-center items-start hover:underline active:underline hover:underline-offset-1 rounded-3xl">
+                                        <a class=" text-third-text-color text-xl"
+                                           href="https://spirittrance.github.io/">BLOG</a>
+                                    </div>
+                                
+                            </div>
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/archives"
+                        >
+                            <span>Archives</span>
+                            <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/categories"
+                        >
+                            <span>Categories</span>
+                            <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">23</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">10</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">20</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">【花里胡哨】更好看的终端配置 - fish</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="https://avatars.githubusercontent.com/u/107790528?s=400&u=0a209963edc27837d0e6711f216684337f4b52bb&v=4">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">spiritTrance</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-05-29 00:01</span>
+        <span class="mobile">2025-05-29 00:01</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-05-29 00:13:24</span>
+            <span class="mobile">2025-05-29 00:13:24</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Linux/">Linux</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/fish/">fish</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/bash/">bash</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%8A%98%E8%85%BE/">折腾</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E9%BC%93%E6%8D%A3/">鼓捣</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="前言">前言</h1>
+<p>zsh 的 theme 很多花里胡哨的还挺好看，可以上 oh my zsh theme wiki 上面查看，但是奇怪的是每次输入命令之后还有点卡，不知道为什么，于是我配置了fish。fish的优点<del>主要是终端可以配置的更花里胡哨</del>，以及可以根据历史记录自动补全命令，这个比Ctrl + R 用的舒服的多，但缺点也不是没有，比如 fish 下面写脚本不是那么习惯，可能和 bash 有点区别。</p>
+<h1 id="配置">配置</h1>
+<p>fish 主要通过修改文件<code>~/.config/fish/config.fish</code> 配置。作用类似于<code>~/.bashrc</code>，但是里面编写指令不太舒服，但是可以配置更花哨的终端。下面提供两个示例，复制到上述文件里面就可以用了。先上效果图：</p>
+<p><img lazyload src="/images/loading.svg" data-src="/img/linux_kernel/ch1/1.png"></p>
+<p>效果大致是，提示符号有七个箭头，会呈现出渐变的效果。如果上一条指令返回值是 -1，则会全红。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> status is-interactive</span><br><span class="line"><span class="comment"># i8    # Commands to run in interactive sessions can go here</span></span><br><span class="line">end</span><br><span class="line"><span class="comment"># ~/.config/fish/config.fish</span></span><br><span class="line"><span class="comment"># ~/.config/fish/functions/fish_prompt.fish</span></span><br><span class="line"><span class="keyword">function</span> fish_prompt</span><br><span class="line">    <span class="built_in">set</span> -l last_status <span class="variable">$status</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 在 if/else 块之前声明颜色变量，使其作用域为整个函数 ---</span></span><br><span class="line">    <span class="built_in">set</span> -l user_host_bg_color</span><br><span class="line">    <span class="built_in">set</span> -l path_bg_color</span><br><span class="line">    <span class="built_in">set</span> -l git_branch_color_name</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 根据上一条命令的执行状态定义背景颜色和Git分支文字颜色名称 ---</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$last_status</span> -ne 0</span><br><span class="line">        <span class="comment"># 命令失败时的颜色</span></span><br><span class="line">        <span class="built_in">set</span> user_host_bg_color <span class="string">&quot;red&quot;</span></span><br><span class="line">        <span class="built_in">set</span> path_bg_color <span class="string">&quot;red&quot;</span></span><br><span class="line">        <span class="built_in">set</span> git_branch_color_name <span class="string">&quot;red&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment"># 命令成功时的颜色</span></span><br><span class="line">        <span class="built_in">set</span> user_host_bg_color <span class="string">&quot;blue&quot;</span></span><br><span class="line">        <span class="built_in">set</span> path_bg_color <span class="string">&quot;green&quot;</span></span><br><span class="line">        <span class="built_in">set</span> git_branch_color_name <span class="string">&quot;yellow&quot;</span></span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 第一部分：信息行 (这部分保持不变) ---</span></span><br><span class="line">    set_color white --bold --background=<span class="variable">$user_host_bg_color</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27;%s@%s&#x27;</span> (<span class="built_in">whoami</span>) (prompt_hostname)</span><br><span class="line">    set_color normal</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line">    set_color white --bold --background=<span class="variable">$path_bg_color</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27;%s&#x27;</span> <span class="variable">$PWD</span></span><br><span class="line">    set_color normal</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">set</span> -l branch (<span class="built_in">command</span> git symbolic-ref --short HEAD 2&gt;/dev/null; or <span class="built_in">command</span> git rev-parse --short HEAD 2&gt;/dev/null)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">test</span> -n <span class="string">&quot;<span class="variable">$branch</span>&quot;</span></span><br><span class="line">        set_color <span class="variable">$git_branch_color_name</span> --bold</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&#x27;(%s)&#x27;</span> <span class="string">&quot;<span class="variable">$branch</span>&quot;</span></span><br><span class="line">        set_color normal</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 第二部分：7个箭头的提示符 ---</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27; \n&#x27;</span> <span class="comment"># 行首空格和换行，让箭头在新一行开始</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$last_status</span> -eq 0</span><br><span class="line">        <span class="comment"># 命令成功: 7个箭头，首尾随机颜色，中间插值</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># -- 辅助函数定义 (仅在此成功分支内有效和定义) --</span></span><br><span class="line">        <span class="keyword">function</span> __fish_prompt_hex_to_dec_comp</span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&#x27;%d&#x27;</span> <span class="string">&quot;0x<span class="variable">$argv</span>[1]&quot;</span></span><br><span class="line">        end</span><br><span class="line">        <span class="keyword">function</span> __fish_prompt_dec_to_hex_comp</span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&#x27;%02X&#x27;</span> <span class="string">&quot;<span class="variable">$argv</span>[1]&quot;</span></span><br><span class="line">        end</span><br><span class="line">        <span class="comment"># -- 辅助函数定义结束 --</span></span><br><span class="line"></span><br><span class="line">        <span class="built_in">set</span> -l palette FF0000 FFA500 FFFF00 00FF00 0066FF 4B0082 EE82EE</span><br><span class="line">        <span class="built_in">set</span> -l num_palette_colors (count <span class="variable">$palette</span>)</span><br><span class="line">        <span class="built_in">set</span> -l num_arrows 7</span><br><span class="line"></span><br><span class="line">        <span class="built_in">set</span> -l index1 (random 1 <span class="variable">$num_palette_colors</span>)</span><br><span class="line">        <span class="built_in">set</span> -l index2 (random 1 <span class="variable">$num_palette_colors</span>)</span><br><span class="line">        <span class="keyword">while</span> <span class="built_in">test</span> <span class="variable">$index1</span> -eq <span class="variable">$index2</span></span><br><span class="line">            <span class="built_in">set</span> index2 (random 1 <span class="variable">$num_palette_colors</span>)</span><br><span class="line">        end</span><br><span class="line"></span><br><span class="line">        <span class="built_in">set</span> -l start_color_hex <span class="variable">$palette</span>[<span class="variable">$index1</span>]</span><br><span class="line">        <span class="built_in">set</span> -l end_color_hex <span class="variable">$palette</span>[<span class="variable">$index2</span>]</span><br><span class="line"></span><br><span class="line">        <span class="built_in">set</span> -l r_start (__fish_prompt_hex_to_dec_comp (string sub -s 1 -l 2 <span class="variable">$start_color_hex</span>))</span><br><span class="line">        <span class="built_in">set</span> -l g_start (__fish_prompt_hex_to_dec_comp (string sub -s 3 -l 2 <span class="variable">$start_color_hex</span>))</span><br><span class="line">        <span class="built_in">set</span> -l b_start (__fish_prompt_hex_to_dec_comp (string sub -s 5 -l 2 <span class="variable">$start_color_hex</span>))</span><br><span class="line"></span><br><span class="line">        <span class="built_in">set</span> -l r_end (__fish_prompt_hex_to_dec_comp (string sub -s 1 -l 2 <span class="variable">$end_color_hex</span>))</span><br><span class="line">        <span class="built_in">set</span> -l g_end (__fish_prompt_hex_to_dec_comp (string sub -s 3 -l 2 <span class="variable">$end_color_hex</span>))</span><br><span class="line">        <span class="built_in">set</span> -l b_end (__fish_prompt_hex_to_dec_comp (string sub -s 5 -l 2 <span class="variable">$end_color_hex</span>))</span><br><span class="line"></span><br><span class="line">        <span class="comment"># *** CORRECTION IS HERE ***</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> (<span class="built_in">seq</span> 1 <span class="variable">$num_arrows</span>) <span class="comment"># 使用 (seq 1 $num_arrows) 代替 from ... to ...</span></span><br><span class="line">            <span class="built_in">set</span> -l current_arrow_color_hex</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$i</span> -eq 1</span><br><span class="line">                <span class="built_in">set</span> current_arrow_color_hex <span class="variable">$start_color_hex</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$i</span> -eq <span class="variable">$num_arrows</span></span><br><span class="line">                <span class="built_in">set</span> current_arrow_color_hex <span class="variable">$end_color_hex</span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">set</span> -l t (math --scale=10 <span class="string">&quot;(<span class="variable">$i</span> - 1) / (<span class="variable">$num_arrows</span> - 1)&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> -l r_interp (math <span class="string">&quot;round((1 - <span class="variable">$t</span>) * <span class="variable">$r_start</span> + <span class="variable">$t</span> * <span class="variable">$r_end</span>)&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> -l g_interp (math <span class="string">&quot;round((1 - <span class="variable">$t</span>) * <span class="variable">$g_start</span> + <span class="variable">$t</span> * <span class="variable">$g_end</span>)&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> -l b_interp (math <span class="string">&quot;round((1 - <span class="variable">$t</span>) * <span class="variable">$b_start</span> + <span class="variable">$t</span> * <span class="variable">$b_end</span>)&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> r_curr (math <span class="string">&quot;max(0, min(255, <span class="variable">$r_interp</span>))&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> g_curr (math <span class="string">&quot;max(0, min(255, <span class="variable">$g_interp</span>))&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> b_curr (math <span class="string">&quot;max(0, min(255, <span class="variable">$b_interp</span>))&quot;</span>)</span><br><span class="line">                <span class="built_in">set</span> current_arrow_color_hex (__fish_prompt_dec_to_hex_comp <span class="variable">$r_curr</span>)(__fish_prompt_dec_to_hex_comp <span class="variable">$g_curr</span>)(__fish_prompt_dec_to_hex_comp <span class="variable">$b_curr</span>)</span><br><span class="line">            end</span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&#x27;%s➤ &#x27;</span> (set_color <span class="variable">$current_arrow_color_hex</span>)</span><br><span class="line">        end</span><br><span class="line">        set_color normal</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment"># 命令失败: 7个红色箭头 (这里的循环语法 &quot;for i in (seq 7)&quot; 是正确的)</span></span><br><span class="line">        set_color red --bold</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> (<span class="built_in">seq</span> 7) <span class="comment"># (seq 7) 会生成 1 2 3 4 5 6 7</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&#x27;➤ &#x27;</span></span><br><span class="line">        end</span><br><span class="line">        set_color normal</span><br><span class="line">    end</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
+<p>然后下面这个则是七个箭头呈现彩虹色的效果，比较一般，也放着吧。</p>
+<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> status is-interactive</span><br><span class="line">i8    <span class="comment"># Commands to run in interactive sessions can go here</span></span><br><span class="line">end</span><br><span class="line"><span class="comment"># ~/.config/fish/config.fish</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ~/.config/fish/functions/fish_prompt.fish</span></span><br><span class="line"><span class="keyword">function</span> fish_prompt</span><br><span class="line">    <span class="built_in">set</span> -l last_status <span class="variable">$status</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 在 if/else 块之前声明颜色变量，使其作用域为整个函数 ---</span></span><br><span class="line">    <span class="built_in">set</span> -l user_host_bg_color</span><br><span class="line">    <span class="built_in">set</span> -l path_bg_color</span><br><span class="line">    <span class="built_in">set</span> -l git_branch_color_name</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 根据上一条命令的执行状态定义背景颜色和Git分支文字颜色名称 ---</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$last_status</span> -ne 0</span><br><span class="line">        <span class="comment"># 命令失败时的颜色</span></span><br><span class="line">        <span class="built_in">set</span> user_host_bg_color <span class="string">&quot;red&quot;</span></span><br><span class="line">        <span class="built_in">set</span> path_bg_color <span class="string">&quot;red&quot;</span></span><br><span class="line">        <span class="built_in">set</span> git_branch_color_name <span class="string">&quot;red&quot;</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment"># 命令成功时的颜色</span></span><br><span class="line">        <span class="built_in">set</span> user_host_bg_color <span class="string">&quot;blue&quot;</span></span><br><span class="line">        <span class="built_in">set</span> path_bg_color <span class="string">&quot;green&quot;</span></span><br><span class="line">        <span class="built_in">set</span> git_branch_color_name <span class="string">&quot;yellow&quot;</span></span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 第一部分：信息行 ---</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1. 用户名@主机名</span></span><br><span class="line">    set_color white --bold --background=<span class="variable">$user_host_bg_color</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27;%s@%s&#x27;</span> (<span class="built_in">whoami</span>) (prompt_hostname)</span><br><span class="line">    set_color normal</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 完整的绝对路径</span></span><br><span class="line">    set_color white --bold --background=<span class="variable">$path_bg_color</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27;%s&#x27;</span> <span class="variable">$PWD</span></span><br><span class="line">    set_color normal</span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3. Git 分支信息</span></span><br><span class="line">    <span class="built_in">set</span> -l branch (<span class="built_in">command</span> git symbolic-ref --short HEAD 2&gt;/dev/null; or <span class="built_in">command</span> git rev-parse --short HEAD 2&gt;/dev/null)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">test</span> -n <span class="string">&quot;<span class="variable">$branch</span>&quot;</span></span><br><span class="line">        set_color <span class="variable">$git_branch_color_name</span> --bold</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&#x27;(%s)&#x27;</span> <span class="string">&quot;<span class="variable">$branch</span>&quot;</span></span><br><span class="line">        set_color normal</span><br><span class="line">        <span class="built_in">printf</span> <span class="string">&#x27; &#x27;</span></span><br><span class="line">    end</span><br><span class="line"></span><br><span class="line">    <span class="comment"># --- 第二部分：7个箭头的提示符 ---</span></span><br><span class="line">    <span class="built_in">printf</span> <span class="string">&#x27; \n&#x27;</span> <span class="comment"># 行首空格和换行，让箭头在新一行开始</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">test</span> <span class="variable">$last_status</span> -eq 0</span><br><span class="line">        <span class="comment"># 命令成功: 7个彩虹色箭头</span></span><br><span class="line">        <span class="built_in">set</span> -l rainbow_colors FF0000 FFA500 FFFF00 00FF00 0066FF 4B0082 EE82EE <span class="comment"># 红 橙 黄 绿 蓝 靛 紫</span></span><br><span class="line">        <span class="keyword">for</span> color_hex <span class="keyword">in</span> <span class="variable">$rainbow_colors</span></span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&#x27;%s➤ &#x27;</span> (set_color <span class="variable">$color_hex</span>)</span><br><span class="line">        end</span><br><span class="line">        set_color normal</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="comment"># 命令失败: 7个红色箭头</span></span><br><span class="line">        set_color red --bold</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> (<span class="built_in">seq</span> 7)</span><br><span class="line">            <span class="built_in">printf</span> <span class="string">&#x27;➤ &#x27;</span></span><br><span class="line">        end</span><br><span class="line">        set_color normal</span><br><span class="line">    end</span><br><span class="line">end</span><br></pre></td></tr></table></figure></div>
+<h1 id="后记">后记</h1>
+<p>因为作者有一堆需要加载的环境变量放在<code>~/.bashrc</code>里面的，但是迁移到<code>~/.config/fish/config.fish</code>会比较麻烦，fish的脚本有一套固定的语法，所以作者是这样解决的：在<code>~/.bashrc</code>的最后一行启动<code>fish</code>，这样环境变量也就无缝继承过去了。然后试了一下，在 fish 里面执行脚本应该也是没有问题的，似乎就<code>bashrc</code>类似的初始化配置的迁移比较麻烦？就这样吧，渐变色的箭头我还是比较喜欢的。</p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 【花里胡哨】更好看的终端配置 - fish</li>
+        <li><strong>Author:</strong> spiritTrance</li>
+        <li><strong>Created at
+                :</strong> 2025-05-29 00:00:01</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-05-29 00:13:24
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://spirittrance.github.io/2025/05/29/misc_更好看的终端配置/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/fish/">#fish</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/bash/">#bash</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E6%8A%98%E8%85%BE/">#折腾</a>&nbsp;
+			</li>
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E9%BC%93%E6%8D%A3/">#鼓捣</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+  <div class="recommended-article px-2 sm:px-6 md:px-8">
+   <div class="recommended-desktop">
+    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+    </div>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2022/07/18/git_gitStarter/" title="git快速入门" rel="bookmark">
+  <img src="/img/cover/starter.png" alt="git快速入门" class="!max-w-none">
+  <span class="title">git快速入门</span>
+</a><a class="recommended-article-item" href="/2023/08/21/linux_linux基本操作学习/" title="linux基本操作学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="linux基本操作学习" class="!max-w-none">
+  <span class="title">linux基本操作学习</span>
+</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
+</a></div>
+   </div>
+   <div class="recommended-mobile">
+   <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
+     <i aria-hidden="true"></i><span>推荐阅读</span>
+   </div>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2022/07/18/git_gitStarter/" title="git快速入门" rel="bookmark">
+  <img src="/img/cover/starter.png" alt="git快速入门" class="!max-w-none">
+  <span class="title">git快速入门</span>
+</a><a class="recommended-article-item" href="/2023/08/21/linux_linux基本操作学习/" title="linux基本操作学习" rel="bookmark">
+  <img src="img/cover/linux_tools.png" alt="linux基本操作学习" class="!max-w-none">
+  <span class="title">linux基本操作学习</span>
+</a></div>
+   </div>
+  </div>
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/05/23/misc_ChatGPT4%E5%BC%80%E9%80%9A%E6%95%99%E7%A8%8B/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">ChatGPT4开通教程</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="gitalk-container"></div>
+    <script data-swup-reload-script
+            src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js"></script>
+    <script data-swup-reload-script>
+
+        function loadGitalk() {
+            let __gitalk__pathname = decodeURI(location.pathname);
+            const __gitalk__pathnameLength = __gitalk__pathname.length;
+            const __gitalk__pathnameMaxLength = 50;
+            if (__gitalk__pathnameLength > __gitalk__pathnameMaxLength) {
+                __gitalk__pathname = __gitalk__pathname.substring(0, __gitalk__pathnameMaxLength - 3) + '...';
+            }
+
+            try {
+                Gitalk && new Gitalk({
+                    clientID: 'c67a7c5121c94079c84b',
+                    clientSecret: '4b69f6ad1d11b93e12a3d466fb4c0dd05c58c641',
+                    repo: 'blogComment',
+                    owner: 'spiritTrance',
+                    admin: ['spiritTrance'],
+                    id: __gitalk__pathname,
+                    language: 'en',
+                    proxy: 'https://github.com/login/oauth/access_token'
+                }).render('gitalk-container');
+
+            } catch (e) {
+                window.Gitalk = null;
+            }
+        }
+
+        if ('true') {
+            const loadGitalkTimeout = setTimeout(() => {
+                loadGitalk();
+                clearTimeout(loadGitalkTimeout);
+            }, 1000);
+        } else {
+            window.addEventListener('DOMContentLoaded', loadGitalk);
+        }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">【花里胡哨】更好看的终端配置 - fish</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-number">3.</span> <span class="nav-text">后记</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">spiritTrance</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        20 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
