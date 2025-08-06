@@ -23,14 +23,14 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行">
+<meta property="og:title" content="【bug沉思录】1 - 当 thread_local 碰上 libgomp 的嵌套并行">
 <meta property="og:url" content="https://spirittrance.github.io/2025/08/07/cppbug_1_threadlocal/index.html">
 <meta property="og:site_name" content="spiritTranceの小窝">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://spirittrance.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-08-06T16:19:07.000Z">
-<meta property="article:modified_time" content="2025-08-06T17:54:17.051Z">
+<meta property="article:modified_time" content="2025-08-06T17:55:53.155Z">
 <meta property="article:author" content="spiritTrance">
 <meta property="article:tag" content="cpp">
 <meta property="article:tag" content="bug">
@@ -47,7 +47,7 @@
     
     <title>
         
-            【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行 | spiritTranceの小窝
+            【bug沉思录】1 - 当 thread_local 碰上 libgomp 的嵌套并行 | spiritTranceの小窝
         
     </title>
 
@@ -439,7 +439,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">【bug沉思录】1 - 当 thread_local 碰上 libgomp 的嵌套并行</h1>
 			</div>
 			
 		</div>
@@ -467,8 +467,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-08-07 01:54:17</span>
-            <span class="mobile">2025-08-07 01:54:17</span>
+            <span class="desktop">2025-08-07 01:55:53</span>
+            <span class="mobile">2025-08-07 01:55:53</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -567,7 +567,8 @@
 <h1 id="如果我需要嵌套并行也能实现线程重用怎么办">如果我需要嵌套并行也能实现线程重用，怎么办？</h1>
 <p>采用intel提供的libiomp实现。</p>
 <h1 id="其他">其他</h1>
-<h2 id="关于生命周期">关于生命周期</h2>
+<h2 id="关于c的生命周期">关于c++的生命周期</h2>
+<p>TODO</p>
 <h2 id="关于嵌套并行">关于嵌套并行</h2>
 <p>其实关于嵌套并行的问题相对来说还是很棘手，因为很多第三方库都可能使用各种各样的线程并行库。如果在你的并行块里面需要调用这些库，那么就会出现套娃的情况，很有可能会创建特别多的线程数，从而影响性能。这里提供一篇有意思的文献：</p>
 <ul>
@@ -586,14 +587,14 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行</li>
+        <li><strong>Title:</strong> 【bug沉思录】1 - 当 thread_local 碰上 libgomp 的嵌套并行</li>
         <li><strong>Author:</strong> spiritTrance</li>
         <li><strong>Created at
                 :</strong> 2025-08-07 00:19:07</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-08-07 01:54:17
+                    :</strong> 2025-08-07 01:55:53
             </li>
         
         <li>
@@ -746,8 +747,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bug%E5%A4%8D%E6%9F%A5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">bug复查流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug%E7%9A%84%E6%9C%80%E5%B0%8F%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">bug的最小示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#thread_local"><span class="nav-number">3.</span> <span class="nav-text">thread_local</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#libgomp%E7%9A%84%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C"><span class="nav-number">4.</span> <span class="nav-text">libgomp的嵌套并行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%BE%97%E5%88%B0%E8%BF%99%E6%A0%B7%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">5.</span> <span class="nav-text">为什么会得到这样的输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E9%9C%80%E8%A6%81%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C%E4%B9%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E9%87%8D%E7%94%A8%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-number">6.</span> <span class="nav-text">如果我需要嵌套并行也能实现线程重用，怎么办？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">7.1.</span> <span class="nav-text">关于生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C"><span class="nav-number">7.2.</span> <span class="nav-text">关于嵌套并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">7.3.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol>
+		<div class="page-title">【bug沉思录】1 - 当 thread_local 碰上 libgomp 的嵌套并行</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bug%E5%A4%8D%E6%9F%A5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">bug复查流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug%E7%9A%84%E6%9C%80%E5%B0%8F%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">bug的最小示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#thread_local"><span class="nav-number">3.</span> <span class="nav-text">thread_local</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#libgomp%E7%9A%84%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C"><span class="nav-number">4.</span> <span class="nav-text">libgomp的嵌套并行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%BE%97%E5%88%B0%E8%BF%99%E6%A0%B7%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">5.</span> <span class="nav-text">为什么会得到这样的输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E9%9C%80%E8%A6%81%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C%E4%B9%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E9%87%8D%E7%94%A8%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-number">6.</span> <span class="nav-text">如果我需要嵌套并行也能实现线程重用，怎么办？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ec%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">7.1.</span> <span class="nav-text">关于c++的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C"><span class="nav-number">7.2.</span> <span class="nav-text">关于嵌套并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">7.3.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol>
 
 	</div>
 </div>
