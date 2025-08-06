@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://spirittrance.github.io/2023/10/01/cpp_1_链接/"/>
+    <link rel="canonical" href="https://spirittrance.github.io/2025/08/07/cppbug_1_threadlocal/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -23,17 +23,17 @@
         
         <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【cpp查漏补缺】1-cpp是如何跑起来的？">
-<meta property="og:url" content="https://spirittrance.github.io/2023/10/01/cpp_1_%E9%93%BE%E6%8E%A5/index.html">
+<meta property="og:title" content="【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行">
+<meta property="og:url" content="https://spirittrance.github.io/2025/08/07/cppbug_1_threadlocal/index.html">
 <meta property="og:site_name" content="spiritTranceの小窝">
 <meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://spirittrance.github.io/images/redefine-og.webp">
-<meta property="article:published_time" content="2023-10-01T04:33:07.000Z">
-<meta property="article:modified_time" content="2025-01-29T02:43:44.510Z">
+<meta property="article:published_time" content="2025-08-06T16:19:07.000Z">
+<meta property="article:modified_time" content="2025-08-06T17:19:04.524Z">
 <meta property="article:author" content="spiritTrance">
 <meta property="article:tag" content="cpp">
-<meta property="article:tag" content="链接">
+<meta property="article:tag" content="bug">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://spirittrance.github.io/images/redefine-og.webp">
     
@@ -47,7 +47,7 @@
     
     <title>
         
-            【cpp查漏补缺】1-cpp是如何跑起来的？ | spiritTranceの小窝
+            【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行 | spiritTranceの小窝
         
     </title>
 
@@ -438,12 +438,8 @@
 
 		<div class="article-title relative w-full">
 			
-			
-			
-			<img src="/img/cover/cpp.png" alt="【cpp查漏补缺】1-cpp是如何跑起来的？" class="w-full h-60 sm:h-72 md:h-80 object-cover sm:rounded-t-large dark:brightness-75" />
-			
-			<div class="w-full flex items-center absolute bottom-0 justify-start">
-				<h1 class="article-title-cover text-center mx-6 my-6 text-second-text-color bg-background-color-transparent px-4 py-3 text-3xl sm:text-4xl md:text-5xl font-semibold backdrop-blur-lg rounded-xl border border-border-color ">【cpp查漏补缺】1-cpp是如何跑起来的？</h1>
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行</h1>
 			</div>
 			
 		</div>
@@ -464,15 +460,15 @@
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-10-01 12:33:07</span>
-        <span class="mobile">2023-10-01 12:33:07</span>
+        <span class="desktop">2025-08-07 00:19:07</span>
+        <span class="mobile">2025-08-07 00:19:07</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-01-29 10:43:44</span>
-            <span class="mobile">2025-01-29 10:43:44</span>
+            <span class="desktop">2025-08-07 01:19:04</span>
+            <span class="mobile">2025-08-07 01:19:04</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -486,7 +482,7 @@
                     
                         
                         <li>
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/">编程语言</a>&nbsp;
+                            <a href="/categories/bug%E6%B2%89%E6%80%9D%E5%BD%95/">bug沉思录</a>&nbsp;
                         </li>
                     
                     
@@ -504,7 +500,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/%E9%93%BE%E6%8E%A5/">链接</a>&nbsp;
+                        | <a href="/tags/bug/">bug</a>&nbsp;
                     </li>
                 
             </ul>
@@ -530,81 +526,65 @@
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<h1 id="总概">总概</h1>
-<p>本文将介绍cpp从源代码到可执行文件的构建流程。</p>
-<h1 id="预处理">预处理</h1>
-<p>预处理一步仅仅是简单的文本替换，如包含文件<code>#include</code>，宏展开<code>#define</code>等。预处理的结果是一个经过修改的源代码，通常以.i文件的扩展名保存。你可以尝试下列指令来生成预处理后的文件：<br>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -E my_program.cpp -o my_program.i</span><br></pre></td></tr></table></figure></div></p>
-<h1 id="编译">编译</h1>
-<p>编译这一步则是将预处理后的源文件转换成汇编语言，常见的指令集，如x86。</p>
-<h2 id="cpp主流编译器介绍">cpp主流编译器介绍</h2>
-<ul>
-<li>GCC（GNU Compiler Collection）:准确来说，GCC是由GNU项目开发的编译器<strong>套件</strong>，包括C，C++，Fortran等。而g++是C++的编译器，gcc是C的编译器（也可以编译C++，但一般用g++代替）</li>
-<li>MinGW（Minimalist GNU for Windows）是一套用于Windows操作系统的开发<strong>工具集</strong>，它允许开发人员使用GNU工具链在Windows上开发应用程序，包括编译和构建C、C++等编程语言的应用程序。</li>
-<li>MSVC（MicroSoft Visual C++）：是指 Microsoft Visual C++，是 Microsoft 的 C++ 编译器和开发<strong>工具集</strong>。</li>
-<li>Clang：是LLVM（Low-Level Virtual Machine）项目的一部分。Clang 可以在多种操作系统上运行，包括各种Unix-like系统（如Linux和macOS）以及Windows。</li>
-<li>LLVM：是一个开源的编译器基础设施项目，它包括一组模块化的编译器技术和工具，用于开发和优化程序的编译和执行。Clang为LLVM的前端。除此之外，还包括一种虚拟指令集和优化器，<strong>允许开发者构建自定义编程语言</strong>。</li>
-</ul>
-<p>简单总结，主流的编译器为gcc（g++），msvc（中的c++编译器）和clang三种。而LLVM是一个基础框架，可以帮助开发编译器。</p>
-<h2 id="生成汇编代码">生成汇编代码</h2>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -S -march=x86-64 my_program.cpp -o my_program.S</span><br></pre></td></tr></table></figure></div>
-<p>注意<code>-march</code>选项用于指定指令集，这里指定的是x86-64。可以选择将x86-64替换成其他选项，如果不存在，gcc会提示非法，并展示所有合法选项。</p>
-<h1 id="汇编">汇编</h1>
-<p>这一步的任务由汇编器完成：将汇编语言转换成机器代码。除此之外，汇编语言还承担着翻译伪指令的任务。<br>
-&gt; 伪指令：相关指令集并未提供的指令，伪指令的出现原因是为了编译器开发者的方便而发明出来的。最后需要由汇编器完成伪指令翻译的任务。</p>
-<h1 id="链接">链接</h1>
-<p>链接是将多个目标文件和库文件<strong>组合成一个可执行文件</strong>的过程。</p>
-<h2 id="链接器的任务">链接器的任务</h2>
-<p>链接器的任务主要有：</p>
-<ul>
-<li>符号解析：解析各个目标文件中的符号引用，以确定它们对应的符号定义，并建立符号表。这里解释一下符号：符号包括变量名，函数名，类名等。C中有一个关键字<code>extern</code>，即提醒该符号需要在外部文件中查找。另外，如果一个cpp源文件没有包含函数声明而调用了某一函数，那么这一文件是无法通过编译这一步的。如果修过《编译原理》相关课程，这一原因不难想到：无法确定参数列表和返回值，也就无法生成正确的ABI调用。</li>
-<li>地址解析：计算各个符号在可执行文件中的地址。每一个目标文件都是假设从虚拟地址空间的0x00000000开始，多个目标文件组合成一个文件，自然要重新计算地址，也就是下面的重定位步骤。</li>
-<li>重定位：调整目标文件中的代码和数据，使其正确地引用其他目标文件中的符号。</li>
-<li>合并：将所有目标文件合并成为可执行文件。</li>
-</ul>
-<p>考虑到本文的出发点，本文主体主要介绍库文件如何创建和链接。本文仅简单介绍了链接的具体步骤。如果对链接的具体细节感兴趣，请参考《深入理解计算机系统》相关章节。</p>
-<h2 id="库文件">库文件</h2>
-<p>库文件（Library Files）是一种包含已编译二进制代码的文件，它们包含了可重用的程序模块或函数。一般来说，库文件分为静态库和动态库。</p>
-<ul>
-<li>静态库
-<ul>
-<li>扩展名：<code>.a</code>(Linux)或<code>.lib</code>(Windows)</li>
-<li>在编译时加入可执行文件中</li>
-<li>优点：在于程序执行速度快</li>
-<li>缺点：是增大了可执行文件大小，库文件的更新会引起可执行文件的重新编译</li>
-</ul></li>
-<li>动态库
-<ul>
-<li>扩展名：<code>.so</code>(Linux)或<code>.dll</code>(Windows)或<code>.dylib</code>(macOS)</li>
-<li>不会在编译期加入可执行文件，而是在程序运行时加载到内存中</li>
-<li>优点：是多个程序可以共享动态库，有助于节省内存。库文件的更新，不需要重新编译可执行文件，只需替换库文件即可</li>
-<li>缺点：是由于在运行时要加载库文件，程序启动速度较慢。</li>
-</ul></li>
-</ul>
-<p>下面介绍静态库和动态库的创建和链接，这里先给出目录：<br>
-这里先给出目录：<br>
-<div class="code-container" data-rel="Text"><figure class="iseeu highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── add.cpp</span><br><span class="line">├── main.cpp</span><br><span class="line">├── mul.cpp</span><br><span class="line">├── add.o</span><br><span class="line">├── mul.o</span><br><span class="line">├── lib</span><br><span class="line">│   ├── libcalc.a</span><br><span class="line">│   ├── libcalc.so</span><br><span class="line">│   ├── libadd.a</span><br><span class="line">│   ├── libadd.so</span><br><span class="line">│   ├── libmul.a</span><br><span class="line">│   └── libmul.so</span><br><span class="line">└── main</span><br></pre></td></tr></table></figure></div></p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成目标文件</span></span><br><span class="line">gcc -o add.o -c add.cpp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 静态库</span></span><br><span class="line">ar -rcs lib/libcalc.a add.o mul.o  <span class="comment"># 使用ar(archive)工具创建，其中mylib.a是静态库名</span></span><br><span class="line">gcc -o main main.cpp -L ./lib -lcalc <span class="comment"># -L(Library)代表静态库路径，-l(link)是要链接的静态库</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态库</span></span><br><span class="line">gcc -shared -o libcalc.so add.o mul.o <span class="comment"># -shared 表示创建动态库，mylib.so是动态库名</span></span><br><span class="line">gcc -o main main.cpp -L ./lib -lcalc <span class="comment"># 与静态库一样</span></span><br><span class="line">ldd main  <span class="comment"># 查看依赖关系，通常会发现新加的动态库找不到依赖</span></span><br><span class="line">LD_LIBRARY_PATH=<span class="variable">$LD_LIBRARY_PATH</span>:`<span class="built_in">pwd</span>`/lib</span><br><span class="line"><span class="built_in">export</span> LD_LIBRARY_PATH  <span class="comment"># 修改LD_LIBRARY_PATH变量使得能够查找到依赖，注意该方法只对当前终端有效，如果希望能够永久生效，需要修改环境变量</span></span><br><span class="line">ldd main  <span class="comment"># 再次查看</span></span><br><span class="line">./main    <span class="comment"># 执行</span></span><br></pre></td></tr></table></figure></div>
-<p>这里需要强调的是，库名需要用<code>mylib</code>，对应的文件名是<code>libmylib.a</code>或<code>libmylib.so</code>，也就是说，搜索库的时候会在前面加上<code>lib</code>，后面加上<code>.a</code>或<code>.so</code>后缀。然后会优先搜索动态库，其次搜索静态库。</p>
-<p>下面介绍一下多个库链接以及动态库和静态库混合链接的情况。</p>
-<div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多个静态库链接</span></span><br><span class="line">gcc -static -o main main.cpp -L ./lib -ladd -lmul</span><br><span class="line">gcc -static -o main main.cpp ./lib/libadd.a ./lib/libmul.a</span><br><span class="line"></span><br><span class="line"><span class="comment"># 多个动态库链接</span></span><br><span class="line">gcc -Bdynamic -o main main.cpp -L ./lib -ladd -lmul</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态库和静态库混合链接</span></span><br><span class="line">gcc main.cpp -L ./lib -Wl,-Bstatic -ladd -Wl,-Bdynamic -lmul  <span class="comment"># 第一种方式，先链接静态库，后链接动态库</span></span><br><span class="line">gcc main.cpp -L ./lib -Wl,-Bdynamic -lmul -Wl,-Bstatic -ladd -Wl,-Bdynamic  <span class="comment">#第二种方式，先链接动态库，后链接静态库，然后在最后加上`-Wl,-Bdynamic`使用动态连接的命令</span></span><br></pre></td></tr></table></figure></div>
-<h1 id="装载">装载</h1>
-<p>最后，程序如果需要执行，需要装载器将可执行文件载入内存中，进行执行。其中仍然有一些细节，但不在本章讨论之类。如果希望了解更多的细节，请参考《深入理解计算机系统》。</p>
+			<h1 id="bug复查流程">bug复查流程</h1>
+<p>这次碰到的bug十分隐蔽，如果没有做好git管理的话，在历史记录上二分查找bug，那么这个bug估计很难查出来。原因是实现逻辑是正确的，但是因为各个线程使用的种子是完全相同的，导致最终结果出现“共振”现象，导致结果出错。排查流程就是在git上面做二分查找，最后找到出错的提交记录。</p>
+<h1 id="bug的最小示例">bug的最小示例</h1>
+<p>下面是用于说明 bug 的最小示例。</p>
+<div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;omp.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Rng</span> &#123;</span><br><span class="line">  <span class="type">static</span> <span class="keyword">thread_local</span> <span class="type">int</span> seed;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> tid)</span></span>&#123;</span><br><span class="line">    seed = tid * <span class="number">1000</span> + <span class="number">12345</span>; <span class="comment">// Example initialization</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="type">static</span> <span class="type">int</span> <span class="title">get_seed</span><span class="params">()</span>  </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> seed;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">thread_local</span> <span class="type">int</span> Rng::seed = <span class="number">0</span>; <span class="comment">// Initialize the thread-local variable</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> threads = <span class="number">4</span>;</span><br><span class="line">    <span class="built_in">omp_set_num_threads</span>(threads);</span><br><span class="line">    <span class="comment">// 第一个并行块</span></span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> omp parallel num_threads(threads)</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="meta">#<span class="keyword">pragma</span> omp critical</span></span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; <span class="built_in">omp_get_thread_num</span>() </span><br><span class="line">           &lt;&lt; <span class="string">&quot; no initialized with seed: &quot;</span></span><br><span class="line">           &lt;&lt; Rng::<span class="built_in">get_seed</span>() &lt;&lt; endl;</span><br><span class="line">      Rng::<span class="built_in">init</span>(<span class="built_in">omp_get_thread_num</span>());</span><br><span class="line">      <span class="meta">#<span class="keyword">pragma</span> omp critical</span></span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; <span class="built_in">omp_get_thread_num</span>() </span><br><span class="line">           &lt;&lt; <span class="string">&quot; initialized with seed: &quot;</span></span><br><span class="line">           &lt;&lt; Rng::<span class="built_in">get_seed</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二个并行块</span></span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> omp parallel num_threads(threads)</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="meta">#<span class="keyword">pragma</span> omp critical</span></span><br><span class="line">      cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; <span class="built_in">omp_get_thread_num</span>() </span><br><span class="line">           &lt;&lt; <span class="string">&quot; has seed: &quot;</span></span><br><span class="line">           &lt;&lt; Rng::<span class="built_in">get_seed</span>() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第三个并行块：带有嵌套并行块的并行块</span></span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> omp parallel num_threads(1)</span></span><br><span class="line">    &#123;</span><br><span class="line">      <span class="meta">#<span class="keyword">pragma</span> omp parallel num_threads(threads)</span></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="meta">#<span class="keyword">pragma</span> omp critical</span></span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; <span class="built_in">omp_get_thread_num</span>() </span><br><span class="line">             &lt;&lt; <span class="string">&quot; in nested parallel region has seed: &quot;</span></span><br><span class="line">             &lt;&lt; Rng::<span class="built_in">get_seed</span>() &lt;&lt; endl;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>使用的是<code>g++</code>实现的openmp。现在请推测：最后有几条输出seed的结果是0？</p>
+<blockquote>
+<p>编译器：g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0<br>
+<code>g++ test.cpp -fopenmp -o test</code></p>
+</blockquote>
+<details class="[red]" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>[控制台输出] </summary>
+              <div class="content">
+              <p>其中一次的输出结果：</p><div class="code-container" data-rel="Txt"><figure class="iseeu highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Thread 0 no initialized with seed: 0</span><br><span class="line">Thread 0 initialized with seed: 12345</span><br><span class="line">Thread 2 no initialized with seed: 0</span><br><span class="line">Thread 2 initialized with seed: 14345</span><br><span class="line">Thread 3 no initialized with seed: 0</span><br><span class="line">Thread 3 initialized with seed: 15345</span><br><span class="line">Thread 1 no initialized with seed: 0</span><br><span class="line">Thread 1 initialized with seed: 13345</span><br><span class="line">Thread 0 has seed: 12345</span><br><span class="line">Thread 3 has seed: 15345</span><br><span class="line">Thread 2 has seed: 14345</span><br><span class="line">Thread 1 has seed: 13345</span><br><span class="line">Thread 0 in nested parallel region has seed: 12345</span><br><span class="line">Thread 1 in nested parallel region has seed: 0</span><br><span class="line">Thread 2 in nested parallel region has seed: 0</span><br><span class="line">Thread 3 in nested parallel region has seed: 0</span><br></pre></td></tr></table></figure></div><p>答案是七个：包括最开始的 4 个，以及嵌套并行块的 3 个。</p>
+              </div>
+            </details>
+<p>下面首先介绍相关的知识点，为最后的问题分析做铺垫。如果想先看分析，可以跳转到<a href="#为什么会得到这样的输出">这部分</a>。如果看不懂，再看下面两节。</p>
+<h1 id="thread_local">thread_local</h1>
+<p>在c++11标准里面引入了<code>thread_local</code>的关键字。其生命周期和它的宿主线程的生命周期相绑定。一个需要额外注意的点是，<code>thread_local</code>限定的变量，<strong>只会初始化一次</strong>，也就是说，对于线程而言，其更像是一个<strong>静态变量</strong>。好，那么对于<code>static thread_local</code>定义的变量呢？其生命周期是怎样的？我们先来看一下<a class="link" target="_blank" rel="noopener" href="https://en.cppreference.com/w/c/language/storage_class_specifiers.html">cppreference<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>的这一段话：</p>
+<blockquote>
+<p><strong>Storage duration</strong></p>
+</blockquote>
+<blockquote>
+<p>Every object has a property called storage duration, which limits the object lifetime. There are four kinds of storage duration in C:</p>
+</blockquote>
+<blockquote>
+<p><strong>automatic storage duration.</strong> The storage is allocated when the block in which the object was declared is entered and deallocated when it is exited by any means (goto, return, reaching the end). One exception is the VLAs; their storage is allocated when the declaration is executed, not on block entry, and deallocated when the declaration goes out of scope, not when the block is exited(since C99). If the block is entered recursively, a new allocation is performed for every recursion level. All function parameters and non-static block-scope objects have this storage duration, as well as compound literals used at block scope(until C23)</p>
+</blockquote>
+<blockquote>
+<p><strong>static storage duration.</strong> The storage duration is the entire execution of the program, and the value stored in the object is initialized only once, prior to main function. **All objects declared static and all objects with either internal or external linkage that aren't declared _Thread_local(until C23)thread_local(since C23)(since C11) have this storage duration.**</p>
+</blockquote>
+<blockquote>
+<p><strong>thread storage duration.</strong> The storage duration is the entire execution of the thread in which it was created, and the value stored in the object is initialized when the thread is started. Each thread has its own, distinct, object. If the thread that executes the expression that accesses this object is not the thread that executed its initialization, the behavior is implementation-defined. All objects declared _Thread_local(until C23)thread_local(since C23) have this storage duration.(since C11)</p>
+</blockquote>
+<blockquote>
+<p><strong>allocated storage duration.</strong> The storage is allocated and deallocated on request, using dynamic memory allocation functions.</p>
+</blockquote>
+<p>可以推知：<code>static thread_local</code>在生命周期的管理上等同于<code>thread_local</code>。如果还是不信，stackoverflow上面也有人问过<a class="link" target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22794382/are-c11-thread-local-variables-automatically-static">同样的问题<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。</p>
+<h1 id="openmp的嵌套并行">openmp的嵌套并行</h1>
+<p>众所周知，openmp的线程并行模型是<code>fork-join</code>模型。</p>
+<p>TODO：<br>
+介绍fork-join，介绍syscall，介绍openmp的线程重用机制。</p>
+<details class="[blue]" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>[小练习] </summary>
+              <div class="content">
+              <p>使用<code>g++ -fopenmp</code>编译这段程序，输出结果是什么？可以尝试自行编译检查结果。</p><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;omp.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">thread_local</span> <span class="type">int</span> x = <span class="number">0</span>;</span><br><span class="line">  x++;</span><br><span class="line">  <span class="meta">#<span class="keyword">pragma</span> omp critical</span></span><br><span class="line">  cout &lt;&lt; <span class="string">&quot;Thread &quot;</span> &lt;&lt; <span class="built_in">omp_get_thread_num</span>() </span><br><span class="line">       &lt;&lt; <span class="string">&quot; has x = &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="meta">#<span class="keyword">pragma</span> omp parallel num_threads(1)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">foo</span>();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">#<span class="keyword">pragma</span> omp parallel num_threads(1)</span></span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">foo</span>();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+<h1 id="为什么会得到这样的输出">为什么会得到这样的输出</h1>
+<h1 id="如果我需要嵌套并行也能实现线程重用怎么办">如果我需要嵌套并行也能实现线程重用，怎么办？</h1>
+<h1 id="其他">其他</h1>
+<h2 id="关于生命周期">关于生命周期</h2>
+<h2 id="关于嵌套并行">关于嵌套并行</h2>
+<p>其实关于嵌套并行的问题相对来说还是很棘手，因为很多第三方库都可能使用各种各样的线程并行库。如果在你的并行块里面需要调用这些库，那么就会出现套娃的情况，很有可能会创建特别多的线程数，从而影响性能。事实上这个问题一直有人研究，这里提供一篇文献：<br>
+- <a class="link" target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/8891628">BOLT: Optimizing OpenMP Parallel Regions with User-Level Threads<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>
+- 对应的 <a class="link" target="_blank" rel="noopener" href="https://www.openmp.org/wp-content/uploads/SC19-Iwasaki-Threads.pdf">slide<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h2 id="section"></h2>
 <h1 id="总结">总结</h1>
-<p>在本文最后，我们再次总结一下gcc常用的选项：<br>
-- <code>-o</code>：指定输出文件<br>
-- <code>-E</code>：对代码仅进行预处理，生成<code>*.i</code>文件<br>
-- <code>-S</code>：生成汇编代码，生成<code>*.S</code>文件<br>
-- <code>-march</code>：指定指令集<br>
-- <code>-c</code>：对源代码进行预处理，编译和汇编，但不链接。（即目标代码<code>.o</code>）<br>
-- <code>-L</code>：指定库所在的目录<br>
-- <code>-I</code>：指定头文件所在目录<br>
-- <code>-l</code>：指定库名，注意对于lib*.so或lib*.a类似的库，有两种写法：<code>-l:lib*.a</code>或<code>-l*</code><br>
-- <code>-static</code>或<code>-Bstatic</code>：指定静态库链接<br>
-- <code>-Bdynamic</code>：指定动态库链接<br>
-- <code>-Wl,</code>：表示将额外的参数传递给链接器，如<code>-Wl,-Bstatic</code>表明需要接下来链接静态库</p>
-<h1 id="参考资料">参考资料</h1>
-<p>《深入理解计算机系统》</p>
+<p>1.项目管理：这次是 git 立了大功，能够在历史记录上进行二分查找。虽然但是，应该有更好的做法：比如在提交前进行正确性测试，测试正确再进行提交。并且测试应该是可以实现自动化的，这个需要回头了解。</p>
+<p>2.对于静态变量的生命周期，需要仔细考虑；尤其是碰上<code>static thread_local</code>这种组合的时候，需要更加谨慎的处理。</p>
+<p>3.对于<code>g++</code>实现的openmp，其在外层并行块实现了线程重用，但是在内层并行块并没有实现线程重用。更加需要注意的是，因为内层并行块没有实现线程重用，因此内层的线程创建和销毁都有一定开销，在编写高性能计算程序的时候尤其要注意。测试结果是，这个开销大概在1~10ms这个量级。如果需要内层并行块的线程重用，可以使用intel的openmp，应该在intel的oneAPI套件里面，本人并没有调查。编译选项是<code>-kopenmp</code>.</p>
 
 		</div>
 
@@ -612,18 +592,18 @@
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>Title:</strong> 【cpp查漏补缺】1-cpp是如何跑起来的？</li>
+        <li><strong>Title:</strong> 【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行</li>
         <li><strong>Author:</strong> spiritTrance</li>
         <li><strong>Created at
-                :</strong> 2023-10-01 12:33:07</li>
+                :</strong> 2025-08-07 00:19:07</li>
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-01-29 10:43:44
+                    :</strong> 2025-08-07 01:19:04
             </li>
         
         <li>
-            <strong>Link:</strong> https://spirittrance.github.io/2023/10/01/cpp_1_链接/
+            <strong>Link:</strong> https://spirittrance.github.io/2025/08/07/cppbug_1_threadlocal/
         </li>
         <li>
             <strong>
@@ -649,7 +629,7 @@
 			</li>
 			
 			<li class="tag-item mx-0.5">
-				<a href="/tags/%E9%93%BE%E6%8E%A5/">#链接</a>&nbsp;
+				<a href="/tags/bug/">#bug</a>&nbsp;
 			</li>
 			
 		</ul>
@@ -661,27 +641,27 @@
     <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
      <i aria-hidden="true"></i><span>推荐阅读</span>
     </div>
-    <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/10/01/cpp_2_Makefile用法/" title="【cpp查漏补缺】2-Makefile入门" rel="bookmark">
-  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="!max-w-none">
-  <span class="title">【cpp查漏补缺】2-Makefile入门</span>
-</a><a class="recommended-article-item" href="/2023/10/02/cpp_3_CMake用法/" title="【cpp查漏补缺】3-CMake入门" rel="bookmark">
-  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】3-CMake入门" class="!max-w-none">
-  <span class="title">【cpp查漏补缺】3-CMake入门</span>
-</a><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch1/" title="【MIT6.172】学习笔记（1）" rel="bookmark">
-  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（1）" class="!max-w-none">
-  <span class="title">【MIT6.172】学习笔记（1）</span>
+    <div class="recommended-article-group"><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch2/" title="【MIT6.172】学习笔记（2）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（2）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（2）</span>
+</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
+</a><a class="recommended-article-item" href="/2023/11/30/量化研究方法_ch4_向量与SIMD/" title="【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行" rel="bookmark">
+  <img src="/img/cover/book_arch_quan.jpg" alt="【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行" class="!max-w-none">
+  <span class="title">【计算机系统结构：量化研究方法】第四章：向量、SIMD和GPU结构中的数据级并行</span>
 </a></div>
    </div>
    <div class="recommended-mobile">
    <div class="recommended-article-header text-xl md:text-3xl font-bold mt-10">
      <i aria-hidden="true"></i><span>推荐阅读</span>
    </div>
-   <div class="recommended-article-group"><a class="recommended-article-item" href="/2023/10/01/cpp_2_Makefile用法/" title="【cpp查漏补缺】2-Makefile入门" rel="bookmark">
-  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】2-Makefile入门" class="!max-w-none">
-  <span class="title">【cpp查漏补缺】2-Makefile入门</span>
-</a><a class="recommended-article-item" href="/2023/10/02/cpp_3_CMake用法/" title="【cpp查漏补缺】3-CMake入门" rel="bookmark">
-  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】3-CMake入门" class="!max-w-none">
-  <span class="title">【cpp查漏补缺】3-CMake入门</span>
+   <div class="recommended-article-group"><a class="recommended-article-item" href="/2024/02/09/MIT6.172_ch2/" title="【MIT6.172】学习笔记（2）" rel="bookmark">
+  <img src="/img/cover/MIT6.172.png" alt="【MIT6.172】学习笔记（2）" class="!max-w-none">
+  <span class="title">【MIT6.172】学习笔记（2）</span>
+</a><a class="recommended-article-item" href="/2023/10/03/cpp_4_gdb调试/" title="【cpp查漏补缺】4-gdb的使用" rel="bookmark">
+  <img src="/img/cover/cpp.png" alt="【cpp查漏补缺】4-gdb的使用" class="!max-w-none">
+  <span class="title">【cpp查漏补缺】4-gdb的使用</span>
 </a></div>
    </div>
   </div>
@@ -689,23 +669,11 @@
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
-			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2023/10/01/cpp_2_Makefile%E7%94%A8%E6%B3%95/">
-					<span class="left arrow-icon flex justify-center items-center">
-						<i class="fa-solid fa-chevron-left"></i>
-					</span>
-					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">【cpp查漏补缺】2-Makefile入门</span>
-						<span class="post-nav-item">Prev posts</span>
-					</span>
-				</a>
-			</div>
-			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="next" rel="next" href="/2023/08/21/linux_linux%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E5%AD%A6%E4%B9%A0/">
+				<a class="next" rel="next" href="/2025/08/06/git_scene/">
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">linux基本操作学习</span>
+						<span class="post-nav-title-item">git使用场景常见问题解决</span>
 						<span class="post-nav-item">Next posts</span>
 					</span>
 					<span class="right arrow-icon flex justify-center items-center">
@@ -784,8 +752,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">On this page</div>
-		<div class="page-title">【cpp查漏补缺】1-cpp是如何跑起来的？</div>
-		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E6%A6%82"><span class="nav-number">1.</span> <span class="nav-text">总概</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91"><span class="nav-number">3.</span> <span class="nav-text">编译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cpp%E4%B8%BB%E6%B5%81%E7%BC%96%E8%AF%91%E5%99%A8%E4%BB%8B%E7%BB%8D"><span class="nav-number">3.1.</span> <span class="nav-text">cpp主流编译器介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81"><span class="nav-number">3.2.</span> <span class="nav-text">生成汇编代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B1%87%E7%BC%96"><span class="nav-number">4.</span> <span class="nav-text">汇编</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5"><span class="nav-number">5.</span> <span class="nav-text">链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%93%BE%E6%8E%A5%E5%99%A8%E7%9A%84%E4%BB%BB%E5%8A%A1"><span class="nav-number">5.1.</span> <span class="nav-text">链接器的任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%93%E6%96%87%E4%BB%B6"><span class="nav-number">5.2.</span> <span class="nav-text">库文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%85%E8%BD%BD"><span class="nav-number">6.</span> <span class="nav-text">装载</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol>
+		<div class="page-title">【bug沉思录】1 - 当 thread_local 碰上 openmp 的嵌套并行</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#bug%E5%A4%8D%E6%9F%A5%E6%B5%81%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">bug复查流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#bug%E7%9A%84%E6%9C%80%E5%B0%8F%E7%A4%BA%E4%BE%8B"><span class="nav-number">2.</span> <span class="nav-text">bug的最小示例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#thread_local"><span class="nav-number">3.</span> <span class="nav-text">thread_local</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#openmp%E7%9A%84%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C"><span class="nav-number">4.</span> <span class="nav-text">openmp的嵌套并行</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E5%BE%97%E5%88%B0%E8%BF%99%E6%A0%B7%E7%9A%84%E8%BE%93%E5%87%BA"><span class="nav-number">5.</span> <span class="nav-text">为什么会得到这样的输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E6%88%91%E9%9C%80%E8%A6%81%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C%E4%B9%9F%E8%83%BD%E5%AE%9E%E7%8E%B0%E7%BA%BF%E7%A8%8B%E9%87%8D%E7%94%A8%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-number">6.</span> <span class="nav-text">如果我需要嵌套并行也能实现线程重用，怎么办？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">7.1.</span> <span class="nav-text">关于生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%B5%8C%E5%A5%97%E5%B9%B6%E8%A1%8C"><span class="nav-number">7.2.</span> <span class="nav-text">关于嵌套并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#section"><span class="nav-number">7.3.</span> <span class="nav-text"></span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li></ol>
 
 	</div>
 </div>
