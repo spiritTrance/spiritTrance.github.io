@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://spirittrance.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-08-06T16:19:07.000Z">
-<meta property="article:modified_time" content="2025-08-06T17:36:35.275Z">
+<meta property="article:modified_time" content="2025-08-06T17:40:36.548Z">
 <meta property="article:author" content="spiritTrance">
 <meta property="article:tag" content="cpp">
 <meta property="article:tag" content="bug">
@@ -467,8 +467,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-08-07 01:36:35</span>
-            <span class="mobile">2025-08-07 01:36:35</span>
+            <span class="desktop">2025-08-07 01:40:36</span>
+            <span class="mobile">2025-08-07 01:40:36</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -549,10 +549,10 @@
 </blockquote>
 <blockquote>
 <p>Every object has a property called storage duration, which limits the object lifetime. There are four kinds of storage duration in C:<br>
-<strong>automatic storage duration.</strong> The storage is allocated when the block in which the object was declared is entered and deallocated when it is exited by any means (goto, return, reaching the end). One exception is the VLAs; their storage is allocated when the declaration is executed, not on block entry, and deallocated when the declaration goes out of scope, not when the block is exited(since C99). If the block is entered recursively, a new allocation is performed for every recursion level. All function parameters and non-static block-scope objects have this storage duration, as well as compound literals used at block scope(until C23)<br>
-<strong>static storage duration.</strong> The storage duration is the entire execution of the program, and the value stored in the object is initialized only once, prior to main function. **All objects declared static and all objects with either internal or external linkage that aren't declared _Thread_local(until C23)thread_local(since C23)(since C11) have this storage duration.<strong><br>
-</strong>thread storage duration.** The storage duration is the entire execution of the thread in which it was created, and the value stored in the object is initialized when the thread is started. Each thread has its own, distinct, object. If the thread that executes the expression that accesses this object is not the thread that executed its initialization, the behavior is implementation-defined. All objects declared _Thread_local(until C23)thread_local(since C23) have this storage duration.(since C11)<br>
-<strong>allocated storage duration.</strong> The storage is allocated and deallocated on request, using dynamic memory allocation functions.</p>
+1.<strong>automatic storage duration.</strong> The storage is allocated when the block in which the object was declared is entered and deallocated when it is exited by any means (goto, return, reaching the end). One exception is the VLAs; their storage is allocated when the declaration is executed, not on block entry, and deallocated when the declaration goes out of scope, not when the block is exited(since C99). If the block is entered recursively, a new allocation is performed for every recursion level. All function parameters and non-static block-scope objects have this storage duration, as well as compound literals used at block scope(until C23)<br>
+2。<strong>static storage duration.</strong> The storage duration is the entire execution of the program, and the value stored in the object is initialized only once, prior to main function. **All objects declared static and all objects with either internal or external linkage that aren't declared _Thread_local(until C23) / thread_local(since C11) have this storage duration.<strong><br>
+3.</strong>thread storage duration.** The storage duration is the entire execution of the thread in which it was created, and the value stored in the object is initialized when the thread is started. Each thread has its own, distinct, object. If the thread that executes the expression that accesses this object is not the thread that executed its initialization, the behavior is implementation-defined. All objects declared _Thread_local(until C23)thread_local(since C23) have this storage duration.(since C11)<br>
+4.<strong>allocated storage duration.</strong> The storage is allocated and deallocated on request, using dynamic memory allocation functions.</p>
 </blockquote>
 <p>可以推知：<code>static thread_local</code>在生命周期的管理上等同于<code>thread_local</code>。如果还是不信，stackoverflow上面也有人问过<a class="link" target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22794382/are-c11-thread-local-variables-automatically-static">同样的问题<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>。</p>
 <h1 id="openmp的嵌套并行">openmp的嵌套并行</h1>
@@ -593,7 +593,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-08-07 01:36:35
+                    :</strong> 2025-08-07 01:40:36
             </li>
         
         <li>
